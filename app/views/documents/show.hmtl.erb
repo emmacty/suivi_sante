@@ -1,20 +1,15 @@
-<div class="container mt-5 pb-5">
-  <div class="row d-flex align-items-start">
-    <div class="col-md-4">
+<div class="patient">
+      <h2><%= "#{document.first_name} #{document.last_name}" %></h2>
+      <p><strong>ordonnance de médicament : <%= document.age %></p>
+      <p><strong>ordonnance de biologie : <%= document.address %></p>
+      <p><strong>compte rendu : <%= document.color %></p>
+      <p><strong>Numéro de Carte de Sécurité : <%= document.security_card_number %></p>
+      <p><strong>Hauteur : <%= document.height %> cm</p>
+      <p><strong>Poids : <%= document.weight %> kg</p>
+      <p><strong>Groupe Sanguin : <%= document.bloodtype %></p>
+      <p><strong>Genre : <%= document.gender %></p>
+      <p><strong>Allergies : <%= document.allergies %></p>
+      <p><strong>Maladies Chroniques : <%= document.chronic_illness %></p>
+        <%= link_to "Éditer", edit_document_path(document) %>
+        <%= link_to "Supprimer", document, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
     </div>
-
-    <div class="col-md-8">
-      <!-- Text on the right -->
-      <div class="card shadow p-4">
-        <h3 class="blue-text mb-4"><%= @offer.title%> </h3>
-        <h3 class="blue-text"> Ordonnance de biologie</h3>
-        <p><%= @offer.profession %></p>
-        <h3 class="blue-text">Ordonnance de médicament</h3>
-        <p><%= @offer.experience %> years</p>
-        <h3 class="blue-text">Imagerie médicale </h3>
-        <p><%= @offer.description %> </p>
-        <h3 class="blue-text">Compte rendu </h3>
-  </div>
-</div>
-</div>
-</div>
