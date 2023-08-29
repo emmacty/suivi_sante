@@ -1,0 +1,26 @@
+.card-document {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  border : 1px solid rgb(220, 220, 220);
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.card-document div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-document i {
+  font-size: 20px;
+  background: $purple;
+	background: -webkit-linear-gradient($purple, $blue);
+	background: linear-gradient($purple, $blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.card-document h3 {
+  color: black;
+}

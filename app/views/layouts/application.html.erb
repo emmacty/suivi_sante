@@ -7,12 +7,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= favicon_link_tag asset_path('logo.png') %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
 <%= render "shared/flashes" %>
-
+  <div class="container text-center my-5 m-auto w-100">
     <%= yield %>
+ </div>
+  <%= render "shared/navbar" %>
   </body>
 </html>
