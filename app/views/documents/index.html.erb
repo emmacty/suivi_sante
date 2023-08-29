@@ -1,0 +1,57 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1 style="color: #F0544F; font-weight: bold;">Which geek for your project?</h1>
+    <p style="color: #A8DDCE; ">Find the best developper for your project and launch your dev carreer!</p>
+  </div>
+</div>
+
+ <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find your geek"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
+      <div class="btn-new" style="width: 18rem;">
+        <%= link_to "Create your offer", "/offers/new", class:"btn btn-danger", id:"btn-new"%>
+      </div>
+
+<div class="cards m-auto">
+  <% @offers.each do |offer|%>
+    <div class="card mx-5" style="width: 18rem;">
+      <%= cl_image_tag(offer.user.photo.key, :height=>300, :width=>300, :crop=>"fill")%>
+      <div class="image-elements">
+        <h2 class="orange-text"><%= offer.user.first_name %> <%= offer.user.last_name %></h2>
+        <h5><i class="fa-solid fa-location-dot"></i><%= offer.localisation %></h5>
+        <p class="card-text blue-text font-weight-bold"><%= offer.date %></p>
+        <hr class="mb-0">
+      </div>
+      <div class="card-body mt-0 pt-0">
+        <div class="title">
+          <h5 class="card-title blue-text";><%= offer.title %></h5>
+        </div>
+        <p class="card-text description-text"><%= offer.description %></p>
+        <p>Price per day: <%= offer.price %>€</p>
+    </div>
+          <div class="btn-view-offer">
+          <%= link_to "View offer", offer_path(offer), class:"btn btn-danger d-block" %>
+            <!-- <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>-->
+          </div>
+        </div>
+  <% end %>
+</div>
+
+<h2 class="center-title blue-text my-5">Find a developper near you!</h2>
+
+<div style="width: 80%; height: 600px; margin-left: 170px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
