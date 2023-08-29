@@ -1,16 +1,8 @@
+<% @patients.each do |patient| %>
 <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
   <p>Âge : <%= patient.age %></p>
-  <p>Adresse : <%= patient.address %></p>
-  <p>Couleur : <%= patient.color %></p>
-  <p>Numéro de Carte de Sécurité : <%= patient.security_card_number %></p>
-  <p>Hauteur : <%= patient.height %> cm</p>
-  <p>Poids : <%= patient.weight %> kg</p>
-  <p>Groupe Sanguin : <%= patient.bloodtype %></p>
-  <p>Genre : <%= patient.gender %></p>
-  <p>Allergies : <%= patient.allergies %></p>
-  <p>Maladies Chroniques : <%= patient.chronic_illness %></p>
         <%= link_to "Voir", patient %>
         <%= link_to "Éditer", edit_patient_path(patient) %>
-        <%= link_to "Supprimer", patient, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
-
+        <%= link_to "Supprimer", patient,  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" }%>
+<% end %>
 <%= link_to "Nouveau Patient", new_patient_path %>

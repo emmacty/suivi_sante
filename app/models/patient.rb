@@ -1,9 +1,9 @@
 class Patient < ApplicationRecord
-  belongs_to :user
+  has_many :user_patients
+  has_many :users, through: :user_patients
   has_many :documents
   has_many :reminders
   has_many :bloodtests
-  has_many :users, through: :user_patient
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, presence: true
