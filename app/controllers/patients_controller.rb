@@ -1,7 +1,8 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
     def index
-      @patients = current_user.patients.all
+      @patients = current_user.patients
+
     end
 
     def show
@@ -44,6 +45,6 @@ class PatientsController < ApplicationController
     end
 
     def set_patient
-      @patient = current_user.patients.find(params[:id])
+      @patient = Patient.find(params[:id])
     end
 end
