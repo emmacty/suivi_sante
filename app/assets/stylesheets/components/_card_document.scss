@@ -24,3 +24,14 @@
 .card-document h3 {
   color: black;
 }
+
+// document index
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.doc_count {
+  justify-content: space-between;
+}
