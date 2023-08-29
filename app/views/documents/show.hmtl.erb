@@ -1,59 +1,20 @@
 <div class="container mt-5 pb-5">
   <div class="row d-flex align-items-start">
     <div class="col-md-4">
-      <!-- Photo on the left -->
-      <div class="bg-white pt-3 px-3 pb-5 shadow rounded border border-gray-800">
-        <img src="<%= cl_image_path(@offer.user.photo.key, height: 600, width: 500, crop: :fill) %>" alt="User Photo" class="img-fluid rounded">
-      </div>
-      <% if @offer.reviews.present? %>
-        <div class="bg-white shadow rounded border border-gray-800 mt-3 p-3">
-          <h2 class="blue-text">Reviews</h2>
-            <% @offer.reviews.each do |review| %>
-            <div class="d-flex justify-content-between">
-              <p><strong><%= review.name %></strong></p>
-              <p><%= review.rating %></p>
-            </div>
-            <p><%= review.comment %></p>
-            <% end %>
-        </div>
-       <% end %>
     </div>
 
     <div class="col-md-8">
       <!-- Text on the right -->
       <div class="card shadow p-4">
-        <h2 class="name-text"><%= @offer.user.first_name %> <%= @offer.user.last_name %> 🚀</h2>
         <h3 class="blue-text mb-4"><%= @offer.title%> </h3>
-        <h3 class="blue-text">Profession </h3>
+        <h3 class="blue-text"> Ordonnance de biologie</h3>
         <p><%= @offer.profession %></p>
-        <h3 class="blue-text">Experience 💡</h3>
+        <h3 class="blue-text">Ordonnance de médicament</h3>
         <p><%= @offer.experience %> years</p>
-        <h3 class="blue-text">Description 💬</h3>
+        <h3 class="blue-text">Imagerie médicale </h3>
         <p><%= @offer.description %> </p>
-        <h3 class="blue-text">Availability 📅</h3>
-        <p><%= @offer.date %></p>
-        <h3 class="blue-text">Location 🌎</h3>
-        <p><%= @offer.localisation %></p>
-        <h3 class="blue-text">Price 💰</h3>
-        <p><%= @offer.price %>€ / day</p>
-          <div class="d-flex justify-content-end">
-            <div>
-              <% if @offer.user != current_user %>
-                <%= link_to "Book this geek", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
-              <% elsif @offer.user == current_user %>
-                <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn btn-danger"%>
-                <%= link_to "Delete your offer",
-                  offer_path(@offer),
-                  class: "btn btn-danger",
-                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-                %>
-              <% end %>
-            </div>
-          </div>
-      </div>
+        <h3 class="blue-text">Compte rendu </h3>
   </div>
 </div>
-    </div>
-  </div>
 </div>
 </div>
