@@ -1,6 +1,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Bloodtest.destroy_all
 UserPatient.destroy_all
 Document.destroy_all
 Patient.destroy_all
@@ -55,17 +56,17 @@ bloodtest_1 = Bloodtest.create!(
   renal: 4,
   lipid: 50,
   sedimentation_rate: 17,
-  glucose: 0.75,
+  glucose: 0.89,
   protein: 67,
   iron: 40,
   blood_count: 4.5
 )
 
 bloodtest_2 = Bloodtest.create!(
-  title: 'patient 1 test',
+  title: 'patient 2 test',
   laboratory: 'BioLab Innovations',
-  doctor: 'Dr. Emily Johnson',
-  patient: patient_1,
+  doctor: 'Dr. Alexander Mitchell',
+  patient: patient_2,
   date: Time.now,
   hepatic: 4.6,
   renal: 4,
@@ -78,16 +79,16 @@ bloodtest_2 = Bloodtest.create!(
 )
 
 bloodtest_3 = Bloodtest.create!(
-  title: 'patient 1 test',
+  title: 'patient 6 test',
   laboratory: 'BioLab Innovations',
-  doctor: 'Dr. Emily Johnson',
-  patient: patient_1,
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_6,
   date: Time.now,
   hepatic: 4.1,
   renal: 3.4,
   lipid: 51,
   sedimentation_rate: 15,
-  glucose: 0.80,
+  glucose: 0.86,
   protein: 61,
   iron: 43,
   blood_count: 4.8
