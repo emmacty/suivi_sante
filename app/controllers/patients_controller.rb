@@ -7,9 +7,9 @@ class PatientsController < ApplicationController
     def show
     end
 
-    def new
-      @patient = current_user.patients.build
-    end
+   def new
+    @patient = current_user.patients.build
+   end
 
     def create
       @patient = current_user.patients.build(patient_params)
