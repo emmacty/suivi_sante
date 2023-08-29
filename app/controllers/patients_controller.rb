@@ -9,11 +9,11 @@ class PatientsController < ApplicationController
     end
 
    def new
-    @patient = current_user.patients.build
+    @patient = current_user.patients.create
    end
 
     def create
-      @patient = current_user.patients.build(patient_params)
+      @patient = current_user.patients.create(patient_params)
       if @patient.save
         redirect_to patient_path(@patient)
       else

@@ -12,3 +12,4 @@
 <p><strong>Maladies Chroniques : <%= @patient.chronic_illness %></p>
         <%= link_to "Éditer", edit_patient_path(@patient) %>
         <%= link_to "Supprimer", @patient,  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" }%>
+        <%= link_to 'Retour à la liste', patients_path %>
