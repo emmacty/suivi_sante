@@ -29,7 +29,7 @@ patient_1 = Patient.create!(first_name: 'Lena' ,
   gender: 'female',
   address: '2 rue Dupaty,33300 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'Type 1 Diabetes',
+  chronic_illness: 'None',
   user: user_1
  )
 patient_2 = Patient.create!(first_name: 'Maxwell' ,
@@ -42,7 +42,7 @@ patient_2 = Patient.create!(first_name: 'Maxwell' ,
   gender: 'male',
   address: '3 Rue De Macau, 33000 Bordeaux, France',
   allergies: 'Peanuts',
-  chronic_illness: 'none',
+  chronic_illness: 'None',
   user: user_1
 )
 patient_3 = Patient.create!(first_name: 'Isabella' ,
@@ -51,11 +51,11 @@ patient_3 = Patient.create!(first_name: 'Isabella' ,
   security_card_number: 78945612310111213,
   height: 160,
   weight: 55,
-  bloodtype: 'AB',
+  bloodtype: 'AB+',
   gender: 'female',
   address: '4 rue des Girondins, 33200 Bordeaux, France',
   allergies: 'Shellfish',
-  chronic_illness: 'Rheumatoid Arthritis',
+  chronic_illness: 'None',
   user: user_1
 )
 patient_4 = Patient.create!(first_name: 'Ethan' ,
@@ -68,7 +68,7 @@ patient_4 = Patient.create!(first_name: 'Ethan' ,
   gender: 'male',
   address: '5 rue André, 33200 Bordeaux, France',
   allergies: 'cat hair',
-  chronic_illness: 'none',
+  chronic_illness: 'None',
   user: user_1
 )
 patient_5 = Patient.create!(first_name: 'Aria',
@@ -81,7 +81,7 @@ patient_5 = Patient.create!(first_name: 'Aria',
   gender: 'female',
   address: '8 rue Louis Mie, 33000 Bordeaux, France',
   allergies: 'Fish',
-  chronic_illness: "Crohn's Disease",
+  chronic_illness: "None",
   user: user_1
 )
 patient_6 = Patient.create!(first_name: 'Liam',
@@ -94,7 +94,7 @@ patient_6 = Patient.create!(first_name: 'Liam',
   gender: 'male',
   address: '8 rue Corot, 33100 Bordeaux, France',
   allergies: 'Cow’s milk',
-  chronic_illness: 'Type 1 Diabetes',
+  chronic_illness: 'None',
   user: user_1
  )
 
