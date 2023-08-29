@@ -4,6 +4,8 @@ class Patient < ApplicationRecord
   has_many :documents
   has_many :reminders
   has_many :bloodtests
+  belongs_to :user, optional: true
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, presence: true
