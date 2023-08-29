@@ -25,7 +25,6 @@ patient_5 = Patient.create!(first_name: 'Aria', last_name: ' Patel', age: 59, se
 patient_6 = Patient.create!(first_name: 'Liam', last_name: ' Sullivan', age: 56, security_card_number: 13045678910111212, height: 161, weight: 54, bloodtype: 'A-', gender: 'male', address: '8 rue Corot, 33100 Bordeaux, France', allergies: 'Cow’s milk', chronic_illness: 'Type 1 Diabetes', user: user_1 )
 
 # document seed
-puts patient_1.inspect
 
 document_1 = Document.create!(title: 'medical_image', category: 0, doctor: 'Dr. Emily Johnson', patient: patient_1, user: user_1, date: Time.now)
 document_2 = Document.create!(title: 'prescription', category: 2, doctor: 'Dr. Alexander Mitchell', patient: patient_1, user: user_1, date: Time.now )
