@@ -1,0 +1,15 @@
+<%= simple_form_for @patient do |f| %>
+  <%= f.input :first_name, label: "Prénom" %>
+  <%= f.input :last_name, label: "Nom de famille" %>
+  <%= f.input :age, label: "Âge" %>
+  <%= f.input :color, label: "Couleur" %>
+  <%= f.input :security_card_number, label: "Numéro de carte de sécurité" %>
+  <%= f.input :height, label: "Taille (cm)" %>
+  <%= f.input :weight, label: "Poids (kg)" %>
+  <%= f.input :bloodtype, label: "Groupe sanguin" %>
+  <%= f.input :gender, label: "Genre" %>
+  <%= f.input :address, label: "Adresse" %>
+  <%= f.input :allergies, label: "Allergies" %>
+  <%= f.input :chronic_illness, label: "Maladies chroniques" %>
+  <%= f.button :submit, "Créer un patient" %>
+<% end %>

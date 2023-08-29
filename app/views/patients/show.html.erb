@@ -1,0 +1,15 @@
+<div class="patient">
+      <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
+      <p><strong>Âge : <%= patient.age %></p>
+      <p><strong>Adresse : <%= patient.address %></p>
+      <p><strong>Couleur : <%= patient.color %></p>
+      <p><strong>Numéro de Carte de Sécurité : <%= patient.security_card_number %></p>
+      <p><strong>Hauteur : <%= patient.height %> cm</p>
+      <p><strong>Poids : <%= patient.weight %> kg</p>
+      <p><strong>Groupe Sanguin : <%= patient.bloodtype %></p>
+      <p><strong>Genre : <%= patient.gender %></p>
+      <p><strong>Allergies : <%= patient.allergies %></p>
+      <p><strong>Maladies Chroniques : <%= patient.chronic_illness %></p>
+        <%= link_to "Éditer", edit_patient_path(patient) %>
+        <%= link_to "Supprimer", patient, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
+    </div>
