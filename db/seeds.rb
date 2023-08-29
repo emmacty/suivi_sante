@@ -1,6 +1,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+UserPatient.destroy_all
 Document.destroy_all
 Patient.destroy_all
 User.destroy_all
@@ -32,3 +33,62 @@ document_3 = Document.create!(title: 'referral_for_test', category: 3, doctor: '
 document_4 = Document.create!(title: 'reporting', category: 1, doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
 document_5 = Document.create!(title: 'reporting', category: 1, doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
 document_6 = Document.create!(title: 'medical_image', category: 0, doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
+
+# user_patients seed
+
+user_patient_1 = UserPatient.create!(patient: patient_1, user: user_1)
+user_patient_2 = UserPatient.create!(patient: patient_2, user: user_2)
+user_patient_3 = UserPatient.create!(patient: patient_3, user: user_3)
+user_patient_4 = UserPatient.create!(patient: patient_4, user: user_4)
+user_patient_5 = UserPatient.create!(patient: patient_5, user: user_5)
+user_patient_6 = UserPatient.create!(patient: patient_6, user: user_6)
+
+# bloodtests seed
+
+bloodtest_1 = Bloodtest.create!(
+  title: 'patient 1 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Emily Johnson',
+  patient: patient_1,
+  date: Time.now,
+  hepatic: 4.6,
+  renal: 4,
+  lipid: 50,
+  sedimentation_rate: 17,
+  glucose: 0.75,
+  protein: 67,
+  iron: 40,
+  blood_count: 4.5
+)
+
+bloodtest_2 = Bloodtest.create!(
+  title: 'patient 1 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Emily Johnson',
+  patient: patient_1,
+  date: Time.now,
+  hepatic: 4.6,
+  renal: 4,
+  lipid: 56,
+  sedimentation_rate: 14,
+  glucose: 0.86,
+  protein: 76,
+  iron: 38,
+  blood_count: 4.2
+)
+
+bloodtest_3 = Bloodtest.create!(
+  title: 'patient 1 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Emily Johnson',
+  patient: patient_1,
+  date: Time.now,
+  hepatic: 4.1,
+  renal: 3.4,
+  lipid: 51,
+  sedimentation_rate: 15,
+  glucose: 0.80,
+  protein: 61,
+  iron: 43,
+  blood_count: 4.8
+)
