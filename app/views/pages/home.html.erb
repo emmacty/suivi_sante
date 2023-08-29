@@ -1,2 +1,58 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container text-center my-5 m-auto w-100">
+  <h1>A title</h1>
+  <h2>A subtitle</h2>
+  <p>A paragraph</p>
+  <%= link_to "A link", "/"%>
+  <br/>
+  <%= link_to "A button", "/", class: "btn button" %>
+
+  <div class="card-document">
+    <div>
+        <h3>Nom de l'examen</h3>
+        <i class="fa-solid fa-pen"></i>
+    </div>
+    <div>
+      <p>Patient concerné</p>
+      <p>11/08/2023</p>
+      <p>Médecin</p>
+    </div>
+  </div>
+
+<div class="d-flex justify-content-between">
+  <div class="card-home">
+    <div class="div">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h2>Conseils</h2>
+    </div>
+  </div>
+   <div class="card-home">
+    <div class="div">
+      <i class="fa-solid fa-users"></i>
+      <h2>Proches</h2>
+    </div>
+  </div>
+</div>
+
+<div class="card-filter">
+  <div data-bs-toggle="collapse" href="#collapseExample" class="filter-name">
+    <h3>Nom du filtre</h3>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+  <div class="collapse" id="collapseExample" class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1"> Filter un</label>
+  </div>
+    <div class="collapse" id="collapseExample" class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1"> Filtre deux</label>
+  </div>
+    <div class="collapse" id="collapseExample" class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1"> Filtre trois</label>
+  </div>
+</div>
+
+
+
+</div>
