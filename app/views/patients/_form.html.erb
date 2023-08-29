@@ -6,10 +6,10 @@
   <%= f.input :security_card_number, label: "Numéro de carte de sécurité" %>
   <%= f.input :height, label: "Taille (cm)" %>
   <%= f.input :weight, label: "Poids (kg)" %>
-  <%= f.input :bloodtype, label: "Groupe sanguin" %>
+  <%= f.input :bloodtype, label: "Groupe sanguin", collection: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] %>
   <%= f.input :gender, label: "Genre" %>
   <%= f.input :address, label: "Adresse" %>
   <%= f.input :allergies, label: "Allergies" %>
-  <%= f.input :chronic_illness, label: "Maladies chroniques" %>
+  <%= f.input :chronic_illness, label: "Maladies chroniques", collection: ["None", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"]%>
   <%= f.button :submit, "Créer un patient" %>
 <% end %>
