@@ -4,6 +4,6 @@ class Document < ApplicationRecord
   has_one_attached :document
   validates :title, presence: true
   validates :date, presence: true
-  enum :category, { medical_image: 0, reporting: 1, prescription: 2, referral_for_test: 3 }
+  validates :category, presence: true, inclusion: { in: ["Imagerie médicale", "Compte-rendu", "Ordonnance", "Ordonnance de biologie"] }
   validates :doctor, presence: true
 end

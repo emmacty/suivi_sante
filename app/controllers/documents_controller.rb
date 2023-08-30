@@ -10,11 +10,12 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
-    @patients = current_user.patients
   end
 
   def create
     @document = Document.new(document_params)
+    @patient = Patient.find(params[:patient_id])
+    @document.patient = @patient
     if @document.save
       redirect_to document_path(@document)
     else
