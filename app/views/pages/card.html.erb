@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Carte Vitale -->
+      <div class="carte-vitale">
+        <h1>Vitale</h1>
+        <p class ="date">émise le 23/04/23</p>
+        <div class="photo">
+          <%= cl_image_tag current_user.patient.photo.key, class:"avatar" %>
+        </div>
+        <div class="infos">
+          <p class="nom">Nom Prénom</p>
+          <p class="numero">Numéro de sécurité sociale</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
