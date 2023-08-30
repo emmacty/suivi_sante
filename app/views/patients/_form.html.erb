@@ -7,7 +7,7 @@
   <%= f.input :height, label: "Taille (cm)", input_html: { class: "card-filter" } %>
   <%= f.input :weight, label: "Poids (kg)", input_html: { class: "card-filter" } %>
   <%= f.input :bloodtype, label: "Groupe sanguin", collection: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"], input_html: { class: "card-filter" } %>
-  <%= f.input :gender, label: "Genre", input_html: { class: "card-filter" } %>
+  <%= f.input :gender, label: "Genre", collection: ["Homme", "Femme", "Non précisé"], input_html: { class: "card-filter" } %>
   <%= f.input :address, label: "Adresse", input_html: { class: "card-filter" } %>
   <%= f.input :allergies, label: "Allergies", input_html: { class: "card-filter" } %>
   <%= f.input :chronic_illness, label: "Maladies chroniques", collection: ["None", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"], input_html: { class: "card-filter" } %>
