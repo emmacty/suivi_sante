@@ -1,10 +1,12 @@
-<%= cl_image_tag current_user.patient.photo.key, class: "avatar" %>
+
+<%= cl_image_tag  @patient.photo.key, class: "avatar" %>
+
 <h2 style = "color: black"><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
 <p><%= @patient.address %></p>
 
 <div class="card-row">
 <div class="card-data">
-  <h2>Numéro de Carte de Sécurité</h2>
+  <h2>Numéro de Sécurité Sociale</h2>
   <p><%= @patient.security_card_number %></p>
 </div>
 </div>
