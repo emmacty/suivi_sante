@@ -3,7 +3,7 @@
   <% @patients.each do |patient| %>
     <div class="card-patient">
       <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
-      <p>Numéro de Carte de Sécurité : <%= patient.security_card_number %></p>
+      <p>Numéro de Sécurité Sociale: <%= patient.security_card_number %></p>
       <div class="card-patient-links">
         <%= link_to "Voir", patient %>
       </div>
