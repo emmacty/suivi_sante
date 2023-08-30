@@ -137,12 +137,13 @@ puts "Creating documents..."
 
 # document seed
 
-document_1 = Document.create!(title: 'Radio du dos', category: 0, doctor: 'Dr. Emily Johnson', patient: patient_1, user: user_1, date: Time.now)
-document_2 = Document.create!(title: 'Ordonnance angine', category: 2, doctor: 'Dr. Alexander Mitchell', patient: patient_1, user: user_1, date: Time.now )
-document_3 = Document.create!(title: 'Ordonnance analyses sanguines', category: 3, doctor: 'Dr. Olivia Anderson', patient: patient_1, user: user_1, date: Time.now)
-document_4 = Document.create!(title: 'Compte rendu radio fémur', category: 1, doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
-document_5 = Document.create!(title: 'Compte rendu IRM cervicales', category: 1, doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
-document_6 = Document.create!(title: 'Echographie', category: 0, doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
+document_1 = Document.create!(title: 'Radio du dos', category: "Imagerie médicale", doctor: 'Dr. Emily Johnson', patient: patient_1, user: user_1, date: Time.now)
+document_2 = Document.create!(title: 'Ordonnance angine', category: "Ordonnance", doctor: 'Dr. Alexander Mitchell', patient: patient_1, user: user_1, date: Time.now )
+document_3 = Document.create!(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie", doctor: 'Dr. Olivia Anderson', patient: patient_1, user: user_1, date: Time.now)
+document_4 = Document.create!(title: 'Compte rendu radio fémur', category: "Compte-rendu", doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
+document_5 = Document.create!(title: 'Compte rendu IRM cervicales', category: "Compte-rendu", doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
+document_6 = Document.create!(title: 'Echographie', category: "Imagerie médicale", doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
+
 
 puts "Documents created!"
 
