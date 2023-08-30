@@ -1,9 +1,11 @@
 <%= simple_form_for @document do |f| %>
-  <%= f.input :title, label: "Titre" %>
-  <%= f.input :date, label: "Date" %>
-  <%= f.input :document, as: :file, label: "Document à télécharger (.pdf)" %>
-  <%= f.input :category, label: "Catégorie" %>
-  <%= f.input :doctor, label: "Docteur" %>
-  <%= f.input :patient_id, label: "Patient" %>
-  <%= f.button :submit, "Enregistrer le document" %>
+  <%= f.input :title, label: "Titre",input_html: { class: "card-filter" } %>
+  <%= f.input :date, label: "Date",
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :document, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
+  <%= f.input :category, label: "Catégorie", input_html: { class: "card-filter" } %>
+  <%= f.input :doctor, label: "Docteur", input_html: { class: "card-filter" } %>
+  <%= f.input :patient_id, label: "Patient", input_html: { class: "card-filter" } %>
+  <%= f.button :submit, "Enregistrer le document", class: "btn button" %>
 <% end %>
