@@ -96,7 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_090910) do
     t.string "address"
     t.string "allergies"
     t.string "chronic_illness"
-    t.integer "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_patients_on_user_id"
