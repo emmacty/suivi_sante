@@ -1,15 +1,61 @@
+<%= cl_image_tag current_user.patient.photo.key, class: "avatar" %>
+<h2 style = "color: black"><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
+<p><%= @patient.address %></p>
 
-<h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
-<p><strong>Âge : <%= @patient.age %></p>
-<p><strong>Adresse : <%= @patient.address %></p>
-<p><strong>Couleur : <%= @patient.color %></p>
-<p><strong>Numéro de Carte de Sécurité : <%= @patient.security_card_number %></p>
-<p><strong>Hauteur : <%= @patient.height %> cm</p>
-<p><strong>Poids : <%= @patient.weight %> kg</p>
-<p><strong>Groupe Sanguin : <%= @patient.bloodtype %></p>
-<p><strong>Genre : <%= @patient.gender %></p>
-<p><strong>Allergies : <%= @patient.allergies %></p>
-<p><strong>Maladies Chroniques : <%= @patient.chronic_illness %></p>
-        <%= link_to "Éditer", edit_patient_path(@patient) %>
-        <%= link_to "Supprimer", @patient,  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" }%>
-        <%= link_to 'Retour à la liste', patients_path, class: "btn button" %>
+<div class="card-row">
+<div class="card-data">
+  <h2>Numéro de Carte de Sécurité</h2>
+  <p><%= @patient.security_card_number %></p>
+</div>
+</div>
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Âge</h2>
+    <p><%= @patient.age %> ans</p>
+  </div>
+
+  <div class="card-data">
+    <h2>Hauteur</h2>
+    <p><%= @patient.height %> cm</p>
+  </div>
+</div>
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Poids</h2>
+    <p><%= @patient.weight %> kg</p>
+  </div>
+
+  <div class="card-data">
+    <h2>Groupe Sanguin</h2>
+    <p><%= @patient.bloodtype %></p>
+  </div>
+</div>
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Genre</h2>
+    <p><%= @patient.gender %></p>
+  </div>
+
+  <div class="card-data">
+    <h2>Allergies</h2>
+    <p><%= @patient.allergies %></p>
+  </div>
+</div>
+<div class="card-row">
+  <div class="card-data">
+    <h2>Maladies Chroniques</h2>
+    <p style="white-space: pre-line"><%= @patient.chronic_illness %></p>
+  </div>
+</div>
+
+<div class="button-container">
+  <%= link_to "Éditer", edit_patient_path(@patient), style: "margin-right: 10px;" %>
+  <%= link_to "Supprimer", @patient, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
+</div>
+
+<div class="center-button">
+  <%= link_to 'Retour à la liste', patients_path, class: "btn button" %>
+</div>
