@@ -1,0 +1,45 @@
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.card-data {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 414px
+}
+
+.card-data h2 {
+  font-size: 20px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $purple;
+}
+
+.card-data p {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.center-button {
+  text-align: center;
+}
