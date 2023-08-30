@@ -1,8 +1,14 @@
-<% @patients.each do |patient| %>
-<h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
-  <p>Âge : <%= patient.age %></p>
+<h2>Mes proches</h2>
+<div class="card-patient-container">
+  <% @patients.each do |patient| %>
+    <div class="card-patient">
+      <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
+      <p>Numéro de Carte de Sécurité : <%= patient.security_card_number %></p>
+      <div class="card-patient-links">
         <%= link_to "Voir", patient %>
-        <%= link_to "Éditer", edit_patient_path(patient) %>
-        <%= link_to "Supprimer", patient,  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" }%>
-<% end %>
-<%= link_to "Nouveau Patient", new_patient_path %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Nouveau Patient", new_patient_path, class: "btn button" %>
