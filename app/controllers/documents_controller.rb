@@ -13,9 +13,8 @@ class DocumentsController < ApplicationController
   end
 
   def create
+    raise
     @document = Document.new(document_params)
-    @patient = Patient.find(params[:patient_id])
-    @document.patient = @patient
     if @document.save
       redirect_to document_path(@document)
     else
@@ -47,7 +46,7 @@ class DocumentsController < ApplicationController
   private
 
   def documents_params
-    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document)
+    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document, :patient_id)
   end
 
   def set_document
