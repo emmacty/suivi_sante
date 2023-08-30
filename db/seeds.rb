@@ -35,7 +35,7 @@ patient_1 = Patient.create!(first_name: 'Maïwenn',
   allergies: 'Pollen',
   chronic_illness: 'None',
   user: user_1
- )
+)
 
 patient_2 = Patient.create!(first_name: 'Maxwell' ,
   last_name: ' Knight',
