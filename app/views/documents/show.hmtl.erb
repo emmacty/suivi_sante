@@ -1,15 +1,12 @@
-<div class="patient">
-      <h2><%= "#{document.first_name} #{document.last_name}" %></h2>
-      <p><strong>ordonnance de médicament : <%= document.age %></p>
-      <p><strong>ordonnance de biologie : <%= document.address %></p>
-      <p><strong>compte rendu : <%= document.color %></p>
-      <p><strong>Numéro de Carte de Sécurité : <%= document.security_card_number %></p>
-      <p><strong>Hauteur : <%= document.height %> cm</p>
-      <p><strong>Poids : <%= document.weight %> kg</p>
-      <p><strong>Groupe Sanguin : <%= document.bloodtype %></p>
-      <p><strong>Genre : <%= document.gender %></p>
-      <p><strong>Allergies : <%= document.allergies %></p>
-      <p><strong>Maladies Chroniques : <%= document.chronic_illness %></p>
-        <%= link_to "Éditer", edit_document_path(document) %>
-        <%= link_to "Supprimer", document, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
+<h1>Test Show</h1>
+<div class="card-document">
+    <div>
+        <h3>Nom de l'examen</h3>
+        <i class="fa-solid fa-pen"></i>
     </div>
+    <div>
+      <p>Patient concerné</p>
+      <p>11/08/2023</p>
+      <p>Médecin</p>
+    </div>
+  </div>

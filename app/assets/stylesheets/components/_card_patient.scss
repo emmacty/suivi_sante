@@ -1,0 +1,44 @@
+.card-patient-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-patient {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 20px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.card-patient h2 {
+  margin: 0;
+  color: black;
+}
+
+.card-patient p {
+  margin: 0;
+  color: gray;
+}
+
+.card-patient-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-patient-links a {
+  font-size: 14px;
+  text-decoration: none;
+  margin-right: 10px;
+}

@@ -9,12 +9,14 @@ class PatientsController < ApplicationController
     end
 
    def new
-    @patient = current_user.patients.new
+    @patient = Patient.new
    end
 
     def create
       @patient = current_user.patients.create(patient_params)
+      @patient.user_id = current_user.id
       if @patient.save
+        UserPatient.create(user: current_user, patient: @patient) if @patient.user_id.nil?
         redirect_to patient_path(@patient)
       else
         render "new", status: :unprocessable_entity
@@ -41,7 +43,7 @@ class PatientsController < ApplicationController
     private
 
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :age, :color, :security_card_number, :height, :weight, :bloodtype, :gender, :address, :allergies, :chronic_illness, :photo)
+      params.require(:patient).permit(:first_name, :last_name, :age, :color, :security_card_number, :height, :weight, :bloodtype, :gender, :address, :allergies, :chronic_illness, :user_id, :photo)
     end
 
     def set_patient
