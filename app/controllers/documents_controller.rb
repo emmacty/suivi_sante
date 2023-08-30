@@ -2,11 +2,10 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   def index
-    @documents = current_user.patients.all
+    @documents = current_user.documents.all
   end
 
   def show
-    @document = Document.find(params[:id])
   end
 
   def new
