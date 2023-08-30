@@ -1,3 +1,7 @@
+<div class="log-out">
+  <a data-turbo-method="delete" href="/users/sign_out"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a>
+</div>
+
 <%= cl_image_tag current_user.patient.photo.key, class:"avatar" %>
 <h1 class="mb-3">Bonjour <%= current_user.patient.first_name %></h1>
 
