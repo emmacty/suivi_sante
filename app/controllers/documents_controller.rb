@@ -26,7 +26,7 @@ class DocumentsController < ApplicationController
 
   def update
     if @document.update(document_params)
-      redirect_to document_path(@document)
+      redirect_to documents_path
       flash[:alert] = "Modifié avec succès!"
     else
       render "edit", status: :unprocessable_entity
