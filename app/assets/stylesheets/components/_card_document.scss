@@ -30,8 +30,35 @@
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  font-size: 12px;
+  align-items: center;
+  background: linear-gradient(#CE84F7, #9FD3FC);
+}
+
+.fa-notes-medical::before {
+  color: black;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .doc_count {
   justify-content: space-between;
+  margin-top: 20px;
+}
+
+p.left {
+  text-align: left;
+  display: inline;
+  margin-right: 82px;
+
+}
+
+p.right {
+  text-align: right;
+  display: inline;
+  margin-left: 82px;
 }

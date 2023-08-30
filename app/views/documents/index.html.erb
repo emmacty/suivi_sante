@@ -1,27 +1,22 @@
 <h1>Documents</h1>
-<div class="container">
   <div class="doc_count">
-    <p>test count</p><p>test filter</p>
+    <p class="left"><%= Document.count %> documents</p><p class="right">Filter</p>
   </div>
-
-  <div class="doc_cards">
+<div class="container">
     <% @documents.each do |document|%>
-    <div class="card mx-5">
-      <div class="symbol">
-        <p>test logo</p>
+  <div class="card-document">
+      <div>
+          <h3><%= document.title %></h3>
+          <div class="eye_link">
+            <a href="/app/views/documents/show"><i class="fa-solid fa-eye"></i></a>
+          </div>
       </div>
       <div>
-        <p>test title</p>
+        <p><%= document.patient.first_name %> <%= document.patient.last_name %></p>
+        <p><%= document.date %></p>
+        <p><%= document.doctor %></p>
       </div>
-      <div>
-        <p>test name</p>
-      </div>
-      <div>
-        <p>test date</p>
-      </div>
-      <div>
-        <p>test doc name</p>
-      </div>
+    </div>
   <% end %>
   </div>
 </div>
