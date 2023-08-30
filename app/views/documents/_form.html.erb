@@ -1,6 +1,8 @@
 <%= simple_form_for @document do |f| %>
   <%= f.input :title, label: "Titre",input_html: { class: "card-filter" } %>
-  <%= f.input :date, label: "Date", input_html: { class: "card-filter" } %>
+  <%= f.input :date, label: "Date",
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   <%= f.input :document, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
   <%= f.input :category, label: "Catégorie", input_html: { class: "card-filter" } %>
   <%= f.input :doctor, label: "Docteur", input_html: { class: "card-filter" } %>

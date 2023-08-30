@@ -10,6 +10,7 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
+    @patients = current_user.patients
   end
 
   def create
