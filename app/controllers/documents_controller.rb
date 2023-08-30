@@ -40,7 +40,6 @@ class DocumentsController < ApplicationController
     redirect_to documents_path, status: :no_content
   end
 
-
   def my_documents
     @my_document = current_user.documents
   end
