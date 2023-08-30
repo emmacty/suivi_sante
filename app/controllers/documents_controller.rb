@@ -13,7 +13,6 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    raise
     @document = Document.new(document_params)
     if @document.save
       redirect_to document_path(@document)
@@ -45,8 +44,8 @@ class DocumentsController < ApplicationController
 
   private
 
-  def documents_params
-    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document, :patient_id)
+  def document_params
+    params.require(:document).permit(:date, :pdf_file, :type, :title, :doctor, :document, :category, :patient_id)
   end
 
   def set_document
