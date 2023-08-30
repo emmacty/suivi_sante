@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   def index
-    @documents = current_user.patients.all
+    @documents = current_user.documents.all
   end
 
   def show
@@ -47,7 +47,7 @@ class DocumentsController < ApplicationController
   private
 
   def documents_params
-    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor)
+    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document)
   end
 
   def set_document

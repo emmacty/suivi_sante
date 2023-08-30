@@ -11,5 +11,6 @@
   <%= f.input :address, label: "Adresse" %>
   <%= f.input :allergies, label: "Allergies" %>
   <%= f.input :chronic_illness, label: "Maladies chroniques", collection: ["None", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"]%>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, "Créer un patient" %>
 <% end %>

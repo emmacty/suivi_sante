@@ -1,5 +1,5 @@
-<%= image_tag("leo.jpg", class:"avatar")%>
-<h1 class="mb-3">Bonjour Leo</h1>
+<%= cl_image_tag current_user.patient.photo.key, class:"avatar" %>
+<h1 class="mb-3">Bonjour <%= current_user.patient.first_name %></h1>
 
 <div class="card-reminder">
   <div class="div">

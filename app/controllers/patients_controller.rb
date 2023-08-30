@@ -9,7 +9,7 @@ class PatientsController < ApplicationController
     end
 
    def new
-    @patient = current_user.patients.create
+    @patient = current_user.patients.new
    end
 
     def create
@@ -41,7 +41,7 @@ class PatientsController < ApplicationController
     private
 
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :age, :color, :security_card_number, :height, :weight, :bloodtype, :gender, :address, :allergies, :chronic_illness)
+      params.require(:patient).permit(:first_name, :last_name, :age, :color, :security_card_number, :height, :weight, :bloodtype, :gender, :address, :allergies, :chronic_illness, :photo)
     end
 
     def set_patient
