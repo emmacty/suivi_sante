@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
 
   def create
     @document = Document.new(document_params)
-    if @offer.save
+    if @document.save
       redirect_to document_path(@document)
     else
       render "new", status: :unprocessable_entity
@@ -37,7 +37,6 @@ class DocumentsController < ApplicationController
     @document.destroy
     redirect_to documents_path, status: :no_content
   end
-
 
   def my_documents
     @my_document = current_user.documents
