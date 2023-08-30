@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :user_patients
+  has_many :documents
   has_many :patients, through: :user_patients
 end
