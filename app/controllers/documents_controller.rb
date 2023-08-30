@@ -13,7 +13,6 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    raise
     @document = Document.new(document_params)
     if @document.save
       redirect_to document_path(@document)
@@ -27,7 +26,7 @@ class DocumentsController < ApplicationController
 
   def update
     if @document.update(document_params)
-      redirect_to document_path(@document)
+      redirect_to documents_path
       flash[:alert] = "Modifié avec succès!"
     else
       render "edit", status: :unprocessable_entity
@@ -45,8 +44,8 @@ class DocumentsController < ApplicationController
 
   private
 
-  def documents_params
-    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document, :patient_id)
+  def document_params
+    params.require(:offer).permit(:date, :pdf_file, :type, :title, :doctor, :document, :patient, :category)
   end
 
   def set_document
