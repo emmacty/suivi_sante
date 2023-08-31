@@ -43,6 +43,8 @@ class DocumentsController < ApplicationController
     @my_document = current_user.documents
   end
 
+  def security_card
+
   private
 
   def documents_params
