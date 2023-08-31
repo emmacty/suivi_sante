@@ -1,8 +1,8 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
-    def index
-      @patients = current_user.patients
 
+    def index
+      @patients = current_user.patients.reject {|patient| patient == current_user.patients.first }
     end
 
     def show
@@ -39,6 +39,10 @@ class PatientsController < ApplicationController
     def destroy
       @patient.destroy
       redirect_to patients_path, status: :no_content
+    end
+
+    def my_profile
+      @patient = current_user.patients.first
     end
 
     private

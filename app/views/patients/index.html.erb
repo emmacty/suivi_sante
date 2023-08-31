@@ -1,14 +1,13 @@
 <h2>Mes proches</h2>
 <div class="card-patient-container">
   <% @patients.each do |patient| %>
-    <div class="card-patient">
-      <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
-      <p>Numéro de Sécurité Sociale: <%= patient.security_card_number %></p>
-      <div class="card-patient-links">
-        <%= link_to "Voir", patient %>
+      <div class="card-patient">
+        <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
+        <p>Numéro de Sécurité Sociale: <%= patient.security_card_number %></p>
+        <div class="card-patient-links">
+          <%= link_to "Voir", patient %>
+        </div>
       </div>
-    </div>
   <% end %>
 </div>
-
 <%= link_to "Nouveau Patient", new_patient_path, class: "btn button" %>
