@@ -49,3 +49,33 @@
   <%= link_to "Éditer", edit_document_path(@document), style: "margin-right: 10px;" %>
   <%= link_to "Supprimer", document_path(@document), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
 </div>
+
+<!-- tentative de JS -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".img_style");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const patientDetails = card.innerHTML;
+        const expandedCard = document.getElementById("expandedCard");
+        const expandedCardInner = expandedCard.querySelector(".img_style");
+
+        // Remplacer le contenu de la carte agrandie avec les détails du patient
+        expandedCardInner.innerHTML = patientDetails;
+
+        // Afficher la carte agrandie
+        expandedCard.style.display = "block";
+      });
+    });
+
+    // Gérer la fermeture de la carte agrandie
+    const expandedCard = document.getElementById("expandedCard");
+    expandedCard.addEventListener("click", (event) => {
+      if (event.target === expandedCard) {
+        expandedCard.style.display = "none";
+      }
+    });
+  });
+</script>

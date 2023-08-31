@@ -45,6 +45,7 @@ class DocumentsController < ApplicationController
   end
 
   def security_card
+  end
 
   private
 
