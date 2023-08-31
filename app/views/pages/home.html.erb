@@ -3,7 +3,7 @@
 </div>
 
 <%= cl_image_tag current_user.patient.photo.key, class:"avatar" %>
-<h1 class="mb-3">Bonjour <%= current_user.patient.first_name %></h1>
+<h1 class="mb-3">Bonjour <%= current_user.patient.first_name%></h1>
 
 <div class="card-reminder">
   <div class="div">
@@ -12,34 +12,41 @@
   </div>
 </div>
 
-
 <div class="d-flex justify-content-between mt-3">
-  <div class="card-home">
-    <div class="div">
-      <i class="fa-solid fa-user"></i>
-      <h2>Profil</h2>
+  <a href="<%=patient_my_profile_path(current_user.patient) %>">
+    <div class="card-home">
+      <div class="div">
+        <i class="fa-solid fa-user"></i>
+        <h2>Profil</h2>
+      </div>
     </div>
-  </div>
+  </a>
+  <a href="">
    <div class="card-home">
     <div class="div">
       <i class="fa-solid fa-chart-line"></i>
       <h2>Suivi</h2>
     </div>
   </div>
+  </a>
 </div>
 
 <div class="d-flex justify-content-between">
+<a href="">
   <div class="card-home">
     <div class="div">
       <i class="fa-solid fa-lightbulb"></i>
       <h2>Conseils</h2>
     </div>
   </div>
-   <div class="card-home">
+  </a>
+
+   <a href="<%= patients_path %>">
+    <div class="card-home">
     <div class="div">
       <i class="fa-solid fa-users"></i>
-      <a href="<%= patients_path %>">
       <h2 >Proches</h2>
     </div>
   </div>
+  </a>
 </div>

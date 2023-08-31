@@ -1,5 +1,4 @@
-
-<%= cl_image_tag  @patient.photo.key, class: "avatar"
+<%= cl_image_tag  @patient.photo.key, class: "avatar"%>
 
 <h2 style = "color: black"><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
 <p><%= @patient.address %></p>
@@ -55,9 +54,8 @@
 
 <div class="button-container">
   <%= link_to "Éditer", edit_patient_path(@patient), style: "margin-right: 10px;" %>
-  <%= link_to "Supprimer", @patient, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
 </div>
 
 <div class="center-button">
-  <%= link_to 'Retour à la liste', patients_path, class: "btn button" %>
+  <%= link_to "Retour à la page d'accueil", root_path, class: "btn button" %>
 </div>
