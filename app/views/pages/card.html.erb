@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Carte Vitale -->
+      <% current_user.patients.each do |patient| %>
+      <div class="carte-vitale mb-4">
+        <h1><strong>Vitale<strong></h1>
+          <div class="photo">
+            <%= cl_image_tag patient.photo.key, class:"avatar" %>
+          </div>
+          <div class="infos text-right">
+            <p class="nom"><%= patient.first_name %></p>
+            <p class="nom"><%= patient.last_name %></p>
+            <p class="numero"><%= patient.security_card_number %></p>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="expandedCard" class="carte-vitale-expanded mb-3" style="display: none;">
+  <div class="carte-vitale">
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".carte-vitale");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const patientDetails = card.innerHTML;
+        const expandedCard = document.getElementById("expandedCard");
+        const expandedCardInner = expandedCard.querySelector(".carte-vitale");
+
+        // Remplacer le contenu de la carte agrandie avec les détails du patient
+        expandedCardInner.innerHTML = patientDetails;
+
+        // Afficher la carte agrandie
+        expandedCard.style.display = "block";
+      });
+    });
+
+    // Gérer la fermeture de la carte agrandie
+    const expandedCard = document.getElementById("expandedCard");
+    expandedCard.addEventListener("click", (event) => {
+      if (event.target === expandedCard) {
+        expandedCard.style.display = "none";
+      }
+    });
+  });
+</script>

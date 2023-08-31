@@ -26,7 +26,7 @@ puts "Creating patients..."
 patient_1 = Patient.create!(first_name: 'Maïwenn',
   last_name: 'Bennett',
   age: 15,
-  security_card_number: 12345678910111213,
+  security_card_number: 12 345 678 910 111 213,
   height: 170,
   weight: 65,
   bloodtype: 'A+',
@@ -40,7 +40,7 @@ patient_1 = Patient.create!(first_name: 'Maïwenn',
 patient_2 = Patient.create!(first_name: 'Maxwell' ,
   last_name: ' Knight',
   age: 11 ,
-  security_card_number: 45612378910111213,
+  security_card_number: 45 612 378 910 111 213,
   height: 140,
   weight: 40,
   bloodtype: 'O+',
@@ -52,7 +52,7 @@ patient_2 = Patient.create!(first_name: 'Maxwell' ,
 patient_3 = Patient.create!(first_name: 'Isabella' ,
   last_name: 'Cruz',
   age: 65,
-  security_card_number: 78945612310111213,
+  security_card_number: 78 945 612 310 111 213,
   height: 160,
   weight: 55,
   bloodtype: 'AB+',
@@ -65,7 +65,7 @@ patient_3 = Patient.create!(first_name: 'Isabella' ,
 patient_4 = Patient.create!(first_name: 'Ethan' ,
   last_name: ' Mitchell',
   age: 8,
-  security_card_number: 10145678912311213,
+  security_card_number: 10 145 678 912 311 213,
   height: 135,
   weight: 30,
   bloodtype: 'B+',
@@ -78,7 +78,7 @@ patient_4 = Patient.create!(first_name: 'Ethan' ,
 patient_5 = Patient.create!(first_name: 'Aria',
   last_name: ' Patel',
   age: 59,
-  security_card_number: 11245678910112313,
+  security_card_number: 11 245 678 910 112 313,
   height: 158,
   weight: 53,
   bloodtype: 'A+',
@@ -91,7 +91,7 @@ patient_5 = Patient.create!(first_name: 'Aria',
 patient_6 = Patient.create!(first_name: 'Liam',
   last_name: ' Sullivan',
   age: 56,
-  security_card_number: 13045678910111212,
+  security_card_number: 13 045 678 910 111 212,
   height: 161,
   weight: 54,
   bloodtype: 'A-',
@@ -146,6 +146,34 @@ document_6 = Document.create!(title: 'Echographie', category: "Imagerie médical
 
 
 puts "Documents created!"
+
+# show image seed
+
+require "open-uri"
+
+file = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/radio_du_dos_mbt9yt.png")
+document_1.photo.attach(io: file, filename: "radio_du_dos.png", content_type: "image/png")
+document_1.save
+
+file_2 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_angine_vgvs9a.jpg")
+document_2.photo.attach(io: file_2, filename: "radio_du_dos.png", content_type: "image/jpg")
+document_2.save
+
+file_3 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_analyse_sang_gb0nm6.jpg")
+document_3.photo.attach(io: file_3, filename: "ordonnance_analyse_sang.jpg", content_type: "image/jpg")
+document_3.save
+
+# file_4 = URI.open("https://avatars.githubusercontent.com/u/138495721?v=4")
+# patient_4.photo.attach(io: file_4, filename: "ethan.png", content_type: "image/png")
+# patient_4.save
+
+file_5 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/compte_rendu_irm_cervicale_s9tifn.png")
+document_5.photo.attach(io: file_5, filename: "compte_rendu_irm_cervicale.png", content_type: "image/png")
+document_5.save
+
+file_6 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/echographie_ldhbsw.jpg")
+document_6.photo.attach(io: file_6, filename: "echographie.jpg", content_type: "image/jpg")
+document_6.save
 
 puts "Creating user_patients..."
 

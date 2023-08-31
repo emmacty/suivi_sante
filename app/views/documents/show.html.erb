@@ -1,8 +1,88 @@
-<h1><a href="/documents"><i class="fa-solid fa-backward"></i></a><%= @document.category %></h1>
+
+<div class="back_btn">
+  <a href="/documents"><i class="fa-solid fa-backward"></i> Back to documents</a>
+</div>
+
+<h1><%= @document.category %></h1>
 
 <div class="doc_count">
     <p class="left"><%= @document.date %></p><p class="right"><%= @document.patient.first_name %>  <%= @document.patient.last_name %></p>
   </div>
 
-<div class="pdf_container">
+<div class="doc_img">
+  <%= cl_image_tag  @document.photo.key, class:"img_style" %>
 </div>
+
+
+
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Document</h2>
+    <p><%= @document.title %></p>
+  </div>
+  </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Categorie</h2>
+      <p><%= @document.category %></p>
+    </div>
+
+    <div class="card-data">
+      <h2>Médecin</h2>
+      <p><%= @document.doctor %></p>
+    </div>
+  </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Patient</h2>
+      <p><%= @document.patient.first_name %> <%= @document.patient.last_name %></p>
+    </div>
+    </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Date</h2>
+      <p><%= @document.date %></p>
+    </div>
+  </div>
+</div>
+
+<div class="button-container">
+  <%= link_to "Éditer", edit_document_path(@document), style: "margin-right: 10px;" %>
+  <%= link_to "Supprimer", document_path(@document), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
+</div>
+
+<!-- tentative de JS -->
+
+<div id="expandedImg" class="carte-vitale-expanded mb-3" style="display: none;">
+  <img class="expended_img" src="">
+</div>
+
+<script>
+  document.addEventListener("click", (event) => {
+    const cards = document.querySelectorAll(".img_style");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const expandedImg = document.getElementById("expandedImg");
+        const expandedImgInner = expandedImg.querySelector(".expended_img");
+
+        // Remplacer le contenu de la carte agrandie avec les détails du patient
+        expandedImgInner.src = card.src;
+
+        // Afficher la carte agrandie
+        expandedImg.style.display = "block";
+      });
+    });
+    // Gérer la fermeture de la carte agrandie
+    const expandedImg = document.getElementById("expandedImg");
+    expandedImg.addEventListener("click", (event) => {
+      if (event.target === expandedImg) {
+        expandedImg.style.display = "none";
+      }
+    });
+  });
+</script>

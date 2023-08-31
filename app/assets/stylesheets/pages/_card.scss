@@ -1,0 +1,84 @@
+/* Styles pour la carte vitale */
+.carte-vitale {
+  background: linear-gradient(#D7DAFF, $blue);
+  border-radius: 20px;
+  padding: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: white;
+}
+
+  .carte-vitale h1 {
+    margin: 0;
+    font-size: 55px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: purple;
+    transform: perspective(400px) rotateX(15deg);
+      display: inline-block;
+    font-weight: bold;
+    background-image: linear-gradient(45deg,purple, #fffefc); /* Dégradé de couleur pour le fond */
+    -webkit-background-clip: text; /* Permet d'appliquer le dégradé au texte */
+    color: white; /* Rend le texte transparent */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Ombre du texte */
+  }
+
+  /* Styles pour la carte agrandie */
+.carte-vitale-expanded {
+  display: none;
+  position: fixed;
+  padding: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.carte-vitale-expanded .carte-vitale {
+  margin-top: 33vh;
+}
+
+  .photo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .infos {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    .nom {
+      margin: 0;
+      font-size: 17px;
+      color: white;
+    }
+
+    .numero {
+      margin: 0;
+      font-size: 14px;
+      color: white;
+      transform: perspective(400px) rotateX(15deg);
+      display: inline-block;
+      padding: 5px; /* Espacement interne pour la bordure */
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.658); /* Ajout de la bordure noire autour du texte */
+      text-stroke: 1px rgba(0, 0, 0, 0.658);
+      }
+  }
