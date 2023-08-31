@@ -1,4 +1,9 @@
-<h1><a href="/documents"><i class="fa-solid fa-backward"></i></a><%= @document.category %></h1>
+
+<div class="back_btn">
+  <a href="/documents"><i class="fa-solid fa-backward"></i> Back to documents</a>
+</div>
+
+<h1><%= @document.category %></h1>
 
 <div class="doc_count">
     <p class="left"><%= @document.date %></p><p class="right"><%= @document.patient.first_name %>  <%= @document.patient.last_name %></p>
@@ -52,29 +57,31 @@
 
 <!-- tentative de JS -->
 
+<div id="expandedImg" class="carte-vitale-expanded mb-3" style="display: none;">
+  <img class="expended_img" src="">
+</div>
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("click", (event) => {
     const cards = document.querySelectorAll(".img_style");
 
     cards.forEach((card) => {
       card.addEventListener("click", () => {
-        const patientDetails = card.innerHTML;
-        const expandedCard = document.getElementById("expandedCard");
-        const expandedCardInner = expandedCard.querySelector(".img_style");
+        const expandedImg = document.getElementById("expandedImg");
+        const expandedImgInner = expandedImg.querySelector(".expended_img");
 
         // Remplacer le contenu de la carte agrandie avec les détails du patient
-        expandedCardInner.innerHTML = patientDetails;
+        expandedImgInner.src = card.src;
 
         // Afficher la carte agrandie
-        expandedCard.style.display = "block";
+        expandedImg.style.display = "block";
       });
     });
-
     // Gérer la fermeture de la carte agrandie
-    const expandedCard = document.getElementById("expandedCard");
-    expandedCard.addEventListener("click", (event) => {
-      if (event.target === expandedCard) {
-        expandedCard.style.display = "none";
+    const expandedImg = document.getElementById("expandedImg");
+    expandedImg.addEventListener("click", (event) => {
+      if (event.target === expandedImg) {
+        expandedImg.style.display = "none";
       }
     });
   });

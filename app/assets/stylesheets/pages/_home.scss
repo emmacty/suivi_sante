@@ -2,3 +2,13 @@
   text-align: right;
   font-size: 14px;
 }
+
+.back_btn {
+  text-align: left;
+  font-size: 14px;
+  background: $purple;
+	background: -webkit-linear-gradient($purple, $blue);
+	background: linear-gradient($purple, $blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
