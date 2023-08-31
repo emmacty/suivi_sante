@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get 'card', to: 'pages#card'
+
   resources :patients, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :reminders, only: [:new, :create, :edit, :update]
   end
