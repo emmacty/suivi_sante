@@ -1,15 +1,45 @@
 <h1>Documents</h1>
-<%= link_to "Nouveau Document", new_document_path, class: "btn button" %>
-<div class="doc_count">
-    <p class="left"><%= Document.count %> documents</p><p class="right">Filter</p>
+<%= link_to "+", new_document_path, class: "btn plus-button" %>
+<div class="filter-count">
+    <p><%= current_user.documents.count %> documents</p>
+    <p><a data-bs-toggle="offcanvas" href="#offcanvasFilter">Filtrer</a></p>
 </div>
+
+<%= form_with url: documents_path, method: :get, class: "d-flex search-form" do %>
+  <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Trouver un document"
+    %>
+  <%= submit_tag "Chercher", class: "btn plus-button"%>
+<% end %>
+
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilter">
+  <div class="offcanvas-header">
+    <h2>Filtrer</h2>
+    <button class="btn plus-button" data-bs-dismiss="offcanvas">X</button>
+  </div>
+  <div class="offcanvas-body text-left">
+    <%= simple_form_for :filter, url: documents_path, method: :get do |f| %>
+    <%= f.input :categories, as: :check_boxes, collection: Document.document_types.keys, checked: params.dig(:filter, :categories)%>
+    <%= f.submit "Filtrer", class: "btn button mb-3"%>
+    <% end %>
+    <%= link_to "Réinitialiser tous les filtres", documents_path%>
+  </div>
+</div>
+
 <% @documents.each do |document|%>
   <div class="card-document">
     <div>
-        <h3><%= document.title %></h3>
-        <div class="eye_link">
+      <%= cl_image_tag document.patient.photo.key, class:"tiny-avatar" %>
+      <div class="eye_link">
         <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe, document_path(document) %>
-        </div>
+      </div>
+    </div>
+    <div>
+        <h3><%= document.title %></h3>
     </div>
     <div>
       <p><%= document.patient.first_name %> <%= document.patient.last_name %></p>
