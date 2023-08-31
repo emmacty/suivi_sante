@@ -1,19 +1,23 @@
 /* Styles pour la carte vitale */
 .carte-vitale {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 70px;
+  background: linear-gradient(#D7DAFF, $blue);
+  border-radius: 20px;
+  padding: 90px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   color: white;
+}
 
   h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 55px;
     position: absolute;
     top: 10px;
     left: 20px;
-    color: linear-gradient(purple, blue)
+    color: purple;
+    transform: perspective(400px) rotateX(15deg);
+      display: inline-block;
+    font-weight: bold;
   }
 
   .photo {
@@ -44,14 +48,15 @@
 
     .nom {
       margin: 0;
-      font-size: 10px;
-      color: purple;
+      font-size: 17px;
+      color: white;
     }
 
     .numero {
       margin: 0;
-      font-size: 10px;
-      color: purple;
+      font-size: 14px;
+      color: white;
+      transform: perspective(400px) rotateX(15deg);
+      display: inline-block;
     }
   }
-}

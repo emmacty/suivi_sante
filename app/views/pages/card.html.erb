@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Carte Vitale -->
+      <% current_user.patients.each do |patient| %>
+      <div class="carte-vitale mb-4">
+        <h1><strong>Vitale<strong></h1>
+          <div class="photo">
+            <%= cl_image_tag patient.photo.key, class:"avatar" %>
+          </div>
+          <div class="infos text-right">
+            <p class="nom"><%= patient.first_name %></p>
+            <p class="nom"><%= patient.last_name %></p>
+            <p class="numero"><%= patient.security_card_number %></p>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
