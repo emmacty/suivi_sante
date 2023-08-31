@@ -3,6 +3,12 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = current_user.documents.all.order(created_at: :desc)
+    if params.dig(:filter, :categories)
+      @documents = @documents.filter_by_category(params[:filter][:categories])
+    end
+    if params[:query].present?
+      @documents = @documents.global_search(params[:query])
+    end
   end
 
   def show
@@ -50,7 +56,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:date, :photo, :type, :title, :doctor, :document, :category, :patient_id, :user_id)
+    params.require(:document).permit(:date, :photo, :pdf_file, :type, :title, :doctor, :document, :category, :patient_id, :user_id, :document_type)
   end
 
   def set_document

@@ -1,7 +1,10 @@
-.simple_form input {
-  color:black !important;
+.simple_form input:not(:checked):focus {
+  background-color: white;
 }
 
-.simple_form input:focus {
+.flatpickr-input {
   background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
