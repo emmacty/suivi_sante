@@ -3,7 +3,7 @@
   <%= f.input :date, label: "Date",
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :document, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
+  <%= f.input :photo, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
   <%= f.input :category, label: "Catégorie", collection: ["Imagerie médicale", "Compte-rendu", "Ordonnance", "Ordonnance de biologie"], input_html: { class: "card-filter" } %>
   <%= f.input :doctor, label: "Docteur", input_html: { class: "card-filter" } %>
   <%= f.input :patient_id, collection: current_user.all_patients.map { |patient| ["#{patient.first_name} #{patient.last_name.upcase}", patient.id]}, label: "Patient", input_html: { class: "card-filter" } %>

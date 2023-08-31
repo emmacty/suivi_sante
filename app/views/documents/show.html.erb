@@ -4,5 +4,48 @@
     <p class="left"><%= @document.date %></p><p class="right"><%= @document.patient.first_name %>  <%= @document.patient.last_name %></p>
   </div>
 
-<div class="pdf_container">
+<div class="doc_img">
+  <%= cl_image_tag  @document.photo.key, class:"img_style" %>
+</div>
+
+
+
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Document</h2>
+    <p><%= @document.title %></p>
+  </div>
+  </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Categorie</h2>
+      <p><%= @document.category %></p>
+    </div>
+
+    <div class="card-data">
+      <h2>Médecin</h2>
+      <p><%= @document.doctor %></p>
+    </div>
+  </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Patient</h2>
+      <p><%= @document.patient.first_name %> <%= @document.patient.last_name %></p>
+    </div>
+    </div>
+
+  <div class="card-row">
+    <div class="card-data">
+      <h2>Date</h2>
+      <p><%= @document.date %></p>
+    </div>
+  </div>
+</div>
+
+<div class="button-container">
+  <%= link_to "Éditer", edit_document_path(@document), style: "margin-right: 10px;" %>
+  <%= link_to "Supprimer", document_path(@document), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
 </div>
