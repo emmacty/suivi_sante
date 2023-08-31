@@ -147,6 +147,34 @@ document_6 = Document.create!(title: 'Echographie', category: "Imagerie médical
 
 puts "Documents created!"
 
+# show image seed
+
+require "open-uri"
+
+file = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/radio_du_dos_mbt9yt.png")
+document_1.photo.attach(io: file, filename: "radio_du_dos.png", content_type: "image/png")
+document_1.save
+
+file_2 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_angine_vgvs9a.jpg")
+document_2.photo.attach(io: file_2, filename: "radio_du_dos.png", content_type: "image/jpg")
+document_2.save
+
+file_3 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_analyse_sang_gb0nm6.jpg")
+document_3.photo.attach(io: file_3, filename: "ordonnance_analyse_sang.jpg", content_type: "image/jpg")
+document_3.save
+
+# file_4 = URI.open("https://avatars.githubusercontent.com/u/138495721?v=4")
+# patient_4.photo.attach(io: file_4, filename: "ethan.png", content_type: "image/png")
+# patient_4.save
+
+file_5 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/compte_rendu_irm_cervicale_s9tifn.png")
+document_5.photo.attach(io: file_5, filename: "compte_rendu_irm_cervicale.png", content_type: "image/png")
+document_5.save
+
+file_6 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/echographie_ldhbsw.jpg")
+document_6.photo.attach(io: file_6, filename: "echographie.jpg", content_type: "image/jpg")
+document_6.save
+
 puts "Creating user_patients..."
 
 # user_patients seed

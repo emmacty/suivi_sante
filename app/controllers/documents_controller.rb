@@ -37,7 +37,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to documents_path, status: :no_content
+    redirect_to documents_path, status: :see_other
   end
 
   def my_documents
@@ -49,7 +49,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:date, :pdf_file, :type, :title, :doctor, :document, :category, :patient_id, :user_id)
+    params.require(:document).permit(:date, :photo, :type, :title, :doctor, :document, :category, :patient_id, :user_id)
   end
 
   def set_document
