@@ -1,7 +1,7 @@
 class Document < ApplicationRecord
   belongs_to :patient
   belongs_to :user
-  has_one_attached :photo
+  has_one_attached :photo, presence: true
   has_one_attached :document
   validates :title, presence: true
   validates :date, presence: true
