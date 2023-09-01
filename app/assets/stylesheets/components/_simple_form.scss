@@ -9,6 +9,11 @@
 
 }
 
+.flatpickr-day.selected {
+  background: $purple;
+  border-color: $purple;
+}
+
 .simple_form .button:active {
   color:white !important;
 }

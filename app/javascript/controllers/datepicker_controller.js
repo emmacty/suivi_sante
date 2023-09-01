@@ -6,4 +6,11 @@ export default class extends Controller {
     flatpickr(this.element)
   }
 
+  connect() {
+    new flatpickr(this.element, {
+      disableMobile: true
+      // more options available on the documentation!
+    });
+  }
+
 }
