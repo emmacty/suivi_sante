@@ -13,8 +13,7 @@
             <%= cl_image_tag patient.photo.key, class:"avatar" %>
           </div>
           <div class="infos text-right">
-            <p class="nom"><%= patient.first_name %></p>
-            <p class="nom"><%= patient.last_name %></p>
+            <p class="nom"><%= patient.first_name %> <%= patient.last_name %></p>
             <p class="numero"><%= patient.security_card_number %></p>
           </div>
       </div>

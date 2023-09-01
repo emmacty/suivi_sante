@@ -62,8 +62,8 @@
 
   .infos {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 30px;
+    left: 30px;
 
     .nom {
       margin: 0;
@@ -77,8 +77,8 @@
       color: white;
       transform: perspective(400px) rotateX(15deg);
       display: inline-block;
-      padding: 5px; /* Espacement interne pour la bordure */
-        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.658); /* Ajout de la bordure noire autour du texte */
+      left: 30px; /* Espacement interne pour la bordure *//* Ajout de la bordure noire autour du texte */
       text-stroke: 1px rgba(0, 0, 0, 0.658);
+      letter-spacing: 3px;
       }
   }
