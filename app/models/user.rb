@@ -13,12 +13,4 @@ class User < ApplicationRecord
   # def set_patient_flag
   #   update(patient: false)
   # end
-
-
-  def all_patients
-    patients_list = self.patients
-    patients_list + [self.patient]
-    # user_patients = UserPatient.where(user_id: self.id)
-    # Patient.where(user_id: self.id) + user_patients.map(&:patient)
-  end
 end
