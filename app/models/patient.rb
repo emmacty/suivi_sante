@@ -1,7 +1,7 @@
 class Patient < ApplicationRecord
   has_many :user_patients
   has_many :users, through: :user_patients
-  has_one_attached :photo, presennce: true
+  has_one_attached :photo, presence: true
   has_many :documents
   has_many :reminders
   has_many :bloodtests
