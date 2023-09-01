@@ -19,35 +19,8 @@
   </div>
 </div>
 
-<div id="expandedCard" class="carte-vitale-expanded mb-3" style="display: none;">
-  <div class="carte-vitale">
+ <div id="expandedCard" class="carte-vitale-expanded mb-3" data-card-target="expandedCard" data-action="click->card#close">
+    <div class="carte-vitale" data-card-target="expandedCardInner">
+    </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".carte-vitale");
-
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const patientDetails = card.innerHTML;
-        const expandedCard = document.getElementById("expandedCard");
-        const expandedCardInner = expandedCard.querySelector(".carte-vitale");
-
-        // Remplacer le contenu de la carte agrandie avec les détails du patient
-        expandedCardInner.innerHTML = patientDetails;
-
-        // Afficher la carte agrandie
-        expandedCard.style.display = "block";
-      });
-    });
-
-    // Gérer la fermeture de la carte agrandie
-    const expandedCard = document.getElementById("expandedCard");
-    expandedCard.addEventListener("click", (event) => {
-      if (event.target === expandedCard) {
-        expandedCard.style.display = "none";
-      }
-    });
-  });
-</script>
