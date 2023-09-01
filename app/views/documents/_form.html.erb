@@ -4,9 +4,8 @@
             as: :string,
             disableMobile: false,
             input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :document, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
-  <%= f.input :document_type, collection: Document.document_types.keys, input_html: { class: "card-filter" }%>
-  <%= f.input :photo, as: :file, label: "Document à télécharger (.pdf)", input_html: { class: "card-filter" } %>
+  <%= f.input :document_type, label: "Type du document", collection: Document.document_types.keys, input_html: { class: "card-filter" }%>
+  <%= f.input :photo, as: :file, label: "Photo à télécharger (.jpg/ .png/ .jpeg)", input_html: { class: "card-filter" } %>
   <%= f.input :doctor, label: "Docteur", input_html: { class: "card-filter" } %>
   <%= f.input :patient_id, collection: current_user.patients.map { |patient| ["#{patient.first_name} #{patient.last_name.upcase}", patient.id]}, label: "Patient", input_html: { class: "card-filter" } %>
   <%= f.button :submit, "Enregistrer le document", class: "btn button" %>

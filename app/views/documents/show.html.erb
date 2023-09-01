@@ -1,39 +1,13 @@
 
 <div class="back_btn">
-  <a href="/documents"><i class="fa-solid fa-backward"></i> Back to documents</a>
+  <a href="/documents"><i class="fa-solid fa-backward"></i> Retour aux documents</a>
 </div>
-
-<h1><%= @document.category %></h1>
-
-<div class="doc_count">
-    <p class="left"><%= @document.date %></p><p class="right"><%= @document.patient.first_name %>  <%= @document.patient.last_name %></p>
-  </div>
 
 <div class="doc_img">
   <%= cl_image_tag  @document.photo.key, class:"img_style" %>
 </div>
 
 
-
-
-<div class="card-row">
-  <div class="card-data">
-    <h2>Document</h2>
-    <p><%= @document.title %></p>
-  </div>
-  </div>
-
-  <div class="card-row">
-    <div class="card-data">
-      <h2>Categorie</h2>
-      <p><%= @document.category %></p>
-    </div>
-
-    <div class="card-data">
-      <h2>Médecin</h2>
-      <p><%= @document.doctor %></p>
-    </div>
-  </div>
 
   <div class="card-row">
     <div class="card-data">
@@ -48,6 +22,29 @@
       <p><%= @document.date %></p>
     </div>
   </div>
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Document</h2>
+    <p><%= @document.title %></p>
+  </div>
+  </div>
+
+<div class="card-row">
+  <div class="card-data">
+    <h2>Categorie</h2>
+    <p><%= @document.document_type %></p>
+  </div>
+  </div>
+
+
+    <div class="card-data">
+      <h2>Médecin</h2>
+      <p><%= @document.doctor %></p>
+    </div>
+  </div>
+
+
 </div>
 
 <div class="button-container">
