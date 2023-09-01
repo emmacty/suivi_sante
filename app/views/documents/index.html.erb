@@ -1,4 +1,9 @@
+<div class="log-out">
+  <a data-turbo-method="delete" href="/users/sign_out"><i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a>
+</div>
 <h1>Documents</h1>
+
+
 <%= link_to "+", new_document_path, class: "btn plus-button" %>
 <div class="filter-count">
     <p><%= current_user.documents.count %> documents</p>
