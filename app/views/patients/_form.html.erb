@@ -13,5 +13,5 @@
   <%= f.input :chronic_illness, input_html: { class: "card-filter" }, collection: ["None", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"], label: "Maladies chroniques" %>
   <%= f.input :user_id, label: false, input_html: {value: current_user.id, class: "d-none"}%>
   <%= f.input :photo, as: :file, input_html: { class: "card-filter" } %>
-  <%= f.button :submit, "Modifier un patient", class: "btn button" %>
+  <%= f.button :submit, "Enregistrer", class: "btn button" %>
 <% end %>
