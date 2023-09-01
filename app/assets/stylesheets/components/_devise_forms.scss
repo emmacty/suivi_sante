@@ -7,6 +7,6 @@
   background-color: white;
 }
 
-.form-inputs .button:active {
+.form-inputs .button:active, .form-inputs button:focus, .form-inputs button:visited {
   color:white !important;
 }
