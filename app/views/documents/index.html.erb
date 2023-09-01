@@ -28,7 +28,7 @@
   </div>
   <div class="offcanvas-body text-left">
     <%= simple_form_for :filter, url: documents_path, method: :get do |f| %>
-    <%= f.input :categories, as: :check_boxes, collection: Document.document_types.keys, checked: params.dig(:filter, :categories)%>
+    <%= f.input :categories, as: :check_boxes, collection: Document.select_enum_attribute(:document_type), checked: params.dig(:filter, :categories)%>
     <%= f.submit "Filtrer", class: "btn button mb-3"%>
     <% end %>
     <%= link_to "Réinitialiser tous les filtres", documents_path%>

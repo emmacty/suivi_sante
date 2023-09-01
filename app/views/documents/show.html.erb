@@ -33,7 +33,7 @@
 <div class="card-row">
   <div class="card-data">
     <h2>Categorie</h2>
-    <p><%= @document.document_type %></p>
+    <p><%= Document.human_enum_name(:document_type, @document.document_type) %></p>
   </div>
   </div>
 
