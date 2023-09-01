@@ -1,11 +1,12 @@
 class Patient < ApplicationRecord
   has_many :user_patients
   has_many :users, through: :user_patients
-  has_one_attached :photo, presence: true
+  has_one_attached :photo
   has_many :documents
   has_many :reminders
   has_many :bloodtests
   belongs_to :user, optional: true
+  validates :photo, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, presence: true
