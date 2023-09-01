@@ -56,7 +56,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:date, :photo, :pdf_file, :type, :title, :doctor, :document, :category, :patient_id, :user_id, :document_type)
+    params.require(:document).permit(:date, :photo, :type, :title, :doctor, :document, :category, :patient_id, :user_id, :document_type)
   end
 
   def set_document
