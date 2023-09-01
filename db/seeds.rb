@@ -16,6 +16,7 @@ user_3 = User.create!(email: 'victoria.cruz@mail.com', password: 'password345')
 user_4 = User.create!(email: 'emma.mitchell@mail.com', password: 'password')
 user_5 = User.create!(email: 'laura.patel@mail.com', password: 'password589')
 user_6 = User.create!(email: 'joris.sullivan@mail.com', password: 'password676')
+user_7 = User.create!(email: 'adele.martin@mail.com', password: 'password')
 
 puts "User created!"
 
@@ -101,6 +102,46 @@ patient_6 = Patient.create!(first_name: 'Liam',
   chronic_illness: 'None',
  )
 
+ patient_7 = Patient.create!(first_name: 'Adèle',
+  last_name: 'Martin',
+  age: 31,
+  security_card_number: 12345678910111214,
+  height: 170,
+  weight: 55,
+  bloodtype: 'A+',
+  gender: 'Femme',
+  address: '2 rue Dupaty, 33300 Bordeaux, France',
+  allergies: 'Pollen',
+  chronic_illness: 'None',
+  user: user_7
+)
+
+patient_8 = Patient.create!(first_name: 'Jean-Pierre',
+  last_name: 'Martin',
+  age: 85,
+  security_card_number: 12345678910111145,
+  height: 185,
+  weight: 80,
+  bloodtype: 'A+',
+  gender: 'Femme',
+  address: '110 rue Godard, 33200 Bordeaux, France',
+  allergies: 'Pollen',
+  chronic_illness: 'None',
+)
+
+patient_9 = Patient.create!(first_name: 'Léo',
+  last_name: 'Martin',
+  age: 4,
+  security_card_number: 12345678910111742,
+  height: 105,
+  weight: 18,
+  bloodtype: 'A+',
+  gender: 'Homme',
+  address: '2 rue Dupaty, 33300 Bordeaux, France',
+  allergies: 'None',
+  chronic_illness: 'None',
+)
+
 # patients photos
 
 require "open-uri"
@@ -129,6 +170,18 @@ file_6 = URI.open("https://avatars.githubusercontent.com/u/139125894?v=4")
 patient_6.photo.attach(io: file_6, filename: "liam.png", content_type: "image/png")
 patient_6.save
 
+file_7 = URI.open("https://avatars.githubusercontent.com/u/102687903?v=4")
+patient_7.photo.attach(io: file_7, filename: "adele.png", content_type: "image/png")
+patient_7.save
+
+file_8 = URI.open("https://plus.unsplash.com/premium_photo-1672297543351-17987c5c9361?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG9sZCUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60")
+patient_8.photo.attach(io: file_8, filename: "jeanpierre.png", content_type: "image/png")
+patient_8.save
+
+file_9 = URI.open("https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGJveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60")
+patient_9.photo.attach(io: file_9, filename: "leo.png", content_type: "image/png")
+patient_9.save
+
 
 puts "Patients created!"
 
@@ -143,6 +196,12 @@ document_3 = Document.create!(title: 'Ordonnance analyses sanguines', category: 
 document_4 = Document.create!(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
 document_5 = Document.create!(title: 'Compte rendu IRM cervicales', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
 document_6 = Document.create!(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
+document_11 = Document.create!(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_7, user: user_7, date: "01-06-2019")
+document_7 = Document.create!(title: 'Radio du dos', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Henri Djerdi', patient: patient_7, user: user_7, date: "12-05-2022")
+document_9 = Document.create!(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Dupont', patient: patient_8, user: user_7, date: "25-05-2023")
+document_8 = Document.create!(title: 'Ordonnance angine', category: "Ordonnance", document_type: 3, doctor: 'Dr. Alexandre Michel', patient: patient_9, user: user_7, date: "15-07-2023")
+document_10 = Document.create!(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie",  document_type: 4, doctor: 'Dr. Olivia Anderson', patient: patient_7, user: user_7, date: "28-07-2023")
+
 
 
 puts "Documents created!"
@@ -175,15 +234,40 @@ file_6 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872
 document_6.photo.attach(io: file_6, filename: "echographie.jpg", content_type: "image/jpg")
 document_6.save
 
+file_7 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/radio_du_dos_mbt9yt.png")
+document_7.photo.attach(io: file_7, filename: "radio_du_dos2.jpg", content_type: "image/jpg")
+document_7.save
+
+file_8 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_angine_vgvs9a.jpg")
+document_8.photo.attach(io: file_8, filename: "ordo_angine.jpg", content_type: "image/jpg")
+document_8.save
+
+file_9 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/compte_rendu_irm_cervicale_s9tifn.png")
+document_9.photo.attach(io: file_9, filename: "compte_rendu_femur.jpg", content_type: "image/jpg")
+document_9.save
+
+file_10 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/ordonnance_analyse_sang_gb0nm6.jpg")
+document_10.photo.attach(io: file_10, filename: "ordo_analyses_sang.jpg", content_type: "image/jpg")
+document_10.save
+
+file_11 = URI.open("https://res.cloudinary.com/dz5wllxek/image/upload/v1693476872/echographie_ldhbsw.jpg")
+document_11.photo.attach(io: file_11, filename: "echographie.jpg", content_type: "image/jpg")
+document_11.save
+
+
 puts "Creating user_patients..."
 
 # user_patients seed
 
+user_patient_1 = UserPatient.create(patient: patient_1, user: user_1)
 user_patient_2 = UserPatient.create!(patient: patient_2, user: user_1)
 user_patient_3 = UserPatient.create!(patient: patient_3, user: user_1)
 user_patient_4 = UserPatient.create!(patient: patient_4, user: user_1)
 user_patient_5 = UserPatient.create!(patient: patient_5, user: user_1)
 user_patient_6 = UserPatient.create!(patient: patient_6, user: user_1)
+user_patient_7 = UserPatient.create!(patient: patient_7, user: user_7)
+user_patient_8 = UserPatient.create!(patient: patient_8, user: user_7)
+user_patient_9 = UserPatient.create!(patient: patient_9, user: user_7)
 
 puts "User_patients created!"
 
