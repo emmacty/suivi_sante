@@ -11,19 +11,14 @@
   padding: 20px;
   border-radius: 20px;
   margin: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 414px
+  width: 100%;
 }
 
 .card-data h2 {
   font-size: 20px;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: $purple;
+  text-align: left;
 }
 
 .card-data p {
@@ -42,4 +37,17 @@
 
 .center-button {
   text-align: center;
+}
+
+.card-data>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.margin-groupe-sanguin {
+  margin-right: 38px;
+}
+
+.margin-right {
+  margin-right: 58px;
 }

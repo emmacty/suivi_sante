@@ -34,7 +34,7 @@ patient_1 = Patient.new(first_name: 'Maïwenn',
   gender: 'Femme',
   address: '2 rue Dupaty,33300 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
   user: user_1
 )
 
@@ -48,7 +48,7 @@ patient_2 = Patient.new(first_name: 'Maxwell' ,
   gender: 'Homme',
   address: '3 Rue De Macau, 33000 Bordeaux, France',
   allergies: 'Peanuts',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 patient_3 = Patient.new(first_name: 'Isabella' ,
   last_name: 'Cruz',
@@ -60,7 +60,7 @@ patient_3 = Patient.new(first_name: 'Isabella' ,
   gender: 'Femme',
   address: '4 rue des Girondins, 33200 Bordeaux, France',
   allergies: 'Shellfish',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
 patient_4 = Patient.new(first_name: 'Ethan' ,
@@ -73,7 +73,7 @@ patient_4 = Patient.new(first_name: 'Ethan' ,
   gender: 'Homme',
   address: '5 rue André, 33200 Bordeaux, France',
   allergies: 'cat hair',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
 patient_5 = Patient.new(first_name: 'Aria',
@@ -86,7 +86,7 @@ patient_5 = Patient.new(first_name: 'Aria',
   gender: 'Femme',
   address: '8 rue Louis Mie, 33000 Bordeaux, France',
   allergies: 'Fish',
-  chronic_illness: "None",
+  chronic_illness: "Aucune",
 )
 
 patient_6 = Patient.new(first_name: 'Liam',
@@ -99,7 +99,7 @@ patient_6 = Patient.new(first_name: 'Liam',
   gender: 'Homme',
   address: '8 rue Corot, 33100 Bordeaux, France',
   allergies: 'Cow’s milk',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
  )
 
  patient_7 = Patient.new(first_name: 'Adèle',
@@ -112,7 +112,7 @@ patient_6 = Patient.new(first_name: 'Liam',
   gender: 'Femme',
   address: '2 rue Dupaty, 33300 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
   user: user_7
 )
 
@@ -123,10 +123,10 @@ patient_8 = Patient.new(first_name: 'Jean-Pierre',
   height: 185,
   weight: 80,
   bloodtype: 'A+',
-  gender: 'Femme',
+  gender: 'Homme',
   address: '110 rue Godard, 33200 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
 patient_9 = Patient.new(first_name: 'Léo',
@@ -139,7 +139,7 @@ patient_9 = Patient.new(first_name: 'Léo',
   gender: 'Homme',
   address: '2 rue Dupaty, 33300 Bordeaux, France',
   allergies: 'None',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
 # patients photos

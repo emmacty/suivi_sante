@@ -32,14 +32,3 @@
 .search-form input:focus {
   background-color: white;
 }
-
-.tiny-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 10px;
-  border : 1px solid rgb(220, 220, 220);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}

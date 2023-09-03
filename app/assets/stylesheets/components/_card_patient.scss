@@ -42,3 +42,18 @@
   text-decoration: none;
   margin-right: 10px;
 }
+
+.card-patient div {
+  display: flex;
+  justify-content: space-between;
+  text-align: left !important;
+}
+
+.card-patient i {
+  font-size: 20px;
+  background: $purple;
+	background: -webkit-linear-gradient($purple, $blue);
+	background: linear-gradient($purple, $blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
