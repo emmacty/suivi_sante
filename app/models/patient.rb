@@ -16,5 +16,5 @@ class Patient < ApplicationRecord
   validates :bloodtype, presence: true, inclusion: { in: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] }
   validates :gender, presence: true, inclusion: { in: ["Homme", "Femme", "Non précisé"] }
   validates :address, presence: true
-  validates :chronic_illness, presence: true, inclusion: { in: ["None", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"] }
+  validates :chronic_illness, presence: true, inclusion: { in: ["Aucune", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"] }
 end

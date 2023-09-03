@@ -24,7 +24,7 @@ puts "Creating patients..."
 
 # patient seed
 
-patient_1 = Patient.create!(first_name: 'Maïwenn',
+patient_1 = Patient.new(first_name: 'Maïwenn',
   last_name: 'Bennett',
   age: 15,
   security_card_number: 12345678910111213,
@@ -34,11 +34,11 @@ patient_1 = Patient.create!(first_name: 'Maïwenn',
   gender: 'Femme',
   address: '2 rue Dupaty,33300 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
   user: user_1
 )
 
-patient_2 = Patient.create!(first_name: 'Maxwell' ,
+patient_2 = Patient.new(first_name: 'Maxwell' ,
   last_name: ' Knight',
   age: 11 ,
   security_card_number: 45612378910111213,
@@ -48,9 +48,9 @@ patient_2 = Patient.create!(first_name: 'Maxwell' ,
   gender: 'Homme',
   address: '3 Rue De Macau, 33000 Bordeaux, France',
   allergies: 'Peanuts',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
-patient_3 = Patient.create!(first_name: 'Isabella' ,
+patient_3 = Patient.new(first_name: 'Isabella' ,
   last_name: 'Cruz',
   age: 65,
   security_card_number: 78945612310111213,
@@ -60,10 +60,10 @@ patient_3 = Patient.create!(first_name: 'Isabella' ,
   gender: 'Femme',
   address: '4 rue des Girondins, 33200 Bordeaux, France',
   allergies: 'Shellfish',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
-patient_4 = Patient.create!(first_name: 'Ethan' ,
+patient_4 = Patient.new(first_name: 'Ethan' ,
   last_name: ' Mitchell',
   age: 8,
   security_card_number: 10145678912311213,
@@ -73,10 +73,10 @@ patient_4 = Patient.create!(first_name: 'Ethan' ,
   gender: 'Homme',
   address: '5 rue André, 33200 Bordeaux, France',
   allergies: 'cat hair',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
-patient_5 = Patient.create!(first_name: 'Aria',
+patient_5 = Patient.new(first_name: 'Aria',
   last_name: ' Patel',
   age: 59,
   security_card_number: 11245678910112313,
@@ -86,10 +86,10 @@ patient_5 = Patient.create!(first_name: 'Aria',
   gender: 'Femme',
   address: '8 rue Louis Mie, 33000 Bordeaux, France',
   allergies: 'Fish',
-  chronic_illness: "None",
+  chronic_illness: "Aucune",
 )
 
-patient_6 = Patient.create!(first_name: 'Liam',
+patient_6 = Patient.new(first_name: 'Liam',
   last_name: ' Sullivan',
   age: 56,
   security_card_number: 13045678910111212,
@@ -99,10 +99,10 @@ patient_6 = Patient.create!(first_name: 'Liam',
   gender: 'Homme',
   address: '8 rue Corot, 33100 Bordeaux, France',
   allergies: 'Cow’s milk',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
  )
 
- patient_7 = Patient.create!(first_name: 'Adèle',
+ patient_7 = Patient.new(first_name: 'Adèle',
   last_name: 'Martin',
   age: 31,
   security_card_number: 12345678910111214,
@@ -112,24 +112,24 @@ patient_6 = Patient.create!(first_name: 'Liam',
   gender: 'Femme',
   address: '2 rue Dupaty, 33300 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
   user: user_7
 )
 
-patient_8 = Patient.create!(first_name: 'Jean-Pierre',
+patient_8 = Patient.new(first_name: 'Jean-Pierre',
   last_name: 'Martin',
   age: 85,
   security_card_number: 12345678910111145,
   height: 185,
   weight: 80,
   bloodtype: 'A+',
-  gender: 'Femme',
+  gender: 'Homme',
   address: '110 rue Godard, 33200 Bordeaux, France',
   allergies: 'Pollen',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
-patient_9 = Patient.create!(first_name: 'Léo',
+patient_9 = Patient.new(first_name: 'Léo',
   last_name: 'Martin',
   age: 4,
   security_card_number: 12345678910111742,
@@ -139,7 +139,7 @@ patient_9 = Patient.create!(first_name: 'Léo',
   gender: 'Homme',
   address: '2 rue Dupaty, 33300 Bordeaux, France',
   allergies: 'None',
-  chronic_illness: 'None',
+  chronic_illness: 'Aucune',
 )
 
 # patients photos
@@ -190,17 +190,17 @@ puts "Creating documents..."
 
 # document seed
 
-document_1 = Document.create!(title: 'Radio du dos', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Emily Johnson', patient: patient_1, user: user_1, date: Time.now)
-document_2 = Document.create!(title: 'Ordonnance angine', category: "Ordonnance", document_type: 3, doctor: 'Dr. Alexander Mitchell', patient: patient_1, user: user_1, date: Time.now )
-document_3 = Document.create!(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie",  document_type: 4, doctor: 'Dr. Olivia Anderson', patient: patient_1, user: user_1, date: Time.now)
-document_4 = Document.create!(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
-document_5 = Document.create!(title: 'Compte rendu IRM cervicales', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
-document_6 = Document.create!(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
-document_11 = Document.create!(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_7, user: user_7, date: "01-06-2019")
-document_7 = Document.create!(title: 'Radio du dos', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Henri Djerdi', patient: patient_7, user: user_7, date: "12-05-2022")
-document_9 = Document.create!(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Dupont', patient: patient_8, user: user_7, date: "25-05-2023")
-document_8 = Document.create!(title: 'Ordonnance angine', category: "Ordonnance", document_type: 3, doctor: 'Dr. Alexandre Michel', patient: patient_9, user: user_7, date: "15-07-2023")
-document_10 = Document.create!(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie",  document_type: 4, doctor: 'Dr. Olivia Anderson', patient: patient_7, user: user_7, date: "28-07-2023")
+document_1 = Document.new(title: 'Radio du dos', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Emily Johnson', patient: patient_1, user: user_1, date: Time.now)
+document_2 = Document.new(title: 'Ordonnance angine', category: "Ordonnance", document_type: 3, doctor: 'Dr. Alexander Mitchell', patient: patient_1, user: user_1, date: Time.now )
+document_3 = Document.new(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie",  document_type: 4, doctor: 'Dr. Olivia Anderson', patient: patient_1, user: user_1, date: Time.now)
+document_4 = Document.new(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Parker', patient: patient_1, user: user_1, date: Time.now)
+document_5 = Document.new(title: 'Compte rendu IRM cervicales', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Sophia Williams', patient: patient_1, user: user_1, date: Time.now)
+document_6 = Document.new(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_1, user: user_1, date: Time.now)
+document_11 = Document.new(title: 'Echographie', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Jacob Ramirez', patient: patient_7, user: user_7, date: "01-06-2019")
+document_7 = Document.new(title: 'Radio du dos', category: "Imagerie médicale", document_type: 1, doctor: 'Dr. Henri Djerdi', patient: patient_7, user: user_7, date: "12-05-2022")
+document_9 = Document.new(title: 'Compte rendu radio fémur', category: "Compte-rendu", document_type: 2, doctor: 'Dr. Benjamin Dupont', patient: patient_8, user: user_7, date: "25-05-2023")
+document_8 = Document.new(title: 'Ordonnance angine', category: "Ordonnance", document_type: 3, doctor: 'Dr. Alexandre Michel', patient: patient_9, user: user_7, date: "15-07-2023")
+document_10 = Document.new(title: 'Ordonnance analyses sanguines', category: "Ordonnance de biologie",  document_type: 4, doctor: 'Dr. Olivia Anderson', patient: patient_7, user: user_7, date: "28-07-2023")
 
 
 
