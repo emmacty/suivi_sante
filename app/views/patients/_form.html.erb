@@ -8,7 +8,12 @@
   <%= f.input :weight, label: "Poids (kg)", input_html: { class: "card-filter" } %>
   <%= f.input :bloodtype, label: "Groupe sanguin", collection: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"], input_html: { class: "card-filter" } %>
   <%= f.input :gender, label: "Genre", collection: ["Homme", "Femme", "Non précisé"], input_html: { class: "card-filter" } %>
-  <%= f.input :address, label: "Adresse", input_html: { class: "card-filter" } %>
+
+  <%= f.input :address,
+    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
+    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+  %>
+
   <%= f.input :allergies, label: "Allergies", input_html: { class: "card-filter" } %>
   <%= f.input :chronic_illness, input_html: { class: "card-filter" }, collection: ["Aucune", "Hypertension", "Bronchopneumopathie chronique obstructive", "Insuffisance cardiaque chronique", "Diabète de type II", "Diabète de type I", "Maladie oncologique", "L'asthme bronchique", "Anémie", "Dépression"], label: "Maladies chroniques" %>
   <%= f.input :user_id, label: false, input_html: {value: current_user.id, class: "d-none"}%>

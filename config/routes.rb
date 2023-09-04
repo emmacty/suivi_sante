@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :documents, only: [:new, :create, :edit, :update]
   resources :documents, only: [:index, :show, :destroy]
-  resources :reminders, only: [:index, :show, :destroy]
+  resources :reminders, only: [:index, :show, :destroy, :edit, :update, :new, :create]
   resources :bloodtests, only: [:index, :show, :new, :create, :edit, :update]
   resources :user_patients
 end
