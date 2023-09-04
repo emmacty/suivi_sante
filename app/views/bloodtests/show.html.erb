@@ -1,0 +1,17 @@
+<div class="back_btn">
+  <%= link_to ('<i class="fa-solid fa-backward"></i> Retour aux analyses').html_safe, patient_bloodtests_path(@patient) %>
+</div>
+
+<h1 class="mt-3"><%= @bloodtest.title %></h1>
+<div class="card-document">
+    <div>
+      <p><%= @bloodtest.laboratory %></p>
+      <p><%= @bloodtest.doctor %></p>
+    </div>
+  </div>
+
+<%= bar_chart @bloodtest_data, colors:["#CE84F7"] %>
+
+<div class="mt-3">
+  <%= link_to "Éditer", edit_patient_bloodtest_path(@patient, @bloodtest)%>
+</div>

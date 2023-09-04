@@ -1,0 +1,19 @@
+<%= simple_form_for [@patient, @bloodtest] do |f| %>
+  <%= f.input :title, label: "Titre",input_html: { class: "card-filter" } %>
+  <%= f.input :date, label: "Date",
+            as: :string,
+            disableMobile: false,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :doctor, label: "Docteur", input_html: { class: "card-filter" } %>
+  <%= f.input :laboratory, label: "Laboratoire", input_html: { class: "card-filter" } %>
+  <%= f.input :blood_count, label: "Nombre de globules", input_html: { class: "card-filter" } %>
+  <%= f.input :iron, label: "Fer", input_html: { class: "card-filter" } %>
+  <%= f.input :protein, label: "Protéines", input_html: { class: "card-filter" } %>
+  <%= f.input :glucose, label: "Glucose", input_html: { class: "card-filter" } %>
+  <%= f.input :sedimentation_rate, label: "Vitesse de sédimentation", input_html: { class: "card-filter" } %>
+  <%= f.input :lipid, label: "Lipides", input_html: { class: "card-filter" } %>
+  <%= f.input :renal, label: "Rénal", input_html: { class: "card-filter" } %>
+  <%= f.input :hepatic, label: "Hépatique", input_html: { class: "card-filter" } %>
+
+  <%= f.button :submit, "Enregistrer le document", class: "btn button" %>
+<% end %>
