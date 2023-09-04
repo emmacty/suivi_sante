@@ -8,6 +8,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.button:hover, .button:active {
-  color:#FFFFFF;
+.button:hover, .button:active, button:focus, button:visited {
+  color:#FFFFFF !important;
 }

@@ -3,47 +3,44 @@
   <a href="/documents"><i class="fa-solid fa-backward"></i> Retour aux documents</a>
 </div>
 
-<div class="doc_img">
+<div class="doc_img mt-3">
   <%= cl_image_tag  @document.photo.key, class:"img_style" %>
 </div>
 
 
 
-  <div class="card-row">
-    <div class="card-data">
-      <h2>Patient</h2>
-      <p><%= @document.patient.first_name %> <%= @document.patient.last_name %></p>
-    </div>
-    </div>
-
-  <div class="card-row">
-    <div class="card-data">
-      <h2>Date</h2>
-      <p><%= @document.date %></p>
-    </div>
-  </div>
-
 <div class="card-row">
+
   <div class="card-data">
-    <h2>Document</h2>
+    <h2>Titre</h2>
     <p><%= @document.title %></p>
   </div>
-  </div>
 
-<div class="card-row">
   <div class="card-data">
-    <h2>Categorie</h2>
-    <p><%= @document.document_type %></p>
-  </div>
-  </div>
-
-
-    <div class="card-data">
-      <h2>Médecin</h2>
-      <p><%= @document.doctor %></p>
+    <div>
+      <div>
+        <h2>Patient</h2>
+        <p><%= @document.patient.first_name %> <%= @document.patient.last_name %></p>
+      </div>
+      <div class="margin-right">
+        <h2>Date</h2>
+        <p><%= @document.date %></p>
+      </div>
     </div>
   </div>
 
+  <div class="card-data">
+    <div>
+      <div>
+        <h2>Médecin</h2>
+        <p><%= @document.doctor %></p>
+      </div>
+      <div>
+        <h2>Categorie</h2>
+        <p><%= Document.human_enum_name(:document_type, @document.document_type) %></p>
+      </div>
+    </div>
+  </div>
 
 </div>
 

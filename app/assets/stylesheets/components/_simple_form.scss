@@ -6,7 +6,7 @@
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
+  height: 60px;
 }
 
 .flatpickr-day.selected {
@@ -14,6 +14,11 @@
   border-color: $purple;
 }
 
-.simple_form .button:active {
+.simple_form .button:active, .simple_form button:focus, .simple_form button:visited {
   color:white !important;
+}
+
+.simple_form label {
+  color: $purple;
+  font-weight: bold;
 }

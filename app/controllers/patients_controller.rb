@@ -38,7 +38,7 @@ class PatientsController < ApplicationController
 
     def destroy
       @patient.destroy
-      redirect_to patients_path, status: :no_content
+      redirect_to patients_path, status: :see_other
     end
 
     def my_profile
