@@ -2,7 +2,8 @@
 <div class="back_btn">
   <a href="/my_bloodtests"><i class="fa-solid fa-backward"></i> Retour</a>
 </div>
-<h1>Vos analyses</h1>
+<%= cl_image_tag  @patient.photo.key, class: "medium-avatar" %>
+<h1>Analyses de <%= @patient.first_name %></h1>
 <%= link_to "+", new_patient_bloodtest_path, class: "btn plus-button" %>
 
 <% if @patient.bloodtests.any? %>
