@@ -1,10 +1,11 @@
 
 <div class="back_btn">
-  <a href="/"><i class="fa-solid fa-backward"></i> Retour</a>
+  <a href="/my_bloodtests"><i class="fa-solid fa-backward"></i> Retour</a>
 </div>
-
 <h1>Vos analyses</h1>
-<%= link_to "+", new_bloodtest_path, class: "btn plus-button" %>
+<%= link_to "+", new_patient_bloodtest_path, class: "btn plus-button" %>
+
+<% if @patient.bloodtests.any? %>
 <%= line_chart @bloodtests.chart_points,
 colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A439DF", "#E2B2FC" ],
  legend: "bottom",
@@ -24,27 +25,27 @@ colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A43
     download: true %>
     <h4 class="mt-3">Fer</h4>
     <%= line_chart @bloodtests.pluck(:date, :iron),
-    colors: ["#9FD3FC"],
+    colors: ["#75BFF7"],
     discrete: true,
     download: true %>
     <h4 class="mt-3">Protéine</h4>
     <%= line_chart @bloodtests.pluck(:date, :protein),
-    colors: ["#9FD3FC"],
+    colors: ["#4FA7EB"],
     discrete: true,
     download: true %>
     <h4 class="mt-3">Glucose</h4>
     <%= line_chart @bloodtests.pluck(:date, :glucose),
-    colors: ["#9FD3FC"],
+    colors: ["#D2EBFE"],
     discrete: true,
     download: true %>
     <h4 class="mt-3">Taux de sédimentation</h4>
     <%= line_chart @bloodtests.pluck(:date, :sedimentation_rate),
-    colors: ["#9FD3FC"],
+    colors: ["#CE84F7"],
     discrete: true,
     download: true %>
     <h4 class="mt-3">Lipides</h4>
     <%= line_chart @bloodtests.pluck(:date, :lipid),
-    colors: ["#9FD3FC"],
+    colors: ["#BB5DEF"],
     discrete: true,
     download: true %>
     <h4 class="mt-3">Bilan rénal</h4>
@@ -54,7 +55,7 @@ colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A43
     download: true %>
     <h4 class="mt-3">Bilan hépatique</h4>
     <%= line_chart @bloodtests.pluck(:date, :hepatic),
-    colors: ["#9FD3FC"],
+    colors: ["#E2B2FC"],
     discrete: true,
     download: true %>
   </div>
@@ -70,8 +71,15 @@ colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A43
       <div class="d-flex justify-content-between">
         <p><%= bloodtest.date %></p>
         <p><%= bloodtest.title%></p>
-        <%= link_to ('<i class="fa-solid fa-eye small-eye"></i>').html_safe, bloodtest_path(bloodtest) %>
+        <%= link_to ('<i class="fa-solid fa-eye small-eye"></i>').html_safe, patient_bloodtest_path(@patient, bloodtest) %>
       </div>
     <% end %>
   </div>
+
+<% else %>
+  <div class="card-document">
+    <i class="fa-solid fa-question"></i>
+    <p>Ce patient n'a pas d'analyse pour le moment.</p>
+  </div>
+<% end %>
 </div>
