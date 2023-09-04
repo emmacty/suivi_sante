@@ -1,0 +1,14 @@
+<%= simple_form_for @reminder do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, label: "Nom" %>
+    <%= f.input :content, label: "Commentaire" %>
+    <%= f.input :date, as: :date, label: "Date" %>
+    <%= f.input :time, as: :time, label: "Temps" %>
+   <%= f.input :frequency_unity, collection: Reminder.select_enum_attribute(:frequency_unity), label: "Répétition" %>
+    <%= f.input :patient_id, collection: Patient.all.map { |p| ["#{p.first_name} #{p.last_name}", p.id] }, prompt: "Sélectionner un patient" %>
+    <%= f.input :category, label: "Catégorie", collection: ["Rendez-vous", "Traitement", "Contrôle"] %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

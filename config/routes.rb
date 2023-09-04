@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :reminders, only: [:index, :show, :destroy, :edit, :update, :new, :create]
   resources :bloodtests, only: [:index, :show, :new, :create, :edit, :update]
   resources :user_patients
+  resources :repetition, only: [:new, :create, :edit, :update, :destroy]
 end
