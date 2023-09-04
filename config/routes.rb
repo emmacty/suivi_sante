@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :reminders, only: [:index, :show, :destroy, :edit, :update, :new, :create]
   get 'my_bloodtests', to: 'bloodtests#my_bloodtests', as: 'my_bloodtests'
   resources :user_patients
+  resources :repetition, only: [:new, :create, :edit, :update, :destroy]
 end
