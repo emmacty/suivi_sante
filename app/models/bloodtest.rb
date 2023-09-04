@@ -10,6 +10,8 @@ class Bloodtest < ApplicationRecord
     hepatic: "Bilan hépatique",
   }
 
+
+
   belongs_to :patient
   validates :title, presence: true
   validates :laboratory, presence: true
@@ -33,7 +35,7 @@ class Bloodtest < ApplicationRecord
 
   def column_chart
     BLOOD_CATEGORIES.map do |field, cat|
-      { name: cat, data: { cat: field }.to_h }
+      { data: { cat: field }.to_h }
     end
   end
 end

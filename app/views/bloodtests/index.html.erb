@@ -4,6 +4,7 @@
 </div>
 
 <h1>Vos analyses</h1>
+<%= link_to "+", new_bloodtest_path, class: "btn plus-button" %>
 <%= line_chart @bloodtests.chart_points,
 colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A439DF", "#E2B2FC" ],
  legend: "bottom",

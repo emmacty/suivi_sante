@@ -24,18 +24,20 @@ class BloodtestsController < ApplicationController
 
   def create
     @bloodtest = Bloodtest.new(bloodtest_params)
-    @bloodtest.patient_id = patient.id
+    @bloodtest.patient = current_user.patient
     if @bloodtest.save
-      redirect_to bloodtest_path
+      redirect_to bloodtest_path(@bloodtest)
     else
       render "new", status: :unprocessable_entity
     end
   end
 
   def edit
+    @bloodtest = Bloodtest.find(params[:id])
   end
 
   def update
+    @bloodtest = Bloodtest.find(params[:id])
     if @bloodtest.update(bloodtest_params)
       redirect_to bloodtest_path(@bloodtest)
       flash[:alert] = "Modifié avec succès !"
