@@ -33,6 +33,9 @@ gem "cloudinary"
 # Search bar
 gem "pg_search"
 
+#Chart Kick
+gem "chartkick"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

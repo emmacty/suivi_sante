@@ -1,0 +1,76 @@
+
+<div class="back_btn">
+  <a href="/"><i class="fa-solid fa-backward"></i> Retour</a>
+</div>
+
+<h1>Vos analyses</h1>
+<%= line_chart @bloodtests.chart_points,
+colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A439DF", "#E2B2FC" ],
+ legend: "bottom",
+ download: true
+%>
+
+<div class="card-filter">
+  <div data-bs-toggle="collapse" href="#collapseDetails" class="filter-name">
+    <h3>Voir en détail</h3>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+  <div class="collapse" id="collapseDetails" class="form-check">
+    <h4 class="mt-3">Hémoglobine</h4>
+    <%= line_chart @bloodtests.pluck(:date, :blood_count),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Fer</h4>
+    <%= line_chart @bloodtests.pluck(:date, :iron),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Protéine</h4>
+    <%= line_chart @bloodtests.pluck(:date, :protein),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Glucose</h4>
+    <%= line_chart @bloodtests.pluck(:date, :glucose),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Taux de sédimentation</h4>
+    <%= line_chart @bloodtests.pluck(:date, :sedimentation_rate),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Lipides</h4>
+    <%= line_chart @bloodtests.pluck(:date, :lipid),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Bilan rénal</h4>
+    <%= line_chart @bloodtests.pluck(:date, :renal),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+    <h4 class="mt-3">Bilan hépatique</h4>
+    <%= line_chart @bloodtests.pluck(:date, :hepatic),
+    colors: ["#9FD3FC"],
+    discrete: true,
+    download: true %>
+  </div>
+</div>
+
+<div class="card-filter">
+  <div data-bs-toggle="collapse" href="#collapseHistorical" class="filter-name">
+    <h3>Historique</h3>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+  <div class="collapse" id="collapseHistorical" class="form-check">
+    <% @bloodtests.each do |bloodtest| %>
+      <div class="d-flex justify-content-between">
+        <p><%= bloodtest.date %></p>
+        <p><%= bloodtest.title%></p>
+        <%= link_to ('<i class="fa-solid fa-eye small-eye"></i>').html_safe, bloodtest_path(bloodtest) %>
+      </div>
+    <% end %>
+  </div>
+</div>

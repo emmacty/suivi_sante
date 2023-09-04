@@ -34,3 +34,12 @@
   background-color: $purple;
   border-color: $purple;
 }
+
+.small-eye {
+  font-size:16px !important;
+  background: $purple;
+	background: -webkit-linear-gradient($purple, $blue);
+	background: linear-gradient($purple, $blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
