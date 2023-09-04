@@ -7,10 +7,5 @@ class User < ApplicationRecord
   has_many :documents
   has_many :patients, through: :user_patients
   has_one :patient
-
-  # after_create :set_patient_flag
-
-  # def set_patient_flag
-  #   update(patient: false)
-  # end
+  has_many :reminders
 end
