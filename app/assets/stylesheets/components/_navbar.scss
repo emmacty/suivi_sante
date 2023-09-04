@@ -36,3 +36,10 @@
 .navbar i:before {
   display: initial;
 }
+
+.nav-item:active{
+  color: gray !important;
+}
+.nav-item:hover{
+    color: gray !important;
+}
