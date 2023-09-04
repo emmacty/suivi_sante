@@ -15,14 +15,10 @@
 }
 
 .mapboxgl-ctrl-geocoder--input {
-  font-size: 23px;
-  background: $purple;
-	background: -webkit-linear-gradient($purple, $blue);
-	background: linear-gradient($purple, $blue);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
   top: 20px;
   height: 30px;
+  color: #bbbbbd !important;
+  font-family: "Quicksand" !important;
 }
 
 .mapboxgl-ctrl-geocoder--input h3 {
