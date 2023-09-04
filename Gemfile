@@ -36,6 +36,8 @@ gem "pg_search"
 #Chart Kick
 gem "chartkick"
 
+gem "geocoder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
