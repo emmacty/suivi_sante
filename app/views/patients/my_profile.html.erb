@@ -12,44 +12,45 @@
 
 <div class="card-row">
   <div class="card-data">
-    <h2>Âge</h2>
-    <p><%= @patient.age %> ans</p>
+    <div>
+      <div>
+        <h2>Âge</h2>
+        <p><%= @patient.age %> ans</p>
+      </div>
+      <div>
+        <h2>Taille</h2>
+        <p><%= @patient.height %> cm</p>
+      </div>
+      <div>
+        <h2>Poids</h2>
+        <p><%= @patient.weight %> kg</p>
+      </div>
+    </div>
   </div>
 
   <div class="card-data">
-    <h2>Taille</h2>
-    <p><%= @patient.height %> cm</p>
-  </div>
-</div>
-
-<div class="card-row">
-  <div class="card-data">
-    <h2>Poids</h2>
-    <p><%= @patient.weight %> kg</p>
-  </div>
-
-  <div class="card-data">
-    <h2>Groupe Sanguin</h2>
-    <p><%= @patient.bloodtype %></p>
-  </div>
-</div>
-
-<div class="card-row">
-  <div class="card-data">
-    <h2>Genre</h2>
-    <p><%= @patient.gender %></p>
+    <div>
+      <div>
+        <h2>Genre</h2>
+        <p><%= @patient.gender %></p>
+      </div>
+      <div class="margin-groupe-sanguin">
+        <h2>Groupe Sanguin</h2>
+        <p><%= @patient.bloodtype %></p>
+      </div>
+    </div>
   </div>
 
   <div class="card-data">
     <h2>Allergies</h2>
     <p><%= @patient.allergies %></p>
   </div>
-</div>
-<div class="card-row">
+
   <div class="card-data">
     <h2>Maladies Chroniques</h2>
     <p style="white-space: pre-line"><%= @patient.chronic_illness %></p>
   </div>
+
 </div>
 <div class="button-container">
   <%= link_to "Éditer", edit_patient_path(@patient), style: "margin-right: 10px;" %>
