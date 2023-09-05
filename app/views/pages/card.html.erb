@@ -1,15 +1,14 @@
-<div data-controller ="card-controller">
 <div class="log-out">
   <a data-turbo-method="delete" href="/users/sign_out"><i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a>
 </div>
-
+<div data-controller="card">
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <!-- Carte Vitale -->
       <% current_user.patients.each do |patient| %>
-      <div class="carte-vitale mb-4">
-        <h1><strong>Vitale<strong></h1>
+        <div class="carte-vitale mb-4"data-action="click->card#expand">
+          <h1><strong>Vitale<strong></h1>
           <div class="photo">
             <%= cl_image_tag patient.photo.key, class:"avatar" %>
           </div>
@@ -17,15 +16,14 @@
             <p class="nom"><%= patient.first_name %> <%= patient.last_name %></p>
             <p class="numero"><%= patient.security_card_number %></p>
           </div>
-      </div>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
 
- <div id="expandedCard" class="carte-vitale-expanded mb-4" data-card-target="expandedCard" data-action="click->card#expand">
+ <div id="expandedCard" class="carte-vitale-expanded mb-3" data-card-target="expandedCard" data-action="click->card#close">
     <div class="carte-vitale" data-card-target="expandedCardInner">
     </div>
   </div>
-</div>
 </div>

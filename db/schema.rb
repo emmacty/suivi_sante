@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_31_124715) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_144644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -100,6 +100,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_124715) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
@@ -108,14 +110,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_124715) do
     t.string "content"
     t.string "symbol"
     t.date "date"
-    t.integer "frequency_number"
-    t.date "duration"
     t.integer "frequency_unity"
     t.bigint "patient_id", null: false
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "time"
     t.index ["patient_id"], name: "index_reminders_on_patient_id"
+  end
+
+  create_table "repetitions", force: :cascade do |t|
+    t.date "date"
+    t.bigint "reminder_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reminder_id"], name: "index_repetitions_on_reminder_id"
   end
 
   create_table "user_patients", force: :cascade do |t|
@@ -147,6 +156,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_124715) do
   add_foreign_key "documents", "users"
   add_foreign_key "patients", "users"
   add_foreign_key "reminders", "patients"
+  add_foreign_key "repetitions", "reminders"
   add_foreign_key "user_patients", "patients"
   add_foreign_key "user_patients", "users"
 end
