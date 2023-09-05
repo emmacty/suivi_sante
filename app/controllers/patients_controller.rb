@@ -19,6 +19,7 @@ class PatientsController < ApplicationController
       if @patient.save
         UserPatient.create(user: current_user, patient: @patient) if @patient.user_id.nil?
         redirect_to patient_path(@patient)
+        flash[:notice] = "Créé avec succès !"
       else
         render "new", status: :unprocessable_entity
       end
@@ -30,7 +31,7 @@ class PatientsController < ApplicationController
     def update
       if @patient.update(patient_params)
         redirect_to patient_path(@patient)
-        flash[:alert] = "Modifié avec succès!"
+        flash[:notice] = "Modifié avec succès !"
       else
         render "edit", status: :unprocessable_entity
       end

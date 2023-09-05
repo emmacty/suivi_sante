@@ -1,4 +1,3 @@
-
 <div class="back_btn">
   <a href="/documents"><i class="fa-solid fa-backward"></i> Retour aux documents</a>
 </div>
@@ -46,7 +45,9 @@
 
 <div class="button-container">
   <%= link_to "Éditer", edit_document_path(@document), style: "margin-right: 10px;" %>
-  <%= link_to "Supprimer", document_path(@document), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
+  <div data-controller="alert" data-alert-url-value="/documents/<%= @document.id %>" data-alert-redirect-value="/documents?reload=true">
+  <%= link_to "Supprimer", document_path(@document), data: { action: "click->alert#delete", turbo_method: :delete } %>
+  </div>
 </div>
 
 <!-- tentative de JS -->

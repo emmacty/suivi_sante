@@ -34,6 +34,7 @@ class BloodtestsController < ApplicationController
     @bloodtest.patient = Patient.find(params[:patient_id])
     if @bloodtest.save
       redirect_to patient_bloodtest_path(@bloodtest.patient, @bloodtest)
+      flash[:notice] = "Créé avec succès !"
     else
       render "new", status: :unprocessable_entity
     end
@@ -50,7 +51,7 @@ class BloodtestsController < ApplicationController
     @bloodtest.patient = Patient.find(params[:patient_id])
     if @bloodtest.update(bloodtest_params)
       redirect_to patient_bloodtest_path(@bloodtest.patient, @bloodtest)
-      flash[:alert] = "Modifié avec succès !"
+      flash[:notice] = "Modifié avec succès !"
     else
       render "edit", status: :unprocessable_entity
     end

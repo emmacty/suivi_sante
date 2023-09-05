@@ -64,7 +64,9 @@
 
 <div class="button-container">
   <%= link_to "Éditer", edit_patient_path(@patient), style: "margin-right: 10px;" %>
-  <%= link_to "Supprimer", @patient, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
+  <div data-controller="alert" data-alert-url-value="/patients/<%= @patient.id %>" data-alert-redirect-value="/patients?reload=true">
+    <%= link_to "Supprimer", patient_path(@patient), data: { action: "click->alert#delete", turbo_method: :delete } %>
+  </div>
 </div>
 <div class="center-button">
   <%= link_to 'Voir ses documents', documents_path(filter: {patients: ["", "#{@patient.id}"]}), class: "btn button" %>
