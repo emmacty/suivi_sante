@@ -10,14 +10,16 @@
     <p><a data-bs-toggle="offcanvas" href="#offcanvasFilter">Filtrer</a></p>
 </div>
 
-<%= form_with url: documents_path, method: :get, class: "d-flex search-form" do %>
-  <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Trouver un document"
-    %>
-  <%= submit_tag "Chercher", class: "btn plus-button"%>
-<% end %>
+<div data-controller="search-documents">
+  <%= form_with url: documents_path, method: :get, class: "d-flex search-form" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Trouver un document"
+      %>
+    <%= submit_tag "Chercher", class: "btn plus-button"%>
+  <% end %>
+</div>
 
 
 

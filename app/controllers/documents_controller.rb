@@ -2,6 +2,9 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   def index
+    #if params["reload"]
+      #redirect_to documents_path
+    #end
     @documents = current_user.documents.all.order(created_at: :desc)
     if params.dig(:filter, :categories) && !params[:filter][:categories].all? { |item| item.blank? }
       @documents = @documents.filter_by_category(params[:filter][:categories])
@@ -25,6 +28,7 @@ class DocumentsController < ApplicationController
     @document.user_id = current_user.id
     if @document.save
       redirect_to documents_path
+      flash[:notice] = "Créé avec succès !"
     else
       render "new", status: :unprocessable_entity
     end
@@ -36,7 +40,7 @@ class DocumentsController < ApplicationController
   def update
     if @document.update(document_params)
       redirect_to document_path(@document)
-      flash[:alert] = "Modifié avec succès!"
+      flash[:notice] = "Modifié avec succès !"
     else
       render "edit", status: :unprocessable_entity
     end

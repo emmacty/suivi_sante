@@ -4,3 +4,12 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-info, .alert-warning {
+  --bs-alert-color: #CE84F7;
+  --bs-alert-link-color: #CE84F7;
+  --bs-alert-bg: white;
+  --bs-alert-border-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
