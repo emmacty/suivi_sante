@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["expandedCard", "expandedCardInner"];
 
   connect() {
+    console.log("hello")
     this.expandedCardTarget.style.display = "none";
   }
 
