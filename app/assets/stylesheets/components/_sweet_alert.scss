@@ -1,0 +1,17 @@
+.swal2-popup {
+  border-radius:20px;
+}
+
+.swal2-confirm {
+  margin-top: 20px;
+  font-weight: bold;
+  color:#FFFFFF;
+  background: linear-gradient($purple, $blue);
+  padding: 12px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.swal2-confirm:hover, .swal2-confirm:active, .swal2-confirm:focus, .swal2-confirm:visited {
+  color:#FFFFFF !important;
+}
