@@ -25,6 +25,12 @@
 }
 
 
+.container-preloader .animation-preloader .txt-loading .characters:before {
+  animation: characters 4s infinite;  color: $purple;
+  content: attr(preloader-text);  left: 0;
+  opacity: 0;  position: absolute;  top: 0;
+  transform: rotateY(-90deg);
+}
 .container-preloader .animation-preloader .txt-loading .characters {
 	color: rgba(0, 0, 0, 0.2);	position: relative;
 }
