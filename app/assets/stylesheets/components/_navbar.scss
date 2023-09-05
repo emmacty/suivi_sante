@@ -37,9 +37,9 @@
   display: initial;
 }
 
-.nav-item:active{
-  color: gray !important;
+.nav-item.active{
+  color: #DFB7F6 !important;
 }
 .nav-item:hover{
-    color: gray !important;
+    color: #DFB7F6 !important;
 }
