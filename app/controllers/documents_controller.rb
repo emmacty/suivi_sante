@@ -13,6 +13,10 @@ class DocumentsController < ApplicationController
       @documents = @documents.filter_by_patient(params[:filter][:patients])
     end
     @documents = @documents.global_search(params[:query]) if params[:query].present?
+    respond_to do |format|
+      format.html
+      format.text { render partial: "documents/list", locals: {documents: @documents}, formats: [:html] }
+    end
   end
 
   def show
