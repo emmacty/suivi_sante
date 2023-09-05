@@ -1,0 +1,31 @@
+.simple-calendar {
+  table {
+    min-height: 80vh;
+    width: 100%;
+  }
+
+  .today {
+    background-color: #FAF3DD;
+  }
+
+  .reminder {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #1EDD88;
+    transition: 0.3s ease;
+  }
+
+  .reminder:hover {
+    background: #1BCB7F;
+    color: white;
+  }
+
+  @media screen and (max-width: 768px) {
+    .simple-calendar {
+      table {
+        min-height: auto;
+      }
+    }
+  }
+}
