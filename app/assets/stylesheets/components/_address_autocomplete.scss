@@ -47,3 +47,26 @@
 .mapboxgl-ctrl-geocoder--icon-search {
   top: 21px;
 }
+
+
+element.style {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+  text-align: left;
+  color: #bbbbbd !important;
+  border-radius: 20px;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > li > a {
+  color: #bbbbbd;
+  font-family: "Quicksand" !important;
+  border-radius: 20px;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > .active > a {
+  color: #bbbbbd;
+  font-family: "Quicksand" !important;
+  border-radius: 20px;
+}
