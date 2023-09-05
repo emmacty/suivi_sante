@@ -1,10 +1,12 @@
-<% @reminders.each do |reminder| %>
-  <div class="reminder">
-    <h2><%= reminder.title %></h2>
-    <p><%= reminder.content %></p>
-    <p>Date: <%= reminder.date.strftime('%B %d, %Y') %></p>
-    <%= link_to 'Show', reminder %>
-    <%= link_to 'Edit', edit_reminder_path(reminder) %>
-    <%= link_to 'Delete', reminder, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
-  </div>
+<%= link_to "+", new_reminder_path, class: "btn plus-button" %>
+<div class="container">
+<%= month_calendar(events: @reminders, end_attribute: :end_time) do |date, reminders| %>
+  <%= date %>
+
+  <% reminders.each do |reminder| %>
+    <div class="reminder">
+      <p><%= reminder.title %></p>
+    </div>
+  <% end %>
 <% end %>
+</div>
