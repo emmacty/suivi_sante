@@ -11,17 +11,18 @@
 </div>
 
 <div data-controller="search-documents">
-  <%= form_with url: documents_path, method: :get, class: "d-flex search-form" do %>
-    <%= text_field_tag :query,
-          params[:query],
+  <%= form_with url: documents_path, method: :get, html: {class: "d-flex search-form", data: {search_documents_target: "form"}} do |f| %>
+    <%= f.text_field :query,
+          value: params[:query],
           class: "form-control",
-          placeholder: "Trouver un document"
+          placeholder: "Trouver un document",
+          data: {search_documents_target: "input", action: "keyup->search-documents#update"}
       %>
     <%= submit_tag "Chercher", class: "btn plus-button"%>
   <% end %>
+
+  <%= render "list", documents: @documents %>
 </div>
-
-
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilter">
   <div class="offcanvas-header">
@@ -43,24 +44,3 @@
     <%= link_to "Réinitialiser tous les filtres", documents_path%>
   </div>
 </div>
-
-<% @documents.each do |document|%>
-  <div class="card-document">
-    <div>
-      <%= cl_image_tag document.patient.photo.key, class:"tiny-avatar" %>
-      <div class="eye_link">
-        <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe, document_path(document) %>
-      </div>
-    </div>
-    <div>
-        <h3><%= document.title %></h3>
-    </div>
-    <div>
-      <p><%= document.patient.first_name %> <%= document.patient.last_name %></p>
-      <p><%= document.date %></p>
-    </div>
-    <div>
-      <p><%= document.doctor %></p>
-    </div>
-  </div>
-<% end %>

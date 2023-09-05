@@ -1,0 +1,22 @@
+<div data-search-documents-target="list">
+  <% documents.each do |document|%>
+    <div class="card-document">
+      <div>
+        <%= cl_image_tag document.patient.photo.key, class:"tiny-avatar" %>
+        <div class="eye_link">
+          <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe, document_path(document) %>
+        </div>
+      </div>
+      <div>
+          <h3><%= document.title %></h3>
+      </div>
+      <div>
+        <p><%= document.patient.first_name %> <%= document.patient.last_name %></p>
+        <p><%= document.date %></p>
+      </div>
+      <div>
+        <p><%= document.doctor %></p>
+      </div>
+    </div>
+  <% end %>
+<div>
