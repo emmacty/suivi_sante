@@ -1,21 +1,21 @@
-<div class="navbar">
-  <div class="container-fluid">
+<div class="navbar" data-controller="navbar">
+  <div class="container-fluid", data-action="click->navbar#highlightNavItem">
     <ul class="navbar">
-      <li class="nav-item <%= 'active' if current_page?(reminders_path) %>">
+      <li class="nav-item" data-navbar-target="navItem" data-path="/reminders">
         <a href="#"><i class="fa-solid fa-calendar"></i></a>
         <%= link_to "Rappel", "/reminders", class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(documents_path) %>">
+      <li class="nav-item" data-navbar-target="navItem" data-path="/documents">
         <a href="/documents"><i class="fa-solid fa-file"></i></a>
         <%= link_to "Documents", "/documents", class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(card_path) %>">
+      <li class="nav-item" data-navbar-target="navItem" data-path="/card">
         <a href="/card"><i class="fa-solid fa-address-card"></i></a>
-        <%= link_to "Carte", "/card", class: "nav-link" %>
+        <%= link_to "Carte", "/card", class: "nav-link"%>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+      <li class="nav-item" data-navbar-target="navItem" data-path="/home">
         <a href="/"><i class="fa-solid fa-house"></i></a>
-        <%= link_to "Accueil", "/", class: "nav-link" %>
+        <%= link_to "Accueil", "/", class: "nav-link"%>
       </li>
     </ul>
   </div>
