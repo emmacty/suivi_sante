@@ -1,0 +1,16 @@
+<%= simple_form_for @reminder do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, label: "Nom" %>
+    <%= f.input :content, label: "Commentaire" %>
+    <%= f.input :date, label: "Date",
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :time, as: :time, label: "Horaire", input_html: { class: "card-filter" } %>
+    <%= f.input :frequency_unity, collection: Reminder.select_enum_attribute(:frequency_unity), label: "Répétition", input_html: { class: "card-filter" } %>
+    <%= f.input :patient_id, collection: Patient.all.map { |p| ["#{p.first_name} #{p.last_name}", p.id] }, prompt: "Sélectionner un patient", input_html: { class: "card-filter" } %>
+    <%= f.input :category, label: "Catégorie", collection: ["Rendez-vous", "Traitement", "Contrôle"], input_html: { class: "card-filter" } %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn button" %>
+  </div>
+<% end %>

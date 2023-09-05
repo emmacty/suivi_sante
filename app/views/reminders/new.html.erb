@@ -1,16 +1,3 @@
-<%= simple_form_for @reminder do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title, label: "Title" %>
-    <%= f.input :content, label: "Content" %>
-    <%= f.input :symbol, label: "Symbol" %>
-    <%= f.input :date, as: :date, label: "Date" %>
-    <%= f.input :frequency_number, label: "Frequency Number" %>
-    <%= f.input :duration, as: :date, label: "Duration" %>
-    <%= f.input :frequency_unity, label: "Frequency Unity" %>
-    <%= f.input :patient_id, collection: Patient.all.map { |p| ["#{p.first_name} #{p.last_name}", p.id] }, prompt: "Select a patient" %>
-    <%= f.input :category, label: "Category" %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
-<% end %>
+<h1>Nouveau Rappel</h1>
+
+<%= render 'form' %>

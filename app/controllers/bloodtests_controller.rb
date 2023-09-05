@@ -1,10 +1,16 @@
 class BloodtestsController < ApplicationController
 
+  def my_bloodtests
+    @patients = current_user.patients
+  end
+
   def index
-    @bloodtests = current_user.patient.bloodtests
+    @patient = Patient.find(params[:patient_id])
+    @bloodtests = @patient.bloodtests.order(created_at: :desc)
   end
 
   def show
+    @patient = Patient.find(params[:patient_id])
     @bloodtest = Bloodtest.find(params[:id])
     @bloodtest_data = {
       "Hémoglobine": @bloodtest[:blood_count],
@@ -19,27 +25,31 @@ class BloodtestsController < ApplicationController
   end
 
   def new
+    @patient = Patient.find(params[:patient_id])
     @bloodtest = Bloodtest.new
   end
 
   def create
     @bloodtest = Bloodtest.new(bloodtest_params)
-    @bloodtest.patient = current_user.patient
+    @bloodtest.patient = Patient.find(params[:patient_id])
     if @bloodtest.save
-      redirect_to bloodtest_path(@bloodtest)
+      redirect_to patient_bloodtest_path(@bloodtest.patient, @bloodtest)
     else
       render "new", status: :unprocessable_entity
     end
   end
 
   def edit
+    @patient = Patient.find(params[:patient_id])
     @bloodtest = Bloodtest.find(params[:id])
+    @bloodtest.patient = Patient.find(params[:patient_id])
   end
 
   def update
     @bloodtest = Bloodtest.find(params[:id])
+    @bloodtest.patient = Patient.find(params[:patient_id])
     if @bloodtest.update(bloodtest_params)
-      redirect_to bloodtest_path(@bloodtest)
+      redirect_to patient_bloodtest_path(@bloodtest.patient, @bloodtest)
       flash[:alert] = "Modifié avec succès !"
     else
       render "edit", status: :unprocessable_entity

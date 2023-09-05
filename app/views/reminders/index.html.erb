@@ -1,12 +1,10 @@
- <% @reminders.each do |reminder| %>
+<% @reminders.each do |reminder| %>
   <div class="reminder">
     <h2><%= reminder.title %></h2>
     <p><%= reminder.content %></p>
     <p>Date: <%= reminder.date.strftime('%B %d, %Y') %></p>
     <%= link_to 'Show', reminder %>
     <%= link_to 'Edit', edit_reminder_path(reminder) %>
-    <%= link_to 'Delete', reminder, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', reminder, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
   </div>
 <% end %>
-
-<%= link_to 'New', new_reminder_path %>

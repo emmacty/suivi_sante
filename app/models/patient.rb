@@ -6,6 +6,10 @@ class Patient < ApplicationRecord
   has_many :reminders
   has_many :bloodtests
   belongs_to :user, optional: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates :photo, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
