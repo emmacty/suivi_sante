@@ -10,6 +10,7 @@ class Document < ApplicationRecord
   validates :doctor, presence: true
   enum document_type: { imagerie_medicale: 1, compte_rendu: 2, ordonnance: 3, ordonnance_de_biologie: 4}
   scope :filter_by_category, -> (category) { where document_type: category }
+  scope :filter_by_patient, -> (patient) { where patient_id: patient }
   include PgSearch::Model
 
   pg_search_scope :global_search,

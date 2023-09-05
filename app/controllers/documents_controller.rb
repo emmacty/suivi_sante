@@ -3,12 +3,13 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = current_user.documents.all.order(created_at: :desc)
-    if params.dig(:filter, :categories)
+    if params.dig(:filter, :categories) && !params[:filter][:categories].all? { |item| item.blank? }
       @documents = @documents.filter_by_category(params[:filter][:categories])
     end
-    if params[:query].present?
-      @documents = @documents.global_search(params[:query])
+    if params.dig(:filter, :patients) && !params[:filter][:patients].all? { |item| item.blank? }
+      @documents = @documents.filter_by_patient(params[:filter][:patients])
     end
+    @documents = @documents.global_search(params[:query]) if params[:query].present?
   end
 
   def show

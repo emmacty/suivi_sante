@@ -1,4 +1,6 @@
-
+<div class="back_btn">
+  <%= link_to ('<i class="fa-solid fa-backward"></i> Retour aux proches').html_safe, patients_path %>
+</div>
 
 <%= cl_image_tag  @patient.photo.key, class: "avatar" %>
 
@@ -64,7 +66,6 @@
   <%= link_to "Éditer", edit_patient_path(@patient), style: "margin-right: 10px;" %>
   <%= link_to "Supprimer", @patient, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } %>
 </div>
-
 <div class="center-button">
-  <%= link_to 'Retour à la liste', patients_path, class: "btn button" %>
+  <%= link_to 'Voir ses documents', documents_path(filter: {patients: ["", "#{@patient.id}"]}), class: "btn button" %>
 </div>

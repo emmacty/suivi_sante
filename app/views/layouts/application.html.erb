@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SuiviSante</title>
+    <title>SuiviSante - Consultez votre carnet de santé en ligne</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Retrouvez tous vos documents médicaux et vos proches avec SuiviSante." />
+    <meta property="og:image" content="https://siecledigital.fr/wp-content/uploads/2023/01/Docteur-avec-smartphone-940x550.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag asset_path('logo.png') %>
     <%= javascript_importmap_tags %>
+    <link rel="favicon" type="image/png" href="logo.png" />
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

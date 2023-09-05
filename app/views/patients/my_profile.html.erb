@@ -1,3 +1,7 @@
+<div class="back_btn">
+  <a href="/"><i class="fa-solid fa-backward"></i> Retour à l'accueil</a>
+</div>
+
 <%= cl_image_tag  @patient.photo.key, class: "avatar"%>
 
 <h2 style = "color: black"><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
@@ -57,5 +61,5 @@
 </div>
 
 <div class="center-button">
-  <%= link_to "Retour à la page d'accueil", root_path, class: "btn button" %>
+  <%= link_to 'Voir mes documents', documents_path(filter: {patients: ["", "#{@patient.id}"]}), class: "btn button" %>
 </div>

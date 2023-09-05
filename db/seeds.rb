@@ -323,4 +323,150 @@ bloodtest_3 = Bloodtest.create!(
   blood_count: 4.8
 )
 
+# For Adele and her patients
+
+bloodtest_4 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_7,
+  date: "23-03-2022",
+  hepatic: 4.1,
+  renal: 3.4,
+  lipid: 60,
+  sedimentation_rate: 15,
+  glucose: 0.86,
+  protein: 55,
+  iron: 43,
+  blood_count: 4.8
+)
+bloodtest_5 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_7,
+  date: "23-06-2022",
+  hepatic: 4.1,
+  renal: 3.4,
+  lipid: 45,
+  sedimentation_rate: 23,
+  glucose: 0.86,
+  protein: 80,
+  iron: 55,
+  blood_count: 8
+)
+bloodtest_6 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_7,
+  date: "23-09-2022",
+  hepatic: 4.1,
+  renal: 3.4,
+  lipid: 75,
+  sedimentation_rate: 35,
+  glucose: 0.86,
+  protein: 61,
+  iron: 38,
+  blood_count: 6
+)
+
+# --------------------------------
+# JP
+
+bloodtest_7 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_8,
+  date: "23-01-2022",
+  hepatic: 4.1,
+  renal: 3.4,
+  lipid: 51,
+  sedimentation_rate: 25,
+  glucose: 0.86,
+  protein: 70,
+  iron: 43,
+  blood_count: 15.2
+)
+bloodtest_8 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_8,
+  date: "23-06-2022",
+  hepatic: 6.1,
+  renal: 2.1,
+  lipid: 42,
+  sedimentation_rate: 35,
+  glucose: 0.86,
+  protein: 80,
+  iron: 55,
+  blood_count: 10.1
+)
+bloodtest_9 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_8,
+  date: "23-10-2022",
+  hepatic: 3.1,
+  renal: 4,
+  lipid: 60,
+  sedimentation_rate: 15,
+  glucose: 0.86,
+  protein: 68,
+  iron: 48,
+  blood_count: 23
+)
+
+# -------------------------------
+# Léo
+
+bloodtest_10 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_9,
+  date: "23-03-2022",
+  hepatic: 4.1,
+  renal: 4,
+  lipid: 51,
+  sedimentation_rate: 22,
+  glucose: 0.86,
+  protein: 40,
+  iron: 45,
+  blood_count: 10
+)
+bloodtest_11 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_9,
+  date: "23-06-2022",
+  hepatic: 8.4,
+  renal: 3.4,
+  lipid: 47,
+  sedimentation_rate: 25,
+  glucose: 0.72,
+  protein: 45,
+  iron: 40,
+  blood_count: 7.3
+)
+bloodtest_12 = Bloodtest.create!(
+  title: 'patient 6 test',
+  laboratory: 'BioLab Innovations',
+  doctor: 'Dr. Jacob Ramirez',
+  patient: patient_9,
+  date: "23-10-2022",
+  hepatic: 13,
+  renal: 3,
+  lipid: 40,
+  sedimentation_rate: 35,
+  glucose: 0.50,
+  protein: 60,
+  iron: 55,
+  blood_count: 9.1
+)
+
 puts "Bloodtests created!"
