@@ -31,6 +31,13 @@ fr:
           compte_rendu: Compte-rendu
           ordonnance: Ordonnance
           ordonnance_de_biologie: Ordonnance de biologie
+      reminder:
+        frequency_unities:
+          never: Jamais
+          daily: Quotidiennement
+          weekly: Une fois par semaine
+          monthly: Une fois par mois
+          yearly: Une fois par an
     errors:
       models:
         order_product:
