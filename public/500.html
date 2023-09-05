@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <title>Mayday</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
@@ -22,11 +26,22 @@
 
     h1 {
       text-align: center;
+      font-family: "DM Sans", "Helvetica", "sans-serif";
     }
 
     a {
       text-decoration: none;
       color: white;
+    }
+
+    body {
+      text-align: center;
+      font-family: "Quicksand", "Helvetica", "sans-serif";
+    }
+
+    img {
+      margin-top: 50px;
+      width: 100%;
     }
   </style>
 </head>
@@ -34,13 +49,15 @@
 <body>
   <h1 class="title">500</h1>
   <h1 class="sub-title">Server Error</h1>
-  <br>
-  <p>Veuillez nous excuser ! Le serveur rencontre une erreur temporaire. Merci de retenter dans quelques minutes.</p>
+
+  <div class="text-justify">
+    <p>Veuillez nous excuser ! Le serveur rencontre une erreur temporaire. Merci de retenter dans quelques minutes.</p>
+  </div>
   <br>
   <br>
   <div class="button">
-    <a href="/" class="nav-link">Retour sur votre page</a>
+    <a href="/" class="nav-link">Retour au menu</a>
   </div>
-  <img src="/images/500.png" alt="">
+    <img src="https://imagizer.imageshack.com/img922/9297/wz73fE.jpg" alt="">
 </body>
 </html>
