@@ -2,22 +2,30 @@
   table {
     min-height: 80vh;
     width: 100%;
+    --bs-table-color: black;
+    --bs-table-striped-color: black;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
+th {
+  text-align: center !important;
+  color: #CE84F7 !important;
+}
+
   .today {
-    background-color: #FAF3DD;
+    background: #ce84f76e !important;
   }
 
   .reminder {
     color: white;
     padding: 8px 24px;
     border-radius: 4px;
-    background: #1EDD88;
+    background: #9FD3FC;
     transition: 0.3s ease;
   }
 
   .reminder:hover {
-    background: #1BCB7F;
+    background: #ce84f76e !important;
     color: white;
   }
 

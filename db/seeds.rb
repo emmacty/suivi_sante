@@ -1,6 +1,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Article.destroy_all
 Bloodtest.destroy_all
 UserPatient.destroy_all
 Document.destroy_all
@@ -470,3 +471,154 @@ bloodtest_12 = Bloodtest.create!(
 )
 
 puts "Bloodtests created!"
+
+puts "Creating articles..."
+
+article_1 = Article.create!(
+  title: "Les 10 Conseils Essentiels pour une Alimentation Saine",
+  content: "Introduction
+
+  Une alimentation équilibrée joue un rôle crucial dans notre bien-être global. Elle fournit les nutriments essentiels dont notre corps a besoin pour fonctionner correctement, tout en prévenant de nombreuses maladies chroniques. Cependant, il peut parfois être difficile de savoir par où commencer pour adopter de bonnes habitudes alimentaires. Dans cet article, nous allons explorer dix conseils essentiels pour vous aider à maintenir une alimentation saine.
+
+  1. Variez votre alimentation
+
+  L'une des clés pour une alimentation saine est la variété. Mangez une grande variété d'aliments pour vous assurer de bénéficier d'une large gamme de nutriments. Incluez des fruits, des légumes, des céréales complètes, des protéines maigres, des produits laitiers faibles en gras et des sources de graisses saines comme les noix et les avocats dans votre alimentation quotidienne.
+
+  2. Portez attention aux portions
+
+  Même les aliments sains peuvent entraîner une prise de poids si vous en mangez en excès. Apprenez à contrôler les portions en utilisant des assiettes plus petites, en lisant les étiquettes nutritionnelles et en écoutant votre corps pour savoir quand vous êtes rassasié.
+
+  3. Limitez les aliments transformés
+
+  Les aliments transformés sont souvent riches en sucres ajoutés, en graisses saturées et en sodium. Essayez de limiter votre consommation de ces produits en optant pour des aliments frais et non transformés autant que possible.
+
+  4. Consommez des protéines de qualité
+
+  Les protéines sont essentielles à la construction et à la réparation des tissus corporels. Optez pour des sources de protéines maigres telles que le poulet, le poisson, les légumineuses et les produits laitiers faibles en gras. Évitez les viandes transformées riches en gras saturés.
+
+  5. Hydratez-vous
+
+  L'eau est essentielle à de nombreuses fonctions corporelles. Buvez suffisamment d'eau tout au long de la journée pour rester hydraté. Évitez les boissons sucrées et les sodas, qui peuvent être riches en calories vides.
+
+  6. Privilégiez les graisses saines
+
+  Les graisses saines, telles que celles trouvées dans les avocats, les noix, les graines et l'huile d'olive, sont bénéfiques pour votre santé cardiovasculaire. Limitez les graisses saturées et les graisses trans, que l'on trouve souvent dans les aliments frits et transformés.
+
+  7. Évitez le grignotage excessif
+
+  Les collations peuvent être une partie importante d'une alimentation saine, mais évitez de grignoter de manière excessive entre les repas. Optez pour des collations nutritives comme des légumes crus avec de l'houmous ou des fruits frais.
+
+  8. Planifiez vos repas
+
+  La planification des repas peut vous aider à éviter de faire des choix alimentaires impulsifs. Préparez vos repas à l'avance et ayez des options saines disponibles pour les moments où vous avez faim.
+
+  9. Lisez les étiquettes nutritionnelles
+
+  Apprenez à décoder les étiquettes nutritionnelles pour connaître la composition des aliments que vous achetez. Recherchez des produits avec des ingrédients simples et évitez les produits avec de longues listes d'additifs.
+
+  10. Soyez patient et indulgent envers vous-même
+
+  Adopter une alimentation saine est un processus qui peut prendre du temps. Ne soyez pas trop dur envers vous-même et permettez-vous des plaisirs occasionnels. L'essentiel est de maintenir un équilibre sur le long terme.
+
+  Conclusion
+
+  En suivant ces dix conseils pour une alimentation saine, vous pouvez améliorer votre santé, augmenter votre énergie et prévenir de nombreuses maladies. Rappelez-vous que l'alimentation est un aspect essentiel de votre bien-être global, alors prenez soin de votre corps en faisant des choix alimentaires judicieux.",
+
+  author: "Sophie Martin, diététicienne"
+)
+
+article_2 = Article.create!(
+  title: "Les Clés d'une Bonne Pratique Sportive : L'Équilibre entre Entraînement et Bien-Être",
+  content: "Introduction
+
+  La pratique sportive régulière est un pilier essentiel de la santé physique et mentale. Cependant, pour en tirer tous les bénéfices, il est important de développer une bonne pratique sportive. Dans cet article, nous explorerons les principaux éléments d'une bonne pratique sportive, mettant l'accent sur l'équilibre entre l'entraînement rigoureux et le bien-être.
+
+  1. Écoutez votre corps
+
+  L'une des règles d'or de toute bonne pratique sportive est d'écouter son propre corps. Votre corps vous envoie des signaux, que ce soit la fatigue, la douleur ou la soif. Apprenez à reconnaître ces signaux et à y réagir de manière appropriée. Ignorer la douleur persistante peut entraîner des blessures graves, tandis que l'hydratation et le repos sont essentiels pour des performances optimales.
+
+  2. Variez vos activités
+
+  La monotonie peut tuer la motivation. Variez vos activités sportives pour éviter l'ennui et favoriser le développement de divers groupes musculaires. La diversité des exercices contribue également à prévenir les blessures liées à la surutilisation.
+
+  3. Établissez des objectifs réalistes
+
+  Définir des objectifs est une partie importante de la pratique sportive, mais ils doivent être réalistes et atteignables. Fixer des attentes irréalistes peut entraîner la démotivation. Établissez des objectifs à court et à long terme, puis suivez vos progrès pour rester motivé.
+
+  4. Pratiquez la récupération active
+
+  La récupération est aussi importante que l'entraînement lui-même. Intégrez des séances de récupération active, telles que le stretching, le yoga ou la méditation, dans votre routine. Ces activités peuvent aider à soulager la tension musculaire et à améliorer la flexibilité.
+
+  5. Respectez un programme d'entraînement progressif
+
+  Évitez de vous précipiter vers des niveaux d'entraînement élevés trop rapidement. Un programme d'entraînement progressif permet à votre corps de s'adapter et de se renforcer graduellement, réduisant ainsi le risque de blessures.
+
+  6. N'oubliez pas la nutrition
+
+  Une alimentation équilibrée est cruciale pour une pratique sportive optimale. Assurez-vous de consommer suffisamment de nutriments essentiels, tels que les protéines, les glucides, les graisses saines et les vitamines. Hydratez-vous également adéquatement pour maintenir vos performances.
+
+  7. Restez flexible dans votre emploi du temps
+
+  La vie est souvent imprévisible, et il est important d'adapter votre pratique sportive à vos engagements et responsabilités. Si vous ne pouvez pas suivre votre programme d'entraînement habituel un jour, ne vous en faites pas. Il est plus important de maintenir la régularité à long terme que de s'inquiéter d'une séance manquée.
+
+  8. Écoutez les conseils d'experts
+
+  Si vous débutez dans une nouvelle discipline sportive ou si vous avez des objectifs spécifiques, n'hésitez pas à consulter un coach sportif ou un expert. Leurs conseils peuvent vous aider à atteindre vos objectifs de manière plus efficace et sûre.
+
+  Conclusion
+
+  Une bonne pratique sportive repose sur l'équilibre entre l'entraînement rigoureux et le bien-être. En écoutant votre corps, en fixant des objectifs réalistes et en incluant la récupération dans votre routine, vous pouvez non seulement améliorer vos performances, mais aussi maintenir une pratique sportive saine et durable. N'oubliez pas que le sport devrait être avant tout une source de plaisir et de bien-être.",
+
+  author: "Lucie Dupont, coach sportive"
+)
+
+article_3 = Article.create!(
+  title: "Les Secrets d'un Bon Sommeil : Comment Obtenir des Nuits de Rêve",
+  content: "Introduction
+
+  Le sommeil est l'un des piliers de la santé et du bien-être. Une bonne nuit de sommeil régénère le corps et l'esprit, renforce le système immunitaire, améliore la mémoire, et favorise une humeur positive. Malheureusement, de nombreuses personnes souffrent de problèmes de sommeil, ce qui peut avoir un impact négatif sur leur qualité de vie. Dans cet article, nous allons explorer les secrets d'un bon sommeil et vous donner des conseils pratiques pour obtenir des nuits de rêve.
+
+  1. Respectez une routine de sommeil
+
+  L'un des moyens les plus efficaces d'améliorer la qualité de votre sommeil est de suivre une routine de sommeil régulière. Essayez de vous coucher et de vous lever à la même heure tous les jours, même les week-ends. Cette régularité aide à réguler votre horloge biologique interne.
+
+  2. Créez un environnement propice au sommeil
+
+  Votre environnement de sommeil joue un rôle essentiel dans la qualité de votre repos. Assurez-vous que votre chambre est sombre, silencieuse, fraîche et confortable. Investissez dans un matelas et des oreillers de qualité pour un soutien optimal.
+
+  3. Limitez les écrans avant le coucher
+
+  Les écrans de télévision, d'ordinateur, de tablette et de téléphone émettent une lumière bleue qui peut perturber la production de mélatonine, une hormone essentielle au sommeil. Évitez l'utilisation d'écrans au moins une heure avant de vous coucher.
+
+  4. Évitez la caféine et l'alcool en soirée
+
+  La caféine et l'alcool peuvent perturber le sommeil. Limitez la consommation de ces substances, en particulier dans les heures précédant le coucher. Optez plutôt pour une tisane apaisante ou de l'eau.
+
+  5. Faites de l'exercice régulièrement
+
+  L'exercice physique régulier peut améliorer la qualité du sommeil, mais évitez de faire de l'exercice intense trop près de l'heure du coucher, car cela peut vous rendre plus alerte. Idéalement, faites de l'exercice plusieurs heures avant de vous coucher.
+
+  6. Gérez le stress et l'anxiété
+
+  Le stress et l'anxiété peuvent grandement affecter la qualité du sommeil. Pratiquez des techniques de relaxation telles que la méditation, la respiration profonde ou le yoga pour calmer votre esprit avant le coucher.
+
+  7. Évitez les repas lourds en soirée
+
+  Les repas copieux en soirée peuvent provoquer des problèmes de digestion et vous tenir éveillé. Essayez de dîner plus tôt dans la soirée et optez pour des repas légers avant le coucher.
+
+  8. Évitez les siestes excessives
+
+  Les siestes excessives en journée peuvent perturber votre rythme de sommeil nocturne. Si vous avez besoin de faire une sieste, limitez-la à 20 à 30 minutes et évitez de la faire trop tard dans la journée.
+
+  9. Consultez un professionnel de la santé si nécessaire
+
+  Si malgré tous vos efforts, vos problèmes de sommeil persistent, il peut être utile de consulter un professionnel de la santé. Des troubles du sommeil tels que l'apnée du sommeil ou l'insomnie nécessitent parfois une intervention médicale.
+
+  Conclusion
+
+  Obtenir un bon sommeil est essentiel pour une vie saine et équilibrée. En suivant ces conseils et en créant une routine de sommeil adaptée à vos besoins, vous pouvez améliorer considérablement la qualité de vos nuits et profiter des nombreux bienfaits d'un sommeil réparateur. N'oubliez pas que le sommeil est une composante précieuse de votre bien-être global, alors prenez-en soin.",
+
+  author: "Alexandre Dubois, spécialiste du sommeil"
+)
+
+puts "articles created !"

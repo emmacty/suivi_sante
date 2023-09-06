@@ -16,4 +16,5 @@ export default class extends Controller {
   close() {
     this.expandedCardTarget.style.display = "none";
   }
+
 }
