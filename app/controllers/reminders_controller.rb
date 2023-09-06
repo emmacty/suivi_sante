@@ -33,6 +33,7 @@ class RemindersController < ApplicationController
   end
 
   def update
+    @reminder.repetitions.destroy_all
     if @reminder.update(reminder_params)
       create_repetitions_for_reminder(@reminder)
       redirect_to reminder_path(@reminder)
@@ -44,7 +45,7 @@ class RemindersController < ApplicationController
 
   def destroy
     @reminder.destroy
-    redirect_to reminders_path, status: :no_content
+    redirect_to reminders_path, status: :see_other
   end
 
   private
