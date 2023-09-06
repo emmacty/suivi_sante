@@ -25,25 +25,24 @@
 .articles_titles {
   color: $purple;
   text-align: center;
-}
-
-p {
-  font-family: "Quicksand" !important;
-}
-
-img {
-  padding-bottom: 20px;
-}
-
-h1 {
-  padding-bottom: 20px;
-}
-
-ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-body {
-  margin: auto;
+
+
+.article_img {
+  border-radius: 20px;
+}
+
+.auteur {
+  text-align: left;
+}
+
+.article_date {
+  text-align: right;
+}
+
+.article_txt {
+  padding-top: 20px;
 }
