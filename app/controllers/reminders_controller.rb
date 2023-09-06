@@ -17,6 +17,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.patient_id = params[:reminder][:patient_id]
     if @reminder.save
+      raise
       create_repetitions_for_reminder(@reminder)
       redirect_to reminder_path(@reminder)
     else
@@ -66,34 +67,34 @@ class RemindersController < ApplicationController
   end
 
   def create_daily_repetitions(reminder)
-    start_date = reminder.start_date
+    start_time = reminder.start_time
     (1..365).each do |day_offset|
-      repetition_date = start_date + day_offset.days
-      @repetition = Repetition.create(start_date: repetition_date, reminder: reminder)
+      repetition_date = start_time + day_offset.days
+      @repetition = Repetition.create(date: repetition_date, reminder: reminder)
     end
   end
 
   def create_weekly_repetitions(reminder)
-    start_date = reminder.start_date
+    start_time = reminder.start_time
     (1..52).each do |week_offset|
-      repetition_date = start_date + week_offset.weeks
-      @repetition = Repetition.create(start_date: repetition_date, reminder: reminder)
+      repetition_date = start_time + week_offset.weeks
+      @repetition = Repetition.create(date: repetition_date, reminder: reminder)
     end
   end
 
   def create_monthly_repetitions(reminder)
-    start_date = reminder.start_date
+    start_time = reminder.start_time
     (1..12).each do |month_offset|
-      repetition_date = start_date + month_offset.months
-      @repetition = Repetition.create(start_date: repetition_date, reminder: reminder)
+      repetition_date = start_time + month_offset.months
+      @repetition = Repetition.create(date: repetition_date, reminder: reminder)
     end
   end
 
   def create_yearly_repetitions(reminder)
-    start_date = reminder.start_date
+    start_time = reminder.start_time
     (1..5).each do |year_offset|
-      repetition_date = start_date + year_offset.years
-      @repetition = Repetition.create(start_date: repetition_date, reminder: reminder)
+      repetition_date = start_time + year_offset.years
+      @repetition = Repetition.create(date: repetition_date, reminder: reminder)
     end
   end
 end
