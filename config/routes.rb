@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'my_bloodtests', to: 'bloodtests#my_bloodtests', as: 'my_bloodtests'
   resources :user_patients
   resources :repetition, only: [:new, :create, :edit, :update, :destroy]
+  resources :articles, only: [:index, :show]
 end

@@ -470,3 +470,5 @@ bloodtest_12 = Bloodtest.create!(
 )
 
 puts "Bloodtests created!"
+
+article_1 = Article.create
