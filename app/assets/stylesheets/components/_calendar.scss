@@ -1,9 +1,20 @@
+.container-calendar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.filter-right {
+  text-align: right;
+}
+
 .simple-calendar {
   table {
     min-height: 80vh;
     width: 100%;
     --bs-table-color: black;
     --bs-table-striped-color: black;
+    --bs-table-striped-bg: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
@@ -13,20 +24,51 @@ th {
 }
 
   .today {
-    background: #ce84f76e !important;
+    background: rgba(206, 132, 247, 0.3) !important;
   }
 
   .reminder {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #9FD3FC;
+    border-radius: 5px;
+    padding: 0px;
     transition: 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    width: 30px;
+    font-size: 12px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 2px;
   }
 
-  .reminder:hover {
-    background: #ce84f76e !important;
-    color: white;
+  .reminder-first {
+    background: #9fd3fc75;
+  }
+
+  .reminder-second {
+    background: #4fa7ebb3;
+  }
+
+  .reminder-third {
+    background: #ce84f77a;
+  }
+
+  .reminder-fourth {
+    background: #CE84F7;
+  }
+
+  .reminder-fifth {
+    background: #495ceb57;
+  }
+
+  .reminder a {
+    color:black;
+  }
+
+  .simple-calendar {
+    max-width: 200px;
   }
 
   @media screen and (max-width: 768px) {

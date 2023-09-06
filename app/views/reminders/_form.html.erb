@@ -2,7 +2,7 @@
   <div class="form-inputs">
     <%= f.input :title, label: "Titre" %>
     <%= f.input :content, label: "Commentaire" %>
-    <%= f.input :start_time, label: "Date et Heure",
+    <%= f.input :start_time, label: "Date",
       as: :string,
       input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :frequency_unity, collection: Reminder.select_enum_attribute(:frequency_unity), label: "Répétition", input_html: { class: "card-filter" } %>
@@ -10,6 +10,6 @@
     <%= f.input :category, label: "Catégorie", collection: ["Rendez-vous", "Traitement", "Contrôle"], input_html: { class: "card-filter" } %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit, class: "btn button" %>
+    <%= f.button :submit, "Enregistrer", class: "btn button" %>
   </div>
 <% end %>
