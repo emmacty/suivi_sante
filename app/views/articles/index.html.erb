@@ -3,12 +3,56 @@
     <div class="col-12">
       <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <div class="cat 1">
+        <!-- Carrousel pour la catégorie Alimentation -->
+        <h2>Alimentation</h2>
+        <div class="card-body">
+  <%= image_tag "https://static.toiimg.com/photo/92353710.cms", class: "card-img-top", alt: "Image de la carte", style: "width: 400px;" %>
+    <h5 class="card-title">Les Clés d'une Bonne Pratique Sportive</h5>
+    <%= link_to 'Lire l\'article', article_2_path %>
+  </div>
+        <h2>Alimentation</h2>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
           <!-- Indicateurs (bulles de navigation) -->
           <ol class="carousel-indicators">
             <% @articles.each_with_index do |article, index| %>
               <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" <%= index == 0 ? 'class="active"' : '' %>></li>
             <% end %>
+            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
+            <li data-target="carousel" data-slide-to="0" class="active"></li>
+            <li data-target="carousel" data-slide-to="1"></li>
           </ol>
+            </div>
+
+            <!-- Carte 2 - Alimentation -->
+            <div class="carousel-item">
+              <%= link_to 'Lire l\'article', article_2_path %>
+            </div>
+          </div>
+
+          <!-- Contrôles de navigation (flèches gauche et droite) -->
+          <a class="carousel-control-prev" href="#carouselAlimentation" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <!-- Carrousel pour la catégorie Sport -->
+        <h2>Sport</h2>
+        <div id="carouselSport" class="carousel slide" data-ride="carousel">
+          <!-- Indicateurs (bulles de navigation) -->
+          <ol class="carousel-indicators">
+            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
+            <li data-target="#carouselSport" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSport" data-slide-to="1"></li>
+          </ol>
+
+
+@@ -20,29 +56,45 @@
 
 
 <div class="d-flex justify-content-between">
@@ -33,21 +77,48 @@
                     </div>
                   </div>
                 </div>
+            <!-- Carte 1 - Sport -->
+            <div class="carousel-item active">
+              <%= link_to 'Lire l\'article', article_2_path %>
+            </div>
+            <!-- Carte 2 - Sport -->
+            <div class="carousel-item">
+              <%= link_to 'Lire l\'article', article_4_path %>
+              </div>
+            </div>
+          </div>
+
+           <h2>Sommeil</h2>
+        <div id="carouselSport" class="carousel slide" data-ride="carousel">
+          <!-- Indicateurs (bulles de navigation) -->
+          <ol class="carousel-indicators">
+            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
+            <li data-target="#carouselSport" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSport" data-slide-to="1"></li>
+          </ol>
+
+          <!-- Slides du carrousel -->
+          <div class="carousel-inner">
+            <!-- Carte 1 - Sport -->
+            <div class="carousel-item active">
+              <%= link_to 'Lire l\'article', article_3_path %>
+            </div>
+            <!-- Carte 2 - Sport -->
+            <div class="carousel-item">
+              <%= link_to 'Lire l\'article', article_4_path %>
               </div>
             <% end %>
+            </div>
           </div>
 
           <!-- Contrôles de navigation (flèches gauche et droite) -->
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselSport" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselSport" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
