@@ -8,27 +8,9 @@
   <%= month_calendar(events: @reminders + @repetitions, end_attribute: :start_time) do |date, reminders| %>
     <%= date %>
     <% reminders.each do |reminder| %>
-      <% if reminder.patient == Patient.first %>
-        <div class="reminder reminder-first">
+        <div class="reminder reminder-<%= current_user.patients.order(:id).index(reminder.patient) %>">
           <%= link_to reminder.title, reminder_path(reminder) %></p>
         </div>
-      <% elsif reminder.patient == Patient.first %>
-        <div class="reminder reminder-second">
-          <%= link_to reminder.title, reminder_path(reminder) %></p>
-        </div>
-      <% elsif reminder.patient == Patient.third %>
-        <div class="reminder reminder-third">
-          <%= link_to reminder.title, reminder_path(reminder) %></p>
-        </div>
-      <% elsif reminder.patient == Patient.fourth %>
-        <div class="reminder reminder-fourth">
-          <%= link_to reminder.title, reminder_path(reminder) %></p>
-        </div>
-      <% elsif reminder.patient == Patient.fifth %>
-        <div class="reminder reminder-fifth">
-          <%= link_to reminder.title, reminder_path(reminder) %></p>
-        </div>
-      <% end %>
     <% end %>
   <% end %>
 </div>

@@ -4,6 +4,7 @@ class Patient < ApplicationRecord
   has_one_attached :photo
   has_many :documents
   has_many :reminders
+  has_many :repetitions, through: :reminders
   has_many :bloodtests
   belongs_to :user, optional: true
 
