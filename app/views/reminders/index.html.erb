@@ -1,12 +1,12 @@
 <h1>Mes rappels</h1>
 <%= link_to "+", new_reminder_path, class: "btn plus-button" %>
 <div class="container">
-<%= month_calendar(events: @reminders, end_attribute: :end_time) do |date, reminders| %>
-  <%= date %>
-  <% reminders.each do |reminder| %>
-    <div class="reminder">
-      <p><%= reminder.title %></p>
-    </div>
+  <%= month_calendar(events: @reminders + Repetition.last(5), end_attribute: :start_time) do |date, reminders| %>
+    <%= date %>
+    <% reminders.each do |reminder| %>
+      <div class="reminder">
+        <p><%= reminder.title %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>
