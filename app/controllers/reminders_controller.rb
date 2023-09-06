@@ -4,6 +4,7 @@ class RemindersController < ApplicationController
   def index
     start_date = params.fetch(:start_date, Date.today).to_date
     @reminders = Reminder.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @repetitions = Repetition.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
 
   def show
@@ -17,7 +18,6 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.patient_id = params[:reminder][:patient_id]
     if @reminder.save
-      raise
       create_repetitions_for_reminder(@reminder)
       redirect_to reminder_path(@reminder)
     else

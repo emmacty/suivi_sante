@@ -1,6 +1,6 @@
 <%= link_to "+", new_reminder_path, class: "btn plus-button" %>
 <div class="container">
-  <%= month_calendar(events: @reminders + Repetition.last(5), end_attribute: :start_time) do |date, reminders| %>
+  <%= month_calendar(events: @reminders + @repetitions, end_attribute: :start_time) do |date, reminders| %>
     <%= date %>
     <% reminders.each do |reminder| %>
       <div class="reminder">
