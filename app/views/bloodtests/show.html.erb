@@ -10,7 +10,7 @@
     </div>
   </div>
 
-<%= bar_chart @bloodtest_data, colors:["#CE84F7"] %>
+<%= bar_chart @bloodtest_data, colors:["#CE84F7"], download: true %>
 
 <div class="mt-3">
   <%= link_to "Éditer", edit_patient_bloodtest_path(@patient, @bloodtest)%>
