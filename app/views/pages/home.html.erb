@@ -7,9 +7,18 @@
 
 <div class="card-reminder">
   <div class="div">
-    <i class="fa-solid fa-bell"></i>
-    <p>Votre contrôle annuel chez le dentiste approche !</p>
-  </div>
+  <i class="fa-solid fa-bell"></i>
+  <% first_patient = current_user.patients.first %>
+  <% if first_patient.present? %>
+    <% today_reminder = first_patient.reminders.find_by(start_time: Date.today) %>
+    <% if today_reminder.present? %>
+      <p>Votre rappel pour aujourd'hui: <strong> <%= today_reminder.title %></strong></p>
+    <% else %>
+      <p>Aucun rappel pour aujourd'hui</p>
+    <% end %>
+  <% end %>
+</div>
+
 </div>
 
 <div class="d-flex justify-content-between mt-3">
@@ -52,7 +61,7 @@
 </div>
 
 <%# preloader %>
-
+<!--
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <div id="preloader">
 			<div id="container" class="container-preloader">
@@ -104,3 +113,4 @@ $(document).ready(function() {
       });}
   }, 1000);});
 </script>
+-->

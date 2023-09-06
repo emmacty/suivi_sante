@@ -1,0 +1,35 @@
+<div class="back_btn">
+  <a href="/reminders"><i class="fa-solid fa-backward"></i> Retour</a>
+</div>
+<div class="card-reminder-show-container">
+  <div class="card-reminder-show">
+    <div class="title-and-date">
+      <h1><%= @reminder.title %></h1>
+      <p class="date"><%= @reminder.start_time %></p>
+    </div>
+    <p><%= @reminder.content %></p>
+    <p><span class="patient-gray">Patient :</span> <%= @reminder.patient.first_name %> <%= @reminder.patient.last_name %> </p>
+    <p><span class="category-gray">Catégorie :</span> <%= @reminder.category %></p>
+    <p>
+    <span class="category-gray">Fréquence:</span>
+    <% case @reminder.frequency_unity.to_sym %>
+    <% when :daily %>
+      Chaque jour
+    <% when :weekly %>
+      Une fois par semaine
+    <% when :monthly %>
+      Une fois par mois
+    <% when :yearly %>
+      Une fois par an
+    <% else %>
+     Aucune
+      <% end %>
+    </p>
+  </div>
+  <div class="button-container">
+  <%= link_to "Éditer", edit_reminder_path(@reminder), style: "margin-right: 10px;" %>
+  <div data-controller="alert" data-alert-url-value="/reminders/<%= @reminder.id %>" data-alert-redirect-value="/reminders?reload=true">
+  <%= link_to "Supprimer", reminder_path(@reminder), data: { action: "reminder#delete", turbo_method: :delete } %>
+  </div>
+</div>
+</div>

@@ -1,11 +1,52 @@
+<div class="back_btn">
+  <a href="/"><i class="fa-solid fa-backward"></i> Retour</a>
+</div>
+<h1>Mes rappels</h1>
 <%= link_to "+", new_reminder_path, class: "btn plus-button" %>
-<div class="container">
-<%= month_calendar(events: @reminders, end_attribute: :end_time) do |date, reminders| %>
-  <%= date %>
-  <% reminders.each do |reminder| %>
-    <div class="reminder">
-      <p><%= reminder.title %></p>
-    </div>
+<p class="filter-right"><a data-bs-toggle="offcanvas" href="#canvasFilter">Filtrer</a></p>
+<div class="container-calendar">
+  <%= month_calendar(events: @reminders + @repetitions, end_attribute: :start_time) do |date, reminders| %>
+    <%= date %>
+    <% reminders.each do |reminder| %>
+      <% if reminder.patient == Patient.first %>
+        <div class="reminder reminder-first">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.first %>
+        <div class="reminder reminder-second">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.third %>
+        <div class="reminder reminder-third">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.fourth %>
+        <div class="reminder reminder-fourth">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.fifth %>
+        <div class="reminder reminder-fifth">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="canvasFilter">
+  <div class="offcanvas-header">
+    <h2>Filtrer</h2>
+    <button class="btn plus-button" data-bs-dismiss="offcanvas">X</button>
+  </div>
+  <div class="offcanvas-body text-left">
+    <%= simple_form_for :filter, url: reminders_path, method: :get do |f| %>
+      <%= f.input :patients, as: :check_boxes, collection: current_user.patients.map { |p| ["#{p.first_name} #{p.last_name}", p.id] },
+      checked: params.dig(:filter, :patients),
+      input_html: { class: "tag-selector" },
+      item_wrapper_class: 'tag-item' %>
+      <%= f.submit "Filtrer", class: "btn button mb-3"%>
+      <% end %>
+    <%= link_to "Réinitialiser tous les filtres", reminders_path%>
+  </div>
 </div>

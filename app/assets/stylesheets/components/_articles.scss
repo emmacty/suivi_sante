@@ -19,3 +19,30 @@
 @media screen and (max-width:480px){
   .block4{max-width:240px;}
 }
+
+// article_1, 2 and 3
+
+.articles_titles {
+  color: $purple;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+
+.article_img {
+  border-radius: 20px;
+}
+
+.auteur {
+  text-align: left;
+}
+
+.article_date {
+  text-align: left;
+}
+
+.article_txt {
+  padding-top: 20px;
+}
