@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   resources :user_patients
   resources :repetition, only: [:new, :create, :edit, :update, :destroy]
   resources :articles, only: [:index, :show]
-  get 'article_1', to: 'articles#article_1', as: 'article_1'
-  get 'article_2', to: 'articles#article_2', as: 'article_2'
-  get 'article_3', to: 'articles#article_3', as: 'article_3'
-  get 'article_4', to: 'articles#article_4', as: 'article_4'
+    get 'article_1', to: 'articles#article_1', as: 'article_1'
+    get 'article_2', to: 'articles#article_2', as: 'article_2'
+    get 'article_3', to: 'articles#article_3', as: 'article_3'
+    get 'article_4', to: 'articles#article_4', as: 'article_4'
 end
