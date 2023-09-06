@@ -72,32 +72,32 @@ class RemindersController < ApplicationController
   def create_daily_repetitions(reminder)
     start_time = reminder.start_time
     (1..365).each do |day_offset|
-      repetition_date = start_time + day_offset.days
-      @repetition = Repetition.create(start_time: repetition_date, reminder: reminder)
+      repetition_time = start_time + day_offset.days
+      @repetition = Repetition.create(start_time: repetition_time, reminder: reminder)
     end
   end
 
   def create_weekly_repetitions(reminder)
     start_time = reminder.start_time
     (1..52).each do |week_offset|
-      repetition_date = start_time + week_offset.weeks
-      @repetition = Repetition.create(start_time: repetition_date, reminder: reminder)
+      repetition_time = start_time + week_offset.weeks
+      @repetition = Repetition.create(start_time: repetition_time, reminder: reminder)
     end
   end
 
   def create_monthly_repetitions(reminder)
     start_time = reminder.start_time
     (1..12).each do |month_offset|
-      repetition_date = start_time + month_offset.months
-      @repetition = Repetition.create(start_time: repetition_date, reminder: reminder)
+      repetition_time = start_time + month_offset.months
+      @repetition = Repetition.create(start_time: repetition_time, reminder: reminder)
     end
   end
 
   def create_yearly_repetitions(reminder)
     start_time = reminder.start_time
     (1..5).each do |year_offset|
-      repetition_date = start_time + year_offset.years
-      @repetition = Repetition.create(start_time: repetition_date, reminder: reminder)
+      repetition_time = start_time + year_offset.years
+      @repetition = Repetition.create(start_time: repetition_time, reminder: reminder)
     end
   end
 end
