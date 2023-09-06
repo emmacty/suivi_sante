@@ -1,7 +1,4 @@
 <div class="container-fluid">
-  <!-- app/views/articles/index.html.erb -->
-
-<div class="container-fluid">
   <div class="row flex-xl-nowrap">
     <div class="col-12">
       <div class="bd-example">
@@ -22,7 +19,9 @@
                     <%# <img class="d-block w-100" src="<%= article.image_url %>" alt="<%= article.title %>"> %>
                     <div class="my-captions">
                       <h5><%= article.title %></h5>
-                      <p><%= article.description %></p>
+                      <p><%= article.content %></p>
+                      <p><%= article.author %></p>
+                      <!-- Ajoutez d'autres attributs de document au besoin -->
                     </div>
                   </div>
                 </div>
