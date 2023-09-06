@@ -1,7 +1,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
-Reminders.destroy_all
+Reminder.destroy_all
 Article.destroy_all
 Bloodtest.destroy_all
 UserPatient.destroy_all
