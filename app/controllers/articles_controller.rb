@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = current_user.documents.all
+    @articles = Article.all
   end
 
   def show
