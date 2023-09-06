@@ -11,3 +11,20 @@
 .button:hover, .button:active, button:focus, button:visited {
   color:#FFFFFF !important;
 }
+
+// Retour haut de page
+
+.btn-ico {
+  position: relative;
+  box-sizing: content-box;
+  width: 2em;
+  height: 2em;
+  padding: 0.375rem;
+  background: linear-gradient($purple, $blue);
+  border-radius: 50% !important;
+}
+
+.fa-arrow-up {
+  position: relative;
+  top: 4px;
+}
