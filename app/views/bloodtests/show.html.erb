@@ -8,7 +8,10 @@
       <p><%= @bloodtest.laboratory %></p>
       <p><%= @bloodtest.doctor %></p>
     </div>
-  </div>
+    <div>
+      <p><%= @bloodtest.date.strftime("%d/%m/%Y") %></p>
+    </div>
+</div>
 
 <%= bar_chart @bloodtest_data, colors:["#CE84F7"], download: true %>
 

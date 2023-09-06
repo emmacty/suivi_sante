@@ -12,7 +12,7 @@
       </div>
       <div>
         <p><%= document.patient.first_name %> <%= document.patient.last_name %></p>
-        <p><%= document.date %></p>
+        <p><%= document.date.strftime("%d/%m/%Y") %></p>
       </div>
       <div>
         <p><%= document.doctor %></p>

@@ -19,10 +19,14 @@
   text-align: left;
 }
 
+.card-reminder-show p {
+  margin-bottom: 5px;
+}
+
 .title-and-date {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .title-and-date h1 {

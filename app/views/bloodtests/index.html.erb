@@ -70,7 +70,7 @@ colors: ["#9FD3FC", "#75BFF7", "#4FA7EB", "#D2EBFE", "#CE84F7", "#BB5DEF", "#A43
   <div class="collapse" id="collapseHistorical" class="form-check">
     <% @bloodtests.each do |bloodtest| %>
       <div class="d-flex justify-content-between">
-        <p><%= bloodtest.date %></p>
+        <p><%= bloodtest.date.strftime("%d/%m/%Y") %></p>
         <p><%= bloodtest.title%></p>
         <%= link_to ('<i class="fa-solid fa-eye small-eye"></i>').html_safe, patient_bloodtest_path(@patient, bloodtest) %>
       </div>
