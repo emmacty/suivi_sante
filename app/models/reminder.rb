@@ -7,4 +7,5 @@ class Reminder < ApplicationRecord
   validates :frequency_unity, presence: true
   validates :category, presence: true, inclusion: { in: ["Rendez-vous", "Traitement", "Contrôle"] }
   enum frequency_unity: { never: 0, daily: 1, weekly: 2, monthly: 3, yearly: 4 }
+  scope :filter_by_patient, -> (patient) { where patient_id: patient }
 end
