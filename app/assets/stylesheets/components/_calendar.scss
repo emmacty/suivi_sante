@@ -4,6 +4,7 @@
     width: 100%;
     --bs-table-color: black;
     --bs-table-striped-color: black;
+    --bs-table-striped-bg: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
@@ -13,20 +14,34 @@ th {
 }
 
   .today {
-    background: #ce84f76e !important;
+    background: rgba(206, 132, 247, 0.3) !important;
   }
 
   .reminder {
+    margin-top: 5px;
     color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #9FD3FC;
+    padding: 8px;
+    border-radius: 10px;
     transition: 0.3s ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    font-weight: 600;
+  }
+
+  .reminder {
+    background: #9fd3fc75;
   }
 
   .reminder:hover {
-    background: #ce84f76e !important;
+    background: rgba(206, 132, 247, 0.3) !important;
     color: white;
+  }
+
+  .reminder a {
+    color:black;
+  }
+
+  .simple-calendar {
+    max-width: 200px;
   }
 
   @media screen and (max-width: 768px) {
