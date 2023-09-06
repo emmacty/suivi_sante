@@ -19,3 +19,31 @@
 @media screen and (max-width:480px){
   .block4{max-width:240px;}
 }
+
+// article_1, 2 and 3
+
+.articles_titles {
+  color: $purple;
+  text-align: center;
+}
+
+p {
+  font-family: "Quicksand" !important;
+}
+
+img {
+  padding-bottom: 20px;
+}
+
+h1 {
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+body {
+  margin: auto;
+}
