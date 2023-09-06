@@ -328,7 +328,7 @@ bloodtest_3 = Bloodtest.create!(
 # For Adele and her patients
 
 bloodtest_4 = Bloodtest.create!(
-  title: 'patient 6 test',
+  title: 'Bilan trimestriel',
   laboratory: 'BioLab Innovations',
   doctor: 'Dr. Jacob Ramirez',
   patient: patient_7,
@@ -343,7 +343,7 @@ bloodtest_4 = Bloodtest.create!(
   blood_count: 4.8
 )
 bloodtest_5 = Bloodtest.create!(
-  title: 'patient 6 test',
+  title: 'Bilan trimestriel',
   laboratory: 'BioLab Innovations',
   doctor: 'Dr. Jacob Ramirez',
   patient: patient_7,
@@ -358,7 +358,7 @@ bloodtest_5 = Bloodtest.create!(
   blood_count: 8
 )
 bloodtest_6 = Bloodtest.create!(
-  title: 'patient 6 test',
+  title: 'Bilan trimestriel',
   laboratory: 'BioLab Innovations',
   doctor: 'Dr. Jacob Ramirez',
   patient: patient_7,
