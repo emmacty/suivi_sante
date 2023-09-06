@@ -3,15 +3,32 @@
 </div>
 <h1>Mes rappels</h1>
 <%= link_to "+", new_reminder_path, class: "btn plus-button" %>
-<p><a data-bs-toggle="offcanvas" href="#canvasFilter">Filtrer</a></p>
-<div class="container">
+<p class="filter-right"><a data-bs-toggle="offcanvas" href="#canvasFilter">Filtrer</a></p>
+<div class="container-calendar">
   <%= month_calendar(events: @reminders + @repetitions, end_attribute: :start_time) do |date, reminders| %>
     <%= date %>
     <% reminders.each do |reminder| %>
-      <div class="reminder">
-        <%= cl_image_tag reminder.patient.photo.key, class:"tiny-avatar" %>
-        <%= link_to reminder.title, reminder_path(reminder) %></p>
-      </div>
+      <% if reminder.patient == Patient.first %>
+        <div class="reminder reminder-first">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.first %>
+        <div class="reminder reminder-second">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.third %>
+        <div class="reminder reminder-third">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.fourth %>
+        <div class="reminder reminder-fourth">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% elsif reminder.patient == Patient.fifth %>
+        <div class="reminder reminder-fifth">
+          <%= link_to reminder.title, reminder_path(reminder) %></p>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
@@ -30,6 +47,6 @@
       item_wrapper_class: 'tag-item' %>
       <%= f.submit "Filtrer", class: "btn button mb-3"%>
       <% end %>
-    <%= link_to "Réinitialiser tous les filtres", documents_path%>
+    <%= link_to "Réinitialiser tous les filtres", reminders_path%>
   </div>
 </div>
