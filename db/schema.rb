@@ -87,8 +87,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_081019) do
   create_table "flats", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "patients", force: :cascade do |t|
