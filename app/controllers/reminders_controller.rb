@@ -17,7 +17,6 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.patient_id = params[:reminder][:patient_id]
     if @reminder.save
-      raise
       create_repetitions_for_reminder(@reminder)
       redirect_to reminder_path(@reminder)
     else
