@@ -1,0 +1,77 @@
+/* Style général pour la page index */
+.container-fluid {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Style des carrousels */
+.carousel {
+  margin-bottom: 20px;
+}
+
+.carousel-inner {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+/* Style des liens "Lire l'article" */
+a.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+a.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style des indicateurs (bulles de navigation) */
+.carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators li {
+  background-color: #ccc;
+  border: 1px solid #888;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+}
+
+.img-small {
+  border-radius: 20px;
+  padding: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: white;
+}
+
+.card-title {
+
+}
+
+.card-body {
+  border-radius: 20px;
+  padding: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: white;
+}
