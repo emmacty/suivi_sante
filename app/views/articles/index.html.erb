@@ -11,22 +11,10 @@
     <h5 class="card-title">Les Clés d'une Bonne Pratique Sportive</h5>
     <%= link_to 'Lire l\'article', article_2_path %>
   </div>
-        <h2>Alimentation</h2>
         <div id="carousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicateurs (bulles de navigation) -->
-          <ol class="carousel-indicators">
-            <% @articles.each_with_index do |article, index| %>
-              <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" <%= index == 0 ? 'class="active"' : '' %>></li>
-            <% end %>
-            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
-            <li data-target="carousel" data-slide-to="0" class="active"></li>
-            <li data-target="carousel" data-slide-to="1"></li>
-          </ol>
-            </div>
-
             <!-- Carte 2 - Alimentation -->
             <div class="carousel-item">
-              <%= link_to 'Lire l\'article', article_2_path %>
+              <%= link_to 'Lire l\'article', article_6_path %>
             </div>
           </div>
 
@@ -43,70 +31,36 @@
 
         <!-- Carrousel pour la catégorie Sport -->
         <h2>Sport</h2>
-        <div id="carouselSport" class="carousel slide" data-ride="carousel">
-          <!-- Indicateurs (bulles de navigation) -->
-          <ol class="carousel-indicators">
-            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
-            <li data-target="#carouselSport" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselSport" data-slide-to="1"></li>
-          </ol>
-
-
-@@ -20,29 +56,45 @@
-
-
-<div class="d-flex justify-content-between">
-<a href="/article_1">
-  <div class="card-home">
-    <div class="div">
-      <i class="fa-solid fa-lightbulb"></i>
-      <h2>Alimentation</h2>
+        <div class="card-body">
+  <%= image_tag "https://static.toiimg.com/photo/92353710.cms", class: "card-img-top", alt: "Image de la carte", style: "width: 400px;" %>
+    <h5 class="card-title">Les Clés d'une Bonne Pratique Sportive</h5>
+    <%= link_to 'Lire l\'article', article_2_path %>
+  </div>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
 
           <!-- Slides du carrousel -->
           <div class="carousel-inner">
             <% @articles.each_with_index do |article, index| %>
               <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
                 <div class="block4-wrap">
-                  <div class="block4">
-                    <%# <img class="d-block w-100" src="<%= article.image_url %>" alt="<%= article.title %>"> %>
-                    <div class="my-captions">
-                      <h5><%= article.title %></h5>
-                      <p><%= article.content %></p>
-                      <p><%= article.author %></p>
-                      <!-- Ajoutez d'autres attributs de document au besoin -->
-                    </div>
-                  </div>
                 </div>
             <!-- Carte 1 - Sport -->
             <div class="carousel-item active">
-              <%= link_to 'Lire l\'article', article_2_path %>
-            </div>
-            <!-- Carte 2 - Sport -->
-            <div class="carousel-item">
               <%= link_to 'Lire l\'article', article_4_path %>
-              </div>
+            </div>
             </div>
           </div>
 
            <h2>Sommeil</h2>
+        <div class="card-body">
+  <%= image_tag "https://static.toiimg.com/photo/92353710.cms", class: "card-img-top", alt: "Image de la carte", style: "width: 400px;" %>
+    <h5 class="card-title">Les Clés d'une Bonne Pratique Sportive</h5>
+    <%= link_to 'Lire l\'article', article_2_path %>
+  </div>
         <div id="carouselSport" class="carousel slide" data-ride="carousel">
-          <!-- Indicateurs (bulles de navigation) -->
-          <ol class="carousel-indicators">
-            <!-- Vous pouvez ajouter plus d'indicateurs ici si vous avez plus de cartes -->
-            <li data-target="#carouselSport" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselSport" data-slide-to="1"></li>
-          </ol>
 
           <!-- Slides du carrousel -->
           <div class="carousel-inner">
-            <!-- Carte 1 - Sport -->
-            <div class="carousel-item active">
-              <%= link_to 'Lire l\'article', article_3_path %>
-            </div>
-            <!-- Carte 2 - Sport -->
-            <div class="carousel-item">
-              <%= link_to 'Lire l\'article', article_4_path %>
-              </div>
             <% end %>
             </div>
           </div>
