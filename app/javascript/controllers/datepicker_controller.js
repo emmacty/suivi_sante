@@ -8,7 +8,14 @@ export default class extends Controller {
 
   connect() {
     new flatpickr(this.element, {
-      disableMobile: true
+      disableMobile: true,
+      enableTime:      true,
+      altInput:        true,
+      time_24hr:       true,
+      defaultHour:      12,
+      defaultMinute:    0,
+      altFormat:       "d-m-Y à H:i",
+      minuteIncrement: 5
       // more options available on the documentation!
     });
   }
