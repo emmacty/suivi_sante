@@ -5,7 +5,7 @@
 }
 
 .card-article {
-  background: linear-gradient($purple, $blue);
+  background: linear-gradient(#CE84F7, #9FD3FC);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 20px;
   border : 1px solid rgb(220, 220, 220);
@@ -27,6 +27,7 @@
   text-align: center;
   border: 1px solid black;
   margin-bottom: 0px;
+  z-index: 100;
 
 }
 
@@ -49,6 +50,19 @@
   margin-left: 0px;
   margin-top: 0;
   border-radius: 20px;
+}
+
+.carousel-inner :before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)); /* Vous pouvez personnaliser les couleurs et l'opacité selon vos préférences */
+  pointer-events: none; /* Permet de cliquer à travers la superposition */
+  z-index: 1; /* Assurez-vous que la superposition est au-dessus de l'image */
+  border-radius:20px;
 }
 
 .carousel-item .sport-img {
