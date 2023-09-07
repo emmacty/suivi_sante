@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :patients, through: :user_patients
   has_one :patient
   has_many :reminders
+  has_many :bookmarks
+  has_many :bookmarked_articles, through: :bookmarks, source: :article
 end

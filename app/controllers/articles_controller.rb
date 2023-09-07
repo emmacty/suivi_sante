@@ -18,4 +18,5 @@ class ArticlesController < ApplicationController
 
   def article_4
   end
+
 end
