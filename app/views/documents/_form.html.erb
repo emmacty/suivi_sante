@@ -2,7 +2,7 @@
   <%= f.input :title, label: "Titre",input_html: { class: "card-filter" } %>
   <%= f.input :date, label: "Date",
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            input_html: { data: { controller: "flatpickr" } } %>
   <%#= f.input :document_type, label: "Type du document", collection: Document.document_types.keys, input_html: { class: "card-filter" }%>
   <%= f.input :document_type, label: "Type du document", collection: Document.select_enum_attribute(:document_type), input_html: { class: "card-filter" } %>
   <%= f.input :photo, as: :file, label: "Photo à télécharger (.jpg/ .png/ .jpeg)", input_html: { class: "card-filter" } %>
