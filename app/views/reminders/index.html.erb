@@ -26,7 +26,7 @@
             <p><span class="patient-gray">Patient :</span> <%= reminder.patient.first_name %> <%= reminder.patient.last_name %> </p>
             <p><span class="category-gray">Catégorie :</span> <%= reminder.category %></p>
             <p>
-            <span class="category-gray">Fréquence:</span>
+            <span class="category-gray">Fréquence :</span>
             <% case reminder.frequency_unity.to_sym %>
             <% when :daily %>
               Chaque jour
@@ -37,7 +37,7 @@
             <% when :yearly %>
               Une fois par an
             <% else %>
-            Aucune
+              Une seule fois
               <% end %>
             </p>
             <div class="button-container">

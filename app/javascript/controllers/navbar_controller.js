@@ -11,7 +11,6 @@ export default class extends Controller {
     const currentPath = window.location.pathname;
 
     this.navItemTargets.forEach((navItem) => {
-      console.log(navItem);
       const link = navItem.querySelector("a").getAttribute("href");
 
       if (link === currentPath) {
