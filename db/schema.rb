@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_084515) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_073920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,6 +84,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_084515) do
     t.index ["user_id"], name: "index_documents_on_user_id"
   end
 
+  create_table "flats", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -109,7 +114,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_084515) do
     t.string "title"
     t.string "content"
     t.string "symbol"
-    t.date "start_time"
+    t.datetime "start_time"
     t.integer "frequency_unity"
     t.bigint "patient_id", null: false
     t.string "category"

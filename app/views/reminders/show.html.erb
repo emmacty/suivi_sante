@@ -5,8 +5,8 @@
   <div class="card-reminder-show">
     <div class="title-and-date">
       <h1><%= @reminder.title %></h1>
-      <p class="date"><%= @reminder.start_time.strftime("%d/%m/%Y") %></p>
     </div>
+    <p class="date"><%= @reminder.start_time.strftime("%d/%m/%Y %H:%M") %></p>
     <p><%= @reminder.content %></p>
     <p><span class="patient-gray">Patient :</span> <%= @reminder.patient.first_name %> <%= @reminder.patient.last_name %> </p>
     <p><span class="category-gray">Catégorie :</span> <%= @reminder.category %></p>
