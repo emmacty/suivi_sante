@@ -24,7 +24,5 @@
   </div>
   <div class="button-container">
   <%= link_to "Éditer", edit_reminder_path(@reminder), style: "margin-right: 10px;" %>
-  <div data-controller="alert" data-alert-url-value="/reminders/<%= @reminder.id %>" data-alert-redirect-value="/reminders?reload=true">
-  <%= link_to "Supprimer", reminder_path(@reminder), data: { action: "reminder#delete", turbo_method: :delete } %>
-  </div>
+  <%= link_to "Supprimer", reminder_path(@reminder), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr ?" } %>
 </div>
