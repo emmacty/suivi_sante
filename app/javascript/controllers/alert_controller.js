@@ -8,18 +8,12 @@ export default class extends Controller {
   }
 
   connect(){
-    console.log("coucou")
-    console.log("data")
-    console.log(this.urlValue)
     }
 
   delete(event) {
-    console.log("salut")
-    console.log(event.target)
     event.preventDefault()
 
-
-var token = document.getElementsByName('csrf-token')[0].content
+    var token = document.getElementsByName('csrf-token')[0].content
     Swal.fire({
       title: 'Êtes-vous sûr ?',
       icon: 'info',
