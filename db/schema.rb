@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_07_145323) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_145830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,15 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_145323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_bloodtests_on_patient_id"
-  end
-
-  create_table "bookmarks", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_bookmarks_on_article_id"
-    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "documents", force: :cascade do |t|
@@ -167,8 +158,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_145323) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bloodtests", "patients"
-  add_foreign_key "bookmarks", "articles"
-  add_foreign_key "bookmarks", "users"
   add_foreign_key "documents", "patients"
   add_foreign_key "documents", "users"
   add_foreign_key "patients", "users"
