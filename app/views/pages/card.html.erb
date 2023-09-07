@@ -16,14 +16,49 @@
             <p class="nom"><%= patient.first_name %> <%= patient.last_name %></p>
             <p class="numero"><%= patient.security_card_number %></p>
           </div>
+
+
+<div class="d-none">
+  <div class="flip">
+      <div class="front" >
+        <div>
+          <h1 class= "vitale-title" >Vitale</h1>
+          <div class="photo">
+            <%= cl_image_tag patient.photo.key, class:"avatar" %>
+          </div>
+          <div class="infos text-right">
+              <p class="nom"><%= patient.first_name %> <%= patient.last_name %></p>
+              <p class="numero"><%= patient.security_card_number %></p>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="back-infos">
+          <img src="https://www.codeodis.com/img/cms/Nos%20conseils/Polices%20code%20barre/police-code-3de9.gif" alt="">
+          <p><%= patient.security_card_number %></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
         </div>
       <% end %>
     </div>
   </div>
 </div>
 
- <div id="expandedCard" class="carte-vitale-expanded mb-3" data-card-target="expandedCard" data-action="click->card#close">
-    <div class="carte-vitale" data-card-target="expandedCardInner">
-    </div>
+ <div id="expandedCard" class="carte-vitale-expanded mb-3" data-card-target="flipCard" data-action="click->card#flop">
+
+    <%# <div class="carte-vitale" data-card-target="expandedCardInner">
+    </div> %>
   </div>
+
+ <%# <div data-card-target="expandedCard" data-action="click->card#close">
+</div> %>
+
 </div>
