@@ -11,9 +11,6 @@ class RemindersController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def new
     @reminder = Reminder.new
   end
@@ -23,7 +20,7 @@ class RemindersController < ApplicationController
     @reminder.patient_id = params[:reminder][:patient_id]
     if @reminder.save
       create_repetitions_for_reminder(@reminder)
-      redirect_to reminder_path(@reminder)
+      redirect_to reminders_path
     else
       render "new", status: :unprocessable_entity
     end
@@ -36,7 +33,7 @@ class RemindersController < ApplicationController
     @reminder.repetitions.destroy_all
     if @reminder.update(reminder_params)
       create_repetitions_for_reminder(@reminder)
-      redirect_to reminder_path(@reminder)
+      redirect_to reminders_path
       flash[:alert] = "Modifié avec succès!"
     else
       render "edit", status: :unprocessable_entity
