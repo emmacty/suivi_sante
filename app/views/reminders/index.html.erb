@@ -21,7 +21,7 @@
               <h1><%= reminder.title %></h1>
               <a class="btn close-button" data-bs-dismiss="modal">X</a>
             </div>
-              <p class="date"><%= reminder.start_time.strftime("%d/%m/%Y") %></p>
+              <p class="date"><%= reminder.start_time.strftime("%d/%m/%Y %H:%M") %></p>
             <p><%= reminder.content %></p>
             <p><span class="patient-gray">Patient :</span> <%= reminder.patient.first_name %> <%= reminder.patient.last_name %> </p>
             <p><span class="category-gray">Catégorie :</span> <%= reminder.category %></p>
