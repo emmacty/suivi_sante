@@ -14,3 +14,11 @@ left: 40px;
   top: calc(50% - 165px);;
   right: 20px;
 }
+
+.closing-button {
+  font-weight: bold;
+  color:#FFFFFF !important;
+  background: linear-gradient($purple, $blue);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
