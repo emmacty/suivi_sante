@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_07_073920) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_141949) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -126,7 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_073920) do
   end
 
   create_table "repetitions", force: :cascade do |t|
-    t.date "start_time"
+    t.datetime "start_time"
     t.bigint "reminder_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
