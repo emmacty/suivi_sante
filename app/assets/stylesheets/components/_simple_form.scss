@@ -14,11 +14,15 @@
   border-color: $purple;
 }
 
-.simple_form .button:active, .simple_form button:focus, .simple_form button:visited {
+.simple_form .button:active, .simple_form .button:focus, .simple_form .button:visited {
   color:white !important;
 }
 
 .simple_form label {
   color: $purple;
   font-weight: bold;
+}
+
+.simple_form .btn:active, .simple_form .btn:focus, .simple_form .btn:visited {
+  color: white imo !important;
 }

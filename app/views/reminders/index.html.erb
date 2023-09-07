@@ -8,13 +8,50 @@
   <%= month_calendar(events: @reminders + @repetitions, end_attribute: :start_time) do |date, reminders| %>
     <%= date %>
     <% reminders.each do |reminder| %>
-        <div class="reminder reminder-<%= current_user.patients.order(:id).index(reminder.patient) %>">
-          <%= link_to reminder.title, reminder_path(reminder) %></p>
+      <div class="reminder reminder-<%= current_user.patients.order(:id).index(reminder.patient) %>">
+        <a data-bs-toggle="modal" data-bs-target="#reminderModal<%= reminder.class.to_s %><%= reminder.id %>">
+          <%= reminder.title %>
+        </a>
+        <!-- Modal -->
+      </div>
+      <div class="modal fade" id="reminderModal<%= reminder.class.to_s %><%= reminder.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModal<%= reminder.id %>Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content card-reminder-show">
+            <div class="title-and-date">
+              <h1><%= reminder.title %></h1>
+              <a class="btn close-button" data-bs-dismiss="modal">X</a>
+            </div>
+              <p class="date"><%= reminder.start_time.strftime("%d/%m/%Y %H:%M") %></p>
+            <p><%= reminder.content %></p>
+            <p><span class="patient-gray">Patient :</span> <%= reminder.patient.first_name %> <%= reminder.patient.last_name %> </p>
+            <p><span class="category-gray">Catégorie :</span> <%= reminder.category %></p>
+            <p>
+            <span class="category-gray">Fréquence:</span>
+            <% case reminder.frequency_unity.to_sym %>
+            <% when :daily %>
+              Chaque jour
+            <% when :weekly %>
+              Une fois par semaine
+            <% when :monthly %>
+              Une fois par mois
+            <% when :yearly %>
+              Une fois par an
+            <% else %>
+            Aucune
+              <% end %>
+            </p>
+            <div class="button-container">
+            <%= link_to "Éditer", edit_reminder_path(reminder), style: "margin-right: 10px;", class: "purple-link" %>
+            <div data-controller="alert" data-alert-url-value="/reminders/<%= reminder.id %>" data-alert-redirect-value="/reminders?reload=true">
+            <%= link_to "Supprimer", reminder_path(reminder), data: { action: "reminder#delete", turbo_method: :delete }, class: "purple-link" %>
+            </div>
+          </div>
+          </div>
         </div>
+      </div>
     <% end %>
   <% end %>
 </div>
-
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="canvasFilter">
   <div class="offcanvas-header">
