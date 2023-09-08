@@ -8,11 +8,9 @@
 <div class="card-reminder">
   <div class="div">
   <i class="fa-solid fa-bell"></i>
-  <% first_patient = current_user.patients.first %>
-  <% if first_patient.present? %>
-    <% today_reminder = first_patient.reminders.find_by(start_time: Date.today) %>
-    <% if today_reminder.present? %>
-      <p>Votre rappel pour aujourd'hui : <strong> <%= today_reminder.title %></strong></p>
+  <% if @first_patient.present? %>
+    <% if @date_a_verifier.day == @date_actuelle.day %>
+      <p>Votre rappel pour aujourd'hui : <strong> <%= @first_reminder.title %></strong></p>
     <% else %>
       <p>Aucun rappel pour aujourd'hui</p>
     <% end %>
