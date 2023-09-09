@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :documents
   has_many :patients, through: :user_patients
   has_one :patient
-  has_many :reminders
+  has_many :reminders, through: :patients
+  has_many :repetitions, through: :reminders
 end

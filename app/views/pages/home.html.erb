@@ -8,9 +8,20 @@
 <div class="card-reminder">
   <div class="div">
   <i class="fa-solid fa-bell"></i>
-    <p>Votre rappel pour aujourd'hui : <strong>Rdv dentiste</strong></p>
+  <% if @first_patient.present? %>
+    <% if @first_reminder.present? %>
+        <% @first_reminder_date = @first_reminder.start_time.to_s %>
+        <% @date_a_verifier = DateTime.parse(@first_reminder_date) %>
+          <% if @date_a_verifier.day == @date_actuelle.day %>
+            <p>Votre rappel pour aujourd'hui : <strong> <%= @first_reminder.title %></strong></p>
+          <% else %>
+            <p>Aucun rappel pour aujourd'hui</p>
+          <% end %>
+    <% else %>
+      <p>Aucun rappel pour aujourd'hui</p>
+    <% end %>
+  <% end %>
 </div>
-
 </div>
 
 <div class="d-flex justify-content-between mt-3">
@@ -51,54 +62,3 @@
   </div>
   </a>
 </div>
-
-<%# preloader %>
-<% if session[:connexion_homepage] < 3 %>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <div id="preloader">
-			<div id="container" class="container-preloader">
-				<div class="animation-preloader">
-					<div>
-            <img src="https://imagizer.imageshack.com/v2/437x437q70/r/923/UVROre.png" alt="" width="200" height="200">
-          </div>
-					<div class="txt-loading">
-						<span preloader-text="S" class="characters">S</span>
-
-						<span preloader-text="U" class="characters">U</span>
-
-						<span preloader-text="I" class="characters">I</span>
-
-						<span preloader-text="V" class="characters">V</span>
-
-						<span preloader-text="I" class="characters">I</span>
-
-            <br>
-
-            <span preloader-text="S" class="characters">S</span>
-
-						<span preloader-text="A" class="characters">A</span>
-
-						<span preloader-text="N" class="characters">N</span>
-
-						<span preloader-text="T" class="characters">T</span>
-
-						<span preloader-text="E" class="characters">E</span>
-					</div>
-				</div>
-				<div class="loader-section section-left"></div>
-				<div class="loader-section section-right"></div>
-			</div>
-		</div>
-  <script>
-  $(document).ready(function() {
-    setTimeout(function() {
-      $('#container').addClass('loaded');
-      // Once the container has finished, the scroll appears
-      if ($('#container').hasClass('loaded')) {
-        // It is so that once the container is gone, the entire preloader section is deleted
-        $('#preloader').delay(5).queue(function() {
-          $(this).remove();
-        });}
-    }, 1500);});
-  </script>
-<% end %>
