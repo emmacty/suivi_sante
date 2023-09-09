@@ -2,7 +2,9 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
     def index
-      @patients = current_user.patients.reject {|patient| patient == current_user.patients.first }
+      # @patients = current_user.patients.reject {|patient| patient == current_user.patients.first }
+      patient_with_min_id = current_user.patients.min_by { |patient| patient.id }
+      @patients = current_user.patients.reject { |patient| patient == patient_with_min_id }
     end
 
     def show
@@ -43,7 +45,8 @@ class PatientsController < ApplicationController
     end
 
     def my_profile
-      @patient = current_user.patients.first
+      patient_with_min_id = current_user.patients.min_by { |patient| patient.id }
+      @patient = patient_with_min_id
     end
 
     private

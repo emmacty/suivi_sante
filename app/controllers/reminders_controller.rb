@@ -3,8 +3,8 @@ class RemindersController < ApplicationController
 
   def index
     start_date = params.fetch(:start_date, Date.today).to_date
-    @reminders = Reminder.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
-    @repetitions = Repetition.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @reminders = current_user.reminders.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @repetitions = current_user.repetitions.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
     if params.dig(:filter, :patients)
       @reminders = @reminders.filter_by_patient(params[:filter][:patients])
       @repetitions = @repetitions.includes(:reminder).where(reminder: {patient_id: params[:filter][:patients]})
