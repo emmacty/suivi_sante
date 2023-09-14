@@ -24,41 +24,48 @@
 </div>
 </div>
 
-<div class="d-flex justify-content-between mt-3">
-  <a href="<%=patient_my_profile_path(current_user.patient) %>">
-    <div class="card-home">
-      <div class="div">
-        <i class="fa-solid fa-user"></i>
-        <h2>Profil</h2>
+<div class="row mt-3">
+  <div class="col-6">
+    <a href="<%=patient_my_profile_path(current_user.patient) %>">
+      <div class="card-home">
+        <div class="div">
+          <i class="fa-solid fa-user"></i>
+          <h2>Profil</h2>
+        </div>
       </div>
-    </div>
-  </a>
-  <a href="/my_bloodtests">
-   <div class="card-home">
-    <div class="div">
-      <i class="fa-solid fa-chart-line"></i>
-      <h2>Suivi</h2>
-    </div>
+    </a>
   </div>
-  </a>
+  <div class="col-6">
+    <a href="/my_bloodtests">
+      <div class="card-home">
+        <div class="div">
+          <i class="fa-solid fa-chart-line"></i>
+          <h2>Suivi</h2>
+        </div>
+    </div>
+    </a>
+  </div>
 </div>
 
-<div class="d-flex justify-content-between">
-<a href="/articles">
-  <div class="card-home">
-    <div class="div">
-      <i class="fa-solid fa-lightbulb"></i>
-      <h2>Conseils</h2>
+<div class="row mt-3">
+  <div class="col-6">
+    <a href="/articles">
+      <div class="card-home">
+        <div class="div">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h2>Conseils</h2>
+        </div>
+      </div>
+      </a>
     </div>
-  </div>
-  </a>
-
-   <a href="<%= patients_path %>">
-    <div class="card-home">
-    <div class="div">
-      <i class="fa-solid fa-users"></i>
-      <h2 >Proches</h2>
-    </div>
-  </div>
-  </a>
+  <div class="col-6">
+    <a href="<%= patients_path %>">
+      <div class="card-home">
+        <div class="div">
+          <i class="fa-solid fa-users"></i>
+          <h2 >Proches</h2>
+        </div>
+      </div>
+    </a>
+  <div>
 </div>
